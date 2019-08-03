@@ -1,0 +1,33 @@
+@import 'src/sass/shared';
+
+.nav-item {
+  position: relative;
+
+  &__link,
+  &__link:visited {
+    color: $nav-item-color;
+  }
+
+  &__link.active {
+    color: $primary-color;
+  }
+
+  &__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0%;
+    bottom: -0.4rem;
+    height: 0.25rem;
+    background-color: $primary-color;
+    // transition: all 0.15s linear;
+  }
+
+  &__link:hover {
+    color: $primary-color;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
