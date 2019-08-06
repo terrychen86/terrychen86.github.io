@@ -1,0 +1,43 @@
+@import 'src/sass/shared.scss';
+
+.hero {
+  background-color: $hero-background-color;
+  padding-bottom: 10rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+}
+
+.title {
+  color: $primary-text-color;
+}
+
+.subtitle {
+  color: $primary-color;
+  margin-bottom: 2.4rem;
+}
+
+.text {
+  color: $primary-text-color;
+  font-size: 1.8rem;
+}
+
+.image-wrapper {
+  min-width: 60rem;
+}
+
+.content-wrapper {
+  min-width: 34rem;
+}
+
+.image {
+  width: 100%;
+}
+
+.icon-group {
+  display: flex;
+}
