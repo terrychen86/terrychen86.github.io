@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './Section.scss';
+import './Module.scss';
 
 const Section = ({ className, ...props }) => {
   const { children } = props;
