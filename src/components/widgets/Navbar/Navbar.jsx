@@ -15,16 +15,16 @@ const renderNavItems = items => (
 const Navbar = () => {
   const data = useStaticQuery(graphql`
     query NavbarQuery {
-      dataJson {
-        navItems {
-          title
+      allNavItemsJson {
+        nodes {
           path
-        } 
+          title
+        }
       }
     }
   `);
 
-  const items = data.dataJson.navItems;
+  const items = data.allNavItemsJson.nodes;
 
   return (
     <div className="navbar">
