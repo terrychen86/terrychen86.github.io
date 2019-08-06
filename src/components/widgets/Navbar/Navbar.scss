@@ -1,0 +1,17 @@
+@import 'src/sass/shared';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &__container {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .nav-item {
+    margin: 0 1rem;
+  }
+}
