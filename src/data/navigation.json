@@ -1,0 +1,16 @@
+{
+  "navItems": [
+    {
+      "title": "About Me",
+      "path": "/"
+    },
+    {
+      "title": "Projects",
+      "path": "/page-2/"
+    },
+    {
+      "title": "Resume",
+      "path": "/resume"
+    }
+  ]
+}
