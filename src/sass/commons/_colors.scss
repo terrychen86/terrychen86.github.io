@@ -1,12 +1,24 @@
-$near-black: #4a4a4a;
+$near-black: #6a6a6a;
 $purple-white: #f8f8ff;
 $near-white: #fdfdfd;
 $gray: #9b9b9b;
 
-$light-pink: #ec839a;
+$pink: #ec839a;
+$deep-pink: #c377a2;
+$purple: #956e9e;
+$gray-purple: #68648e;
+$gray-blue: #445775;
+$black-blue: #2f4858;
 
 /* color settings */
-$primary-color: $light-pink;
-$primary-text-color: $near-black;
-$nav-item-color: $gray;
-$hero-background-color: $purple-white;
+$primary-color: $pink;
+$primary-text-color: $gray-blue;
+$primary-title-color: $black-blue;
+
+$nav-item-color: $purple;
+$nav-item-placehold-color: $purple-white;
+
+$hero-background-color: linear-gradient(to right top, #cc95c0, #df9cb2, #e8a6a8, #e8b4a2, #e4c2a5, #d5c7a1, #c3cba4, #b0ceae, #8dc8b6, #70bec4, #68b2d0, #7aa1d2);
+
+$icon-link-color: $pink;
+$icon-link-placeholder-color: $black-blue;
