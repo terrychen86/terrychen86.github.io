@@ -1,46 +1,63 @@
 import React from 'react';
-import FontAwesome from 'react-fontawesome';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import { Module, Container } from 'common-ui';
-import heroImage2x from 'images/developer-2x.png';
-import heroImage3x from 'images/developer-3x.png';
-import heroImage4x from 'images/developer-4x.png';
+import heroImage from 'images/developer.svg';
 import styles from './Hero.module.scss';
 
-const Hero = () => (
-  <Module className={styles.hero}>
-    <Container className={styles.container}>
-      <section className={styles.contentWrapper}>
-        <h1 className={styles.title}>Terry Chen</h1>
-        <h4 className={styles.subtitle}>Software Engineer @ ForUsAll</h4>
-        <p className={styles.text}>
-          Software Engineer who focuses on
-          building elegant and high performace
-          web application.
-        </p>
+const Hero = () => {
+  const renderIconLink = () => {
+    const data = useStaticQuery(graphql`
+      query IconLinkQuery {
+        allIconLinksJson {
+          nodes {
+            icon
+            name
+            url
+          }
+        }
+      }
+    `);
+    const { nodes } = data.allIconLinksJson;
+    return nodes.map(link => (
+      <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
+        <i className={`fa ${link.icon}`} aria-hidden="true" />
+      </a>
+    ));
+  };
 
-        <div className={styles.iconGroup}>
-          <FontAwesome
-            name="rocket"
+  return (
+    <Module className={styles.hero}>
+      <Container className={styles.container}>
+        <section className={styles.contentWrapper}>
+          <h1 className={styles.title}>Terry Chen</h1>
+          <h4 className={styles.subtitle}>Software Engineer @ ForUsAll</h4>
+          <p className={styles.text}>
+            Software Engineer who focuses on
+            building elegant and high performace
+            web application.
+          </p>
+
+          <div className={styles.links}>
+            <div className={styles.iconGroup}>
+              {renderIconLink()}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.imageWrapper}>
+          <img
+            src={heroImage}
+            alt="developer"
+            className={styles.image}
           />
-        </div>
-      </section>
+        </section>
+      </Container>
 
-      <section className={styles.imageWrapper}>
-        <img
-          srcSet={`
-            ${heroImage2x} 1x,
-            ${heroImage2x} 2x,
-            ${heroImage3x} 3x,
-            ${heroImage4x} 4x,
-          `}
-          src={heroImage2x}
-          alt="developer"
-          className={styles.image}
-        />
-      </section>
-    </Container>
-  </Module>
-);
+      <div className={styles.waveEffectFirst} />
+      <div className={styles.waveEffectSecond} />
+    </Module>
+  );
+};
 
 export default Hero;
