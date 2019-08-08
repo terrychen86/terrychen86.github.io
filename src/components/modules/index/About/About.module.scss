@@ -1,0 +1,42 @@
+@import 'src/sass/shared.scss';
+
+.about {
+  min-height: auto;
+  padding-top: 10rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+}
+
+.card-image {
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 18rem;
+  height: 18rem;
+  padding: 0.4rem;
+  background: linear-gradient(270deg, $pink, $deep-pink);
+  border-radius: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+  }
+}
+
+.card-content {
+  margin-left: 8rem;
+}
+
+.title {
+  color: $primary-title-color;
+  margin-bottom: 1rem;
+}
+
+p.text {
+  color: $primary-text-color;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
