@@ -3,4 +3,8 @@
 .section {
   height: 72rem;
   min-height: 100vh;
+
+  @media (min-height: 108rem) {
+    min-height: 108rem;
+  }
 }
