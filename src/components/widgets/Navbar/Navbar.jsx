@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
-import { NavItem, Container } from 'common-ui';
+import { Container } from 'common-ui';
 import './Navbar.scss';
 
 const renderNavItems = items => (
   items.map(({ title, path }) => (
-    <NavItem path={path} key={path}>
-      {title}
-    </NavItem>
+    <span className="nav-item" key={path}>
+      <Link activeClassName="active" className="nav-item__link" to={path}>{title}</Link>
+    </span>
   ))
 );
 

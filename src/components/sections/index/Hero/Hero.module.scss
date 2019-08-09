@@ -6,6 +6,10 @@
   padding-bottom: 10rem;
   min-height: 98.5vh;
   overflow: hidden;
+
+  @media (min-height: 108rem) {
+    min-height: 108rem;
+  }
 }
 
 .container {
@@ -32,8 +36,9 @@
 }
 
 .subtitle {
-  color: $primary-color;
+  color: $gray-purple;
   margin-bottom: 2.4rem;
+  opacity: 0.5;
 }
 
 .text {
@@ -87,10 +92,11 @@
     font-size: 2.8rem;
     color: $icon-link-placeholder-color;
     transition: all linear 0.25s;
+    opacity: 0.5;
   }
 
   i:hover {
-    color: $icon-link-color;
+    opacity: 1;
   }
 }
 

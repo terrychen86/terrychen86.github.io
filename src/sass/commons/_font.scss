@@ -1,5 +1,6 @@
 @import './layout.scss';
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
 
 html,
 body {
@@ -8,6 +9,8 @@ body {
 
 h1 {
   font-size: 5.4rem;
+  font-family: "Baloo Chettan", sans-serif;
+  font-weight: 500;
 
   @include respond-below(sm) {
     font-size: 4.8rem;

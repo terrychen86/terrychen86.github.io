@@ -7,6 +7,7 @@ $pink: #ec839a;
 $deep-pink: #c377a2;
 $purple: #956e9e;
 $gray-purple: #68648e;
+
 $gray-blue: #445775;
 $black-blue: #2f4858;
 
@@ -15,10 +16,11 @@ $primary-color: $pink;
 $primary-text-color: $gray-blue;
 $primary-title-color: $black-blue;
 
-$nav-item-color: $gray-blue;
-$nav-item-placehold-color: $purple-white;
+$nav-item-color: $black-blue;
+$nav-item-placehold-color: rgba($gray-purple, 0.8);
 
-$hero-background-color: linear-gradient(to right top, #cc95c0, #df9cb2, #e8a6a8, #e8b4a2, #e4c2a5, #d5c7a1, #c3cba4, #b0ceae, #8dc8b6, #70bec4, #68b2d0, #7aa1d2);
+$hero-background-color: linear-gradient(to right top, #e58abe, #caa5ed, #9fc1ff, #78d9ff, #76ecfe, #87f0ea, #a0f1d7, #bbf1c8, #c5e7b9, #cddcad, #d2d1a6, #d5c7a1);
+$project-background-color: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
 
 $icon-link-color: $pink;
 $icon-link-placeholder-color: $black-blue;
@@ -28,8 +30,8 @@ $icon-card-colors: (
   "2": #df9cb2,
   "3": #e8a6a8,
   "4": #70bec4,
-  "5": #b0ceae,
+  "5": #6c8be2,
   "6": #7aa1d2,
-  "7": #e4c2a5,
-  "8": #d5c7a1
+  "7": #ffb122,
+  "8": #ffd76c,
 );
