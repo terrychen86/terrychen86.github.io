@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { NavItem, Container } from 'common-ui';
@@ -13,6 +13,18 @@ const renderNavItems = items => (
 );
 
 const Navbar = () => {
+  const [scrollLoc, setScrollLoc] = useState(0);
+  useEffect(() => {
+    const onWindowScroll = () => {
+      const top = +window.scrollY;
+      setScrollLoc(top);
+    };
+
+    window.addEventListener('scroll', onWindowScroll);
+
+    return () => { window.removeEventListener('scroll', onWindowScroll); };
+  }, []);
+
   const data = useStaticQuery(graphql`
     query NavbarQuery {
       allNavItemsJson {
@@ -25,9 +37,16 @@ const Navbar = () => {
   `);
 
   const items = data.allNavItemsJson.nodes;
+  const navbarStyle = (() => {
+    if (scrollLoc > 40) {
+      return 'navbar navbar--with_bg';
+    }
+
+    return 'navbar';
+  })();
 
   return (
-    <div className="navbar">
+    <div className={navbarStyle}>
       <Container className="navbar__container">
         {renderNavItems(items)}
       </Container>

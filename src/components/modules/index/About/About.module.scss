@@ -5,12 +5,16 @@
   padding-top: 10rem;
 }
 
-.card {
+.about-me {
   display: flex;
   align-items: center;
+
+  @include respond-below(sm) {
+    flex-direction: column;
+  }
 }
 
-.card-image {
+.about-me-image {
   flex-shrink: 0;
   flex-grow: 0;
   width: 18rem;
@@ -26,17 +30,91 @@
   }
 }
 
-.card-content {
+.about-me-content {
   margin-left: 8rem;
+
+  @include respond-below(sm) {
+    margin-top: 4rem;
+    margin-left: 0;
+  }
 }
 
 .title {
   color: $primary-title-color;
   margin-bottom: 1rem;
+
+  @include respond-below(sm) {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 }
 
 p.text {
   color: $primary-text-color;
   font-size: 1.8rem;
   line-height: 1.5;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+
+  @media (max-width: 1015px) {
+    max-width: 78rem;
+  }
+
+  @media (max-width: 784px) {
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    padding: 0 1rem;
+    margin-top: 1rem;
+  }
+
+  @include respond-below(sm) {
+    max-width: 41.4rem;
+  }
+}
+
+.card {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 22rem;
+  height: 15rem;
+  margin: 0.5rem;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.icon-wrapper {
+  margin: 1.2rem auto;
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.card-title {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.card-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+
+  @include respond-below(sm) {
+    color: white;
+  }
+}
+
+@for $i from 1 to 9 {
+  .card#{$i} {
+    background-color: map-get($icon-card-colors, #{$i});
+  }
+}
+
+.btn-container {
+  text-align: center;
+  margin: 2rem auto;
 }
