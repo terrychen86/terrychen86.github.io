@@ -21,6 +21,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-typist": "^2.0.5",
     "smooth-scroll": "^16.1.0",
     "typescript": "^3.5.3"
   },
