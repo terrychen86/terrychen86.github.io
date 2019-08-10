@@ -1,16 +1,42 @@
-import React from 'react';
-// import { Link, useStaticQuery, graphql } from 'gatsby';
-import projectImage from 'images/projects.svg';
+import React, { useState } from 'react';
 import { Module, Container } from 'common-ui';
-import Wave from 'src/components/widgets/Wave/Wave';
+import Typist from 'react-typist';
 import styles from './ProjectHeader.module.scss';
 
-const ProjectHeader = () => (
-  <Module className={styles.projectHeader}>
-    <Container className={styles.headerContainer}>
-      <h1 className={styles.title}>My Project</h1>
-    </Container>
-  </Module>
-);
+const ProjectHeader = () => {
+  const [typistKey, setTypistKey] = useState(1);
+  const onTypingDone = () => {
+    setTypistKey(typistKey * -1);
+  };
+
+  return (
+    <Module className={styles.projectHeader}>
+      <Container className={styles.headerContainer}>
+        <h1 className={styles.title}>Projects</h1>
+      </Container>
+
+      <Container className={styles.terminalContainer}>
+        <section className={styles.terminalWindow}>
+          <div className={styles.terminalToolbar}>
+            <span className={[styles.toolbarBtn, styles.toolbarBtnRed].join(' ')} />
+            <span className={[styles.toolbarBtn, styles.toolbarBtnYellow].join(' ')} />
+            <span className={[styles.toolbarBtn, styles.toolbarBtnGreen].join(' ')} />
+          </div>
+          <div className={styles.terminalPanel}>
+            terry $ &nbsp;
+            <Typist
+              key={typistKey}
+              onTypingDone={onTypingDone}
+              className={styles.code}
+            >
+              I CODE therefor I AM
+              <Typist.Backspace count={30} delay={1000} />
+            </Typist>
+          </div>
+        </section>
+      </Container>
+    </Module>
+  );
+};
 
 export default ProjectHeader;
