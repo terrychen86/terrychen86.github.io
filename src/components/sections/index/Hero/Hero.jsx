@@ -35,7 +35,7 @@ const Hero = () => {
           <h4 className={styles.subtitle}>Software Engineer @ ForUsAll</h4>
           <p className={styles.text}>
             Software Engineer who focuses on
-            building elegant and high performace
+            building elegant and high performance
             web application.
           </p>
 
