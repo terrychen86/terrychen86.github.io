@@ -1,31 +1,39 @@
-$near-black: #6a6a6a;
 $purple-white: #f8f8ff;
 $near-white: #fdfdfd;
-$gray: #9b9b9b;
+$gray: #9fadbd;
 
-$pink: #ec839a;
-$deep-pink: #c377a2;
-$purple: #956e9e;
-$gray-purple: #68648e;
+$pink: #db7ca7;
+$deep-pink: #a24873;
 
 $gray-blue: #445775;
-$black-blue: #2f4858;
+$black-blue: #3b4856;
 
 /* color settings */
-$primary-color: $pink;
+$primary-color: #40a1e4;
+$primary-reverse-color: white;
+
 $primary-text-color: $gray-blue;
 $primary-title-color: $black-blue;
 
-$nav-item-color: $black-blue;
-$nav-item-placehold-color: rgba($gray-purple, 0.8);
+$nav-item-color: white;
+$nav-item-placehold-color: rgba(white, 0.5);
 
-$hero-background-color: linear-gradient(to right top, #e58abe, #caa5ed, #9fc1ff, #78d9ff, #76ecfe, #87f0ea, #a0f1d7, #bbf1c8, #c5e7b9, #cddcad, #d2d1a6, #d5c7a1);
-$project-background-color: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+$navbar-reverse-bg-color: rgba(white, 0.95);
+$nav-item-placehold-reverse-color: $gray;
 
-$icon-link-color: $pink;
-$icon-link-placeholder-color: $black-blue;
+$hero-title-color: rgba(#f2f2f2, 0.9);
+$hero-text-color: rgba(white, 0.7);
 
-$icon-card-colors: (
+$project-title-color: rgba(#f2f2f2, 0.9);
+
+$hero-background-color: linear-gradient(to right top, #40a1e4, #3090e0, #2d7fdb, #386cd2, #4858c7);
+$hero-background-alt-color: linear-gradient(to right top, #3671bf, #2579bf, #1680be, #1386bb, #1e8cb8);
+$project-background-color: linear-gradient(to right top, #d3cce3, #d9d2e6, #ded8e9, #e4deed, #e9e4f0);
+
+$icon-link-color: white;
+$icon-link-placeholder-color: white;
+
+$icon-card-alt-colors: (
   "1": #cc95c0,
   "2": #df9cb2,
   "3": #e8a6a8,
@@ -33,5 +41,16 @@ $icon-card-colors: (
   "5": #6c8be2,
   "6": #7aa1d2,
   "7": #ffb122,
+  "8": #ffd76c,
+);
+
+$icon-card-colors: (
+  "1": #40a1e4,
+  "2": #00bdeb,
+  "3": #00d5d9,
+  "4": #37e7b4,
+  "5": #db7ca7,
+  "6": #7aa1d2,
+  "7": #9fadbd,
   "8": #ffd76c,
 );
