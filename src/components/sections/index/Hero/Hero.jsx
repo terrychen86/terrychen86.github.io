@@ -2,7 +2,8 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { Module, Container } from 'common-ui';
-import heroImage from 'images/developer.svg';
+import Wave from 'components/widgets/Wave/Wave';
+import heroImage from 'images/developer0-alt.svg';
 import styles from './Hero.module.scss';
 
 const Hero = () => {
@@ -54,8 +55,7 @@ const Hero = () => {
         </section>
       </Container>
 
-      <div className={styles.waveEffectFirst} />
-      <div className={styles.waveEffectSecond} />
+      <Wave />
     </Module>
   );
 };
