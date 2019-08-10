@@ -2,11 +2,14 @@
   "extends": "airbnb",
   "settings": {
     "import/resolver": {
-      "alias": [
-        ["~components", "./src/components"],
-        ["images", "./src/images/"],
-        ["common-ui", "./src/components/commons/CommonUI.jsx"],
-      ],
+      "alias": {
+        "map": [
+          ["components", "./src/components"],
+          ["images", "./src/images"],
+          ["common-ui", "./src/components/commons/CommonUI.jsx"],
+        ],
+        "extensions": [".ts", ".js", ".jsx"],
+      },
     }
   },
   "globals": {

@@ -1,10 +1,12 @@
 {
+  "target": "es2017",
+  "allowSyntheticDefaultImports": false,
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "~components": ["src/components"],
-      "images": ["src/images/"],
-      "common-ui": ["src/components//commons/CommonUI.jsx"]
+      "components/*": ["src/components/*"],
+      "images/*": ["src/images/*"],
+      "common-ui": ["src/components/commons/CommonUI.jsx"]
     }
   }
 }
