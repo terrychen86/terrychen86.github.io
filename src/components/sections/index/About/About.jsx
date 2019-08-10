@@ -85,7 +85,7 @@ const About = () => (
     </Container>
 
     <Container className={styles.btnContainer}>
-      <Link to="/index-2">
+      <Link to="/projects">
         <Button>
           See my projects
         </Button>
