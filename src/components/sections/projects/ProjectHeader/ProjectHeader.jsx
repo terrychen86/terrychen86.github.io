@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Module, Container } from 'common-ui';
 import Typist from 'react-typist';
+import projectImage from 'images/projects.svg';
 import styles from './ProjectHeader.module.scss';
+
 
 const ProjectHeader = () => {
   const [typistKey, setTypistKey] = useState(1);
@@ -16,6 +18,9 @@ const ProjectHeader = () => {
       </Container>
 
       <Container className={styles.terminalContainer}>
+        <div className={styles.imageWrapper}>
+          <img src={projectImage} alt="projects" />
+        </div>
         <section className={styles.terminalWindow}>
           <div className={styles.terminalToolbar}>
             <span className={[styles.toolbarBtn, styles.toolbarBtnRed].join(' ')} />

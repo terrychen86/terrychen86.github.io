@@ -3,16 +3,18 @@
 .project-header {
   position: relative;
   min-height: auto;
-  height: 40rem;
-  background: $hero-background-alt-color;
+  height: 45rem;
+  background-image: $project-background-color;
 }
 
 .header-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 60%;
   padding-top: 10rem;
+  z-index: 2;
+  position: relative;
 }
 
 .title {
@@ -20,11 +22,39 @@
   font-weight: 500;
   font-size: 4.2rem;
   letter-spacing: 0.3rem;
-  opacity: 1;
+  text-shadow: 0.2rem 0.3rem 0 $text-shadow;
+}
+
+.imageWrapper {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 2rem;
+  text-align: center;
+  z-index: 0;
+
+  @include respond-below(sm) {
+    bottom: 10rem;
+    padding: 0 1rem;
+  }
+
+  img {
+    width: 80rem;
+    opacity: 0.7;
+
+    @include respond-below(md) {
+      width: 72rem;
+    }
+
+    @include respond-below(sm) {
+      width: 100%;
+    }
+  }
 }
 
 .terminal-container {
   display: flex;
+  position: relative;
   flex-direction: column;
   height: 40%;
   padding: 0 2rem;
@@ -35,6 +65,8 @@
   flex-direction: column;
   flex: 1 1;
   background: #333;
+  position: relative;
+  z-index: 2;
 }
 
 .terminal-toolbar {

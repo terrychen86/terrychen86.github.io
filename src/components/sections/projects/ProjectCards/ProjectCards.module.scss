@@ -1,0 +1,46 @@
+@import 'src/sass/shared.scss';
+
+.card {
+  display: inline-flex;
+  width: 40rem;
+  box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+
+  @include respond-below(sm) {
+    width: 100%;
+  }
+}
+
+.card-image {
+  height: 20rem;
+  width: 15rem;
+  background: url('src/images/project-cp.jpg');
+  background-size: cover;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.card-desc {
+  position: relative;
+  padding: 2rem;
+  height: 16rem;
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: 2.8rem;
+  color: $primary-title-color;
+}
+
+.card-tags {
+  margin-top: 1rem;
+} 
+
+.card-tag {
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  border: 1px solid rgba($gray, 0.8);
+  color: rgba($gray, 0.8);
+  border-radius: 0.4rem;
+  display: inline-block;
+  margin: 0.2rem;
+}

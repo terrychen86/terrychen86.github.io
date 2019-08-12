@@ -1,6 +1,7 @@
 $purple-white: #f8f8ff;
 $near-white: #fdfdfd;
 $gray: #9fadbd;
+$deep-gray: #898999;
 
 $pink: #db7ca7;
 $deep-pink: #a24873;
@@ -15,6 +16,8 @@ $primary-reverse-color: white;
 $primary-text-color: $gray-blue;
 $primary-title-color: $black-blue;
 
+$text-shadow: $deep-gray;
+
 $nav-item-color: white;
 $nav-item-placehold-color: rgba(white, 0.5);
 
@@ -28,7 +31,7 @@ $project-title-color: rgba(#f2f2f2, 0.9);
 
 $hero-background-color: linear-gradient(to right top, #40a1e4, #3090e0, #2d7fdb, #386cd2, #4858c7);
 $hero-background-alt-color: linear-gradient(to right top, #3671bf, #2579bf, #1680be, #1386bb, #1e8cb8);
-$project-background-color: linear-gradient(to right top, #d3cce3, #d9d2e6, #ded8e9, #e4deed, #e9e4f0);
+$project-background-color: linear-gradient(to right top, #f067a2, #cf70be, #a47acf, #7183d2, #3887c8);
 
 $icon-link-color: white;
 $icon-link-placeholder-color: white;
