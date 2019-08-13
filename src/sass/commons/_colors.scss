@@ -2,15 +2,19 @@ $purple-white: #f8f8ff;
 $near-white: #fdfdfd;
 $gray: #9fadbd;
 $deep-gray: #898999;
-
 $pink: #db7ca7;
 $deep-pink: #a24873;
-
 $gray-blue: #445775;
 $black-blue: #3b4856;
 
+$lite-blue: #40a1e4;
+
+$red:#ff453a;
+$yellow: #ffd60a;
+$green: #32d74b;
+
 /* color settings */
-$primary-color: #40a1e4;
+$primary-color: $lite-blue;
 $primary-reverse-color: white;
 
 $primary-text-color: $gray-blue;
@@ -28,6 +32,10 @@ $hero-title-color: rgba(#f2f2f2, 0.9);
 $hero-text-color: rgba(white, 0.7);
 
 $project-title-color: rgba(#f2f2f2, 0.9);
+$terminal-red-color: $red;
+$terminal-yellow-color: $yellow;
+$terminal-green-color: $green;
+$terminal-text-color: white;
 
 $hero-background-color: linear-gradient(to right top, #40a1e4, #3090e0, #2d7fdb, #386cd2, #4858c7);
 $hero-background-alt-color: linear-gradient(to right top, #3671bf, #2579bf, #1680be, #1386bb, #1e8cb8);

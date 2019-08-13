@@ -1,5 +1,10 @@
 @import 'src/sass/shared.scss';
 
+$terminal-red-color: #ff453a;
+$terminal-yellow-color: #ffd60a;
+$terminal-green-color: #32d74b;
+$terminal-text: white;
+
 .project-header {
   position: relative;
   min-height: auto;
@@ -79,7 +84,7 @@
   background: #222;
   font-family: monospace;
   padding: 1.5rem 3rem;
-  color: #32d74b;
+  color: $terminal-green-color;
   flex: 1 1;
 
   @include respond-above(sm) {
@@ -95,19 +100,19 @@
   margin: 0.5rem;
 
   &-red {
-    background-color: #ff453a;
+    background-color: $terminal-red-color;
   }
 
   &-yellow {
-    background-color: #ffd60a;
+    background-color: $terminal-yellow-color;
   }
 
   &-green {
-    background-color: #32d74b;
+    background-color: $terminal-green-color;
   }
 }
 
 .code {
   display: inline-block;
-  color: white;
+  color: $terminal-text-color;
 }
