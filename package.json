@@ -55,9 +55,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/terrychen86/terrychen86.github.io/"
+    "url": "git@github.com:terrychen86/terrychen86.github.io/"
   },
   "bugs": {
-    "url": "hhttps://github.com/terrychen86/terrychen86.github.io/issues"
+    "url": "https://github.com/terrychen86/terrychen86.github.io/issues"
   }
 }
