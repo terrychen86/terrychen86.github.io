@@ -1,39 +1,66 @@
 @import 'src/sass/shared.scss';
 
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-cards-col {
+  flex: 0 0 33.333332%;
+  text-align: center;
+}
+
 .card {
-  display: inline-flex;
-  width: 40rem;
+  display: inline-block;
+  width: 25rem;
   box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.1);
-  border-radius: 2rem;
 
   @include respond-below(sm) {
     width: 100%;
   }
 }
 
+@for $i from 1 to 9 {
+  .color-card-#{$i} {
+    background-color: map-get($icon-card-colors, #{$i});
+  }
+}
+
+.card-header {
+  position: relative;
+  height: 15rem;
+}
+
 .card-image {
-  height: 20rem;
-  width: 15rem;
-  background: url('src/images/project-cp.jpg');
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  transform: translate(-50%, 50%);
+  height: 12.5rem;
+  width: 12.5rem;
   background-size: cover;
-  border-radius: 2rem 0 0 2rem;
+  border-radius: 100%;
+  border: 0.5rem solid white;
 }
 
 .card-desc {
   position: relative;
   padding: 2rem;
-  height: 16rem;
 }
 
 .card-title {
   font-weight: 500;
   font-size: 2.8rem;
-  color: $primary-title-color;
+  color: white;
+  text-align: center;
+  padding-top: 2rem;
 }
 
 .card-tags {
-  margin-top: 1rem;
-} 
+  margin-top: 3rem;
+  height: 15rem;
+  text-align: left;
+}
 
 .card-tag {
   font-size: 1.2rem;
