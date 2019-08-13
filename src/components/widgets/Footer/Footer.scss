@@ -1,0 +1,15 @@
+@import 'src/sass/shared.scss';
+
+.footer {
+  background-color: #333;
+
+  .footer-container {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .footer-text {
+    color: white;
+    font-size: 1.4rem;
+  }
+}

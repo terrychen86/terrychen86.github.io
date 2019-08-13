@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import Navbar from './widgets/Navbar/Navbar';
+import Footer from './widgets/Footer/Footer';
 
 const Layout = ({ children }) => {
   if (typeof window !== 'undefined') {
@@ -16,6 +17,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <Navbar />
       {children}
+      <Footer />
     </>
   );
 };
