@@ -11,9 +11,12 @@
 }
 
 .card {
+  position: relative;
   display: inline-block;
-  width: 25rem;
+  width: 26rem;
   box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear;
+  margin-bottom: 3.5rem;
 
   @include respond-below(sm) {
     width: 100%;
@@ -39,6 +42,7 @@
   height: 12.5rem;
   width: 12.5rem;
   background-size: cover;
+  background-position: center;
   border-radius: 100%;
   border: 0.5rem solid white;
 }
@@ -70,4 +74,33 @@
   border-radius: 0.4rem;
   display: inline-block;
   margin: 0.2rem;
+}
+
+.btn-group {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 5rem;
+  text-align: right;
+  padding: 0 2rem;
+}
+
+.icon-btn {
+  font-size: 2.8rem;
+  margin-left: 2rem;
+  opacity: 0.8;
+  transition: all 0.25s linear;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.github {
+  color: #333;
+}
+
+.globe {
+  color: #3671bf;
 }
