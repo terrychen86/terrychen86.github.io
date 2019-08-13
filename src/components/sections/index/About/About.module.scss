@@ -3,6 +3,11 @@
 .about {
   min-height: auto;
   padding-top: 10rem;
+
+  @include respond-below(sm) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 .about-me {
@@ -53,6 +58,10 @@ p.text {
   color: $primary-text-color;
   font-size: 1.8rem;
   line-height: 1.5;
+
+  @include respond-below(xxs) {
+    font-size: 1.4rem;
+  }
 }
 
 .cards {

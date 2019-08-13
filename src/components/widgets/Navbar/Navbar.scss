@@ -13,6 +13,10 @@
     text-align: right;
     padding: 3rem 1.5rem;
     transition: all 0.2s linear;
+
+    @include respond-below(sm) {
+      text-align: center;
+    }
   }
 
   .nav-item {
@@ -21,6 +25,10 @@
     font-weight: 500;
     font-size: 1.8rem;
     opacity: 0.75;
+
+    @include respond-below(sm) {
+      font-size: 1.4rem;
+    }
 
     &__link,
     &__link:visited {

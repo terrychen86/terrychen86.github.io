@@ -3,11 +3,26 @@
 .project-cards {
   display: flex;
   flex-wrap: wrap;
+
+  @include respond-below(sm) {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    padding: 2rem;
+  }
 }
 
 .project-cards-col {
   flex: 0 0 33.333332%;
   text-align: center;
+
+  @include respond-below(md) {
+    flex: 0 0 50%;
+  }
+
+  @include respond-below(sm) {
+    flex: 0 0 26rem;
+    margin-right: 1rem;
+  }
 }
 
 .card {

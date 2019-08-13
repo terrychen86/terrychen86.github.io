@@ -39,7 +39,7 @@ $terminal-text: white;
   z-index: 0;
 
   @include respond-below(sm) {
-    bottom: 10rem;
+    bottom: 12.5rem;
     padding: 0 1rem;
   }
 
