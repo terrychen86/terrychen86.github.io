@@ -28,15 +28,20 @@ const renderCards = () => {
     query {
       allProjectsJson {
         nodes {
+          links {
+            icon
+            link
+          }
           name
-          tags
           title
+          tags
         }
       }
     }
   `);
 
   const projects = data.allProjectsJson.nodes;
+
   return projects.map((project, i) => (
     <div key={project.name} className={styles.projectCardsCol}>
       <div className={styles.card}>
@@ -51,10 +56,14 @@ const renderCards = () => {
             {project.tags.map(tag => (<span key={tag} className={styles.cardTag}>{tag}</span>))}
           </div>
         </section>
-        <section>
-          <div className={styles.cardBtn}>
-
-          </div>
+        <section className={styles.btnGroup}>
+          {
+            project.links.map(link => (
+              <a className={styles.iconBtn} key={link.icon} href={link.link} target="_blank" rel="noreferrer noopener">
+                <i className={`fa fa-${link.icon} ${styles[link.icon]}`} aria-hidden="true" />
+              </a>
+            ))
+          }
         </section>
       </div>
     </div>
