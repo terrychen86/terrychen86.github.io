@@ -1,0 +1,33 @@
+@import 'src/sass/shared.scss';
+
+.footer {
+  background-color: #555;
+
+  .footer-container {
+    padding: 2rem;
+    text-align: center;
+
+    @include respond-below(xxs) {
+      padding: 1rem;
+    }
+  }
+
+  .footer-text {
+    color: white;
+    font-size: 1.4rem;
+
+    &-desktop {
+      @include respond-below(sm) {
+        display: none;
+      }
+    }
+
+    &-mobile {
+      font-size: 1.1rem;
+
+      @include respond-above(sm) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Linkedin",
+    "icon": "fa-linkedin-square",
+    "url": "https://www.linkedin.com/in/yenhsuan"
+  },
+  {
+    "name": "Github",
+    "icon": "fa-github",
+    "url": "https://github.com/terrychen86"
+  },
+  {
+    "name": "Codepen",
+    "icon": "fa-codepen",
+    "url": "https://codepen.io/terry-chen/"
+  },
+  {
+    "name": "E-mail",
+    "icon": "fa-envelope-o",
+    "url": "mailto:yenhsuan.terry@gmail.com"
+  }
+]

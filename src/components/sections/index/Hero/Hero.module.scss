@@ -1,0 +1,101 @@
+@import 'src/sass/shared.scss';
+
+.hero {
+  position: relative;
+  background-image: $hero-background-alt-color;
+  padding-bottom: 10rem;
+  min-height: 98.5vh;
+  overflow: hidden;
+
+  @media (min-height: 108rem) {
+    min-height: 108rem;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 4rem;
+
+  @include respond-below(sm) {
+    padding-top: 8rem;
+    flex-direction: column-reverse;
+    justify-content: center;
+    max-width: 41.4rem;
+    min-width: 32rem;
+  }
+
+  @include respond-below(xxs) {
+    padding: 8rem 1.5rem 4rem 1.5rem;
+  }
+}
+
+.title {
+  color: $hero-title-color;
+}
+
+.subtitle {
+  color: $primary-color;
+  margin-bottom: 2.4rem;
+  opacity: 0.9;
+}
+
+.text {
+  color: $hero-text-color;
+  font-size: 1.8rem;
+
+  @include respond-below(sm) {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+}
+
+.image-wrapper {
+  min-width: 60rem;
+  margin-left: 10rem;
+
+  @include respond-below(sm) {
+    min-width: 100%;
+    margin-left: 0;
+  }
+}
+
+.content-wrapper {
+  min-width: 34rem;
+
+  @include respond-below(sm) {
+    min-width: 100%;
+    text-align: center;
+  }
+}
+
+.image {
+  width: 100%;
+}
+
+.links {
+  text-align: left;
+
+  @include respond-below(sm) {
+    text-align: center;
+  }
+}
+
+.icon-group {
+  display: inline-flex;
+  width: 20rem;
+  justify-content: space-around;
+  margin-top: 5.4rem;
+
+  i {
+    font-size: 2.8rem;
+    color: $icon-link-placeholder-color;
+    transition: all linear 0.25s;
+    opacity: 0.3;
+  }
+
+  i:hover {
+    opacity: 1;
+  }
+}

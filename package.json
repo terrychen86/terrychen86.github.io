@@ -21,6 +21,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-pdf": "^4.1.0",
+    "react-typist": "^2.0.5",
     "smooth-scroll": "^16.1.0",
     "typescript": "^3.5.3"
   },
@@ -33,6 +35,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "gatsby-plugin-root-import": "^2.0.5",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0"
@@ -47,13 +50,14 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lint": "npm run lintcss && npm run lintjs",
     "lintcss": "./node_modules/stylelint/bin/stylelint.js ./src/sass/**/*.scss",
-    "lintjs": "./node_modules/.bin/eslint ./src/**/*.js"
+    "lintjs": "./node_modules/.bin/eslint ./src/**/*.jsx",
+    "deploy": "npm run build && gh-pages -d public -b master"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/terrychen86/terrychen86.github.io/"
+    "url": "git@github.com:terrychen86/terrychen86.github.io/"
   },
   "bugs": {
-    "url": "hhttps://github.com/terrychen86/terrychen86.github.io/issues"
+    "url": "https://github.com/terrychen86/terrychen86.github.io/issues"
   }
 }

@@ -4,9 +4,16 @@
     "import/resolver": {
       "alias": {
         "map": [
+          ["components", "./src/components"],
+          ["images", "./src/images"],
           ["common-ui", "./src/components/commons/CommonUI.jsx"],
         ],
-      }
+        "extensions": [".ts", ".js", ".jsx"],
+      },
     }
   },
+  "globals": {
+    "document": true,
+    "window": true
+  }
 }

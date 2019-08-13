@@ -1,0 +1,17 @@
+@import 'src/sass/shared.scss';
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $content-width;
+  padding: 4rem;
+
+  @include respond-below(sm) {
+    max-width: 41.4rem;
+    min-width: 32rem;
+  }
+
+  @include respond-below(xxs) {
+    padding: 1.5rem;
+  }
+}

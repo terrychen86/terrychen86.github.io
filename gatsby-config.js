@@ -14,6 +14,7 @@ module.exports = {
       options: {
         src: path.join(__dirname, 'src'),
         pages: path.join(__dirname, 'src/pages'),
+        images: path.join(__dirname, 'src/images'),
         'common-ui': path.join(__dirname, 'src/components/commons/CommonUI.jsx'),
       },
     },
