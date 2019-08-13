@@ -64,9 +64,9 @@ const About = () => (
         </div>
 
         <div className={styles.aboutMeContent}>
-          <h2 className={styles.title}>
+          <h3 className={styles.title}>
             ABOUT ME
-          </h2>
+          </h3>
 
           <p className={styles.text}>
               Hi, my name is Terry (Yen-Hsuan).
