@@ -7,7 +7,9 @@
   @include respond-below(sm) {
     flex-wrap: nowrap;
     overflow-x: scroll;
-    padding: 2rem;
+    padding: 2rem 0;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
   }
 }
 

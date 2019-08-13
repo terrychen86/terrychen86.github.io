@@ -78,8 +78,10 @@ p.text {
     overflow-x: scroll;
     flex-wrap: nowrap;
     white-space: nowrap;
-    padding: 0 1rem;
     margin-top: 1rem;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   @include respond-below(sm) {
