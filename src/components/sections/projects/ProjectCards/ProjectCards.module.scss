@@ -23,6 +23,7 @@
 
   @include respond-below(sm) {
     flex: 0 0 26rem;
+    margin-left: 1rem;
     margin-right: 1rem;
   }
 }
