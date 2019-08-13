@@ -5,9 +5,10 @@ import { Container } from 'common-ui';
 import './Navbar.scss';
 
 const renderNavItems = items => (
-  items.map(({ title, path }) => (
-    <span className="nav-item" key={path}>
-      <Link activeClassName="active" className="nav-item__link" to={path}>{title}</Link>
+  items.map(({ title, path, link }) => (
+    <span className="nav-item" key={path || link}>
+      {path && (<Link activeClassName="active" className="nav-item__link" to={path}>{title}</Link>)}
+      {link && (<a className="nav-item__link" target="_blank" href={link} rel="noopener noreferrer">{title}</a>)}
     </span>
   ))
 );
@@ -30,6 +31,7 @@ const Navbar = () => {
       allNavItemsJson {
         nodes {
           path
+          link
           title
         }
       }
