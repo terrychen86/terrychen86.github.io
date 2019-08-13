@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Module, Container } from 'common-ui';
 import Typist from 'react-typist';
 import projectImage from 'images/projects.svg';
@@ -6,10 +6,13 @@ import styles from './ProjectHeader.module.scss';
 
 
 const ProjectHeader = () => {
+  let timer = null;
   const [typistKey, setTypistKey] = useState(1);
   const onTypingDone = () => {
-    setTypistKey(typistKey * -1);
+    timer = setTimeout(() => setTypistKey(typistKey * -1), 0);
   };
+
+  useEffect(() => () => { clearTimeout(timer); }, []);
 
   return (
     <Module className={styles.projectHeader}>
