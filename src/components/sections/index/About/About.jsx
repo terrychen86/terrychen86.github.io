@@ -79,7 +79,7 @@ const About = () => {
 
   const isContentVisible = isVisible({ ref: contentRef, position: windowTop });
   const isCardsVisible = isVisible({ ref: cardsRef, position: windowTop });
-  console.log(isCardsVisible);
+
   return (
     <main>
       <section>
