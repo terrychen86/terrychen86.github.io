@@ -75,10 +75,10 @@ const renderCards = () => {
 
 const ProjectCards = () => {
   const [windowPos, setWindowPos] = useState(window.innerHeight);
-  const [isVisible, setIsVisible] = useState(false);
+  const [cardsPos, setCardsPos] = useState(window.innerHeight + 100);
   const cardsRef = useCallback((node) => {
     if (node !== null) {
-      setIsVisible(node.getBoundingClientRect().top < windowPos);
+      setCardsPos(node.getBoundingClientRect().top);
     }
   }, []);
 
@@ -86,8 +86,10 @@ const ProjectCards = () => {
     setWindowPos(viewport);
   }), []);
 
+  const isVisible = cardsPos < windowPos;
+
   return (
-    <section>
+    <section className={styles.projectCardsWrapper}>
       <Container ref={cardsRef} className={classnames(styles.projectCards, isVisible ? styles.fadeIn : '')}>
         {renderCards()}
       </Container>
