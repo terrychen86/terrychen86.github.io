@@ -58,40 +58,46 @@ const renderIconCards = () => {
 
 const About = () => (
   <main>
-    <Container className={styles.about}>
-      <section className={styles.aboutMe}>
-        <div className={styles.aboutMeImage}>
-          <img src={profileImage} alt="profile" />
+    <section>
+      <Container className={styles.about}>
+        <div className={styles.aboutMe}>
+          <div className={styles.aboutMeImage}>
+            <img src={profileImage} alt="profile" />
+          </div>
+
+          <div className={styles.aboutMeContent}>
+            <h3 className={styles.title}>
+              ABOUT ME
+            </h3>
+
+            <p className={styles.text}>
+                Hi, my name is Terry (Yen-Hsuan).
+                I write code and enjoy building beautiful and complicated things.
+                I call many places home. I am from Taiwan,
+                studied in LA and live in San Francisco now.
+                I own both EE & CS master degrees, and I did scientific brain research too.
+                I love travel, music, dogs, coffee, diet coke, and korean food!
+            </p>
+          </div>
         </div>
+      </Container>
+    </section>
 
-        <div className={styles.aboutMeContent}>
-          <h3 className={styles.title}>
-            ABOUT ME
-          </h3>
+    <section>
+      <Container className={styles.cards}>
+        {renderIconCards()}
+      </Container>
+    </section>
 
-          <p className={styles.text}>
-              Hi, my name is Terry (Yen-Hsuan).
-              I write code and enjoy building beautiful and complicated things.
-              I call many places home. I am from Taiwan,
-              studied in LA and live in San Francisco now.
-              I own both EE & CS master degrees, and I did scientific brain research too.
-              I love travel, music, dogs, coffee, diet coke, and korean food!
-          </p>
-        </div>
-      </section>
-    </Container>
-
-    <Container className={styles.cards}>
-      {renderIconCards()}
-    </Container>
-
-    <Container className={styles.btnContainer}>
-      <Link to="/projects">
-        <Button>
-          See my projects
-        </Button>
-      </Link>
-    </Container>
+    <section>
+      <Container className={styles.btnContainer}>
+        <Link to="/projects">
+          <Button>
+            See my projects
+          </Button>
+        </Link>
+      </Container>
+    </section>
   </main>
 );
 
