@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import classnames from 'classnames';
 import { Container } from 'common-ui';
+import { window } from 'utils/SSR';
 import ScrollSpyEffect from 'utils/ScrollSpyEffect';
 
 import codepadImg from 'images/project-cp.jpg';

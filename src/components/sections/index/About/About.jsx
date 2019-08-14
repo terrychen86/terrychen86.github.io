@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import classnames from 'classnames';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { window } from 'utils/SSR';
 import ScrollSpyEffect from 'utils/ScrollSpyEffect';
 
 import { Container, Button } from 'common-ui';
