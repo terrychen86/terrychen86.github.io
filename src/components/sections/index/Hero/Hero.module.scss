@@ -1,5 +1,46 @@
 @import 'src/sass/shared.scss';
 
+@keyframes hero-move-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateX(0.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-move-left {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero {
   position: relative;
   background-image: $hero-background-alt-color;
@@ -16,7 +57,6 @@
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 4rem;
 
   @include respond-below(sm) {
     padding-top: 8rem;
@@ -33,17 +73,19 @@
 
 .title {
   color: $hero-title-color;
+  animation: hero-move-right 1s ease-out;
 }
 
 .subtitle {
   color: $primary-color;
   margin-bottom: 2.4rem;
-  opacity: 0.9;
+  animation: hero-move-left 1s ease-out;
 }
 
 .text {
   color: $hero-text-color;
   font-size: 1.8rem;
+  animation: hero-fade-in 1.5s ease-out;
 
   @include respond-below(sm) {
     text-align: center;
