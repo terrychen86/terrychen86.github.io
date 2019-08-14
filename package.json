@@ -51,7 +51,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lint": "npm run lintcss && npm run lintjs",
     "lintcss": "./node_modules/stylelint/bin/stylelint.js ./src/sass/**/*.scss",
-    "lintjs": "./node_modules/.bin/eslint ./src/**/*.jsx",
+    "lintjs": "./node_modules/.bin/eslint ./src --ext .js --ext .jsx",
     "deploy": "npm run build && gh-pages -d public -b master"
   },
   "repository": {
