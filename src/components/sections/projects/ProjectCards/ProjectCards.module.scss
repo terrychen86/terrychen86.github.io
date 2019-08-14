@@ -17,6 +17,10 @@
   animation-fill-mode: forwards;
 }
 
+.project-cards-wrapper {
+  background: $near-white;
+}
+
 .project-cards {
   display: flex;
   flex-wrap: wrap;
