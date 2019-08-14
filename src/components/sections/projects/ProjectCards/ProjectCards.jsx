@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import classnames from 'classnames';
 import { Container } from 'common-ui';
+import ScrollSpyEffect from 'utils/ScrollSpyEffect';
+
 import codepadImg from 'images/project-cp.jpg';
 import jsdsImg from 'images/project-jsds.png';
 import codImg from 'images/project-cod.jpg';
@@ -70,12 +73,26 @@ const renderCards = () => {
   ));
 };
 
-const ProjectCards = () => (
-  <section>
-    <Container className={styles.projectCards}>
-      {renderCards()}
-    </Container>
-  </section>
-);
+const ProjectCards = () => {
+  const [windowPos, setWindowPos] = useState(window.innerHeight);
+  const [isVisible, setIsVisible] = useState(false);
+  const cardsRef = useCallback((node) => {
+    if (node !== null) {
+      setIsVisible(node.getBoundingClientRect().top < windowPos);
+    }
+  });
+
+  useEffect(ScrollSpyEffect((viewport) => {
+    setWindowPos(viewport);
+  }), []);
+
+  return (
+    <section>
+      <Container ref={cardsRef} className={classnames(styles.projectCards, isVisible ? styles.fadeIn : '')}>
+        {renderCards()}
+      </Container>
+    </section>
+  );
+};
 
 export default ProjectCards;

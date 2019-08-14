@@ -1,8 +1,26 @@
 @import 'src/sass/shared.scss';
 
+@keyframes fade-in {
+  0% {
+    opacity: 0.1;
+    transform: translateY(4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-in;
+  animation-fill-mode: forwards;
+}
+
 .project-cards {
   display: flex;
   flex-wrap: wrap;
+  opacity: 0;
 
   @include respond-below(sm) {
     flex-wrap: nowrap;
