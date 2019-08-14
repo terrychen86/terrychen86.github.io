@@ -18,7 +18,24 @@
 }
 
 .project-cards-wrapper {
-  background: $near-white;
+  position: relative;
+  overflow: hidden;
+}
+
+.decorator-img {
+  position: absolute;
+  bottom: -25rem;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+
+  @include respond-below(md) {
+    bottom: -5rem;
+  }
+
+  img {
+    width: 100%;
+  }
 }
 
 .project-cards {
@@ -85,11 +102,13 @@
   background-position: center;
   border-radius: 100%;
   border: 0.5rem solid white;
+  z-index: 3;
 }
 
 .card-desc {
   position: relative;
   padding: 2rem;
+  background: white;
 }
 
 .card-title {

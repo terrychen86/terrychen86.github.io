@@ -5,6 +5,8 @@ import { Container } from 'common-ui';
 import { window } from 'utils/SSR';
 import ScrollSpyEffect from 'utils/ScrollSpyEffect';
 
+import decoratorImg from 'images/background.png';
+
 import codepadImg from 'images/project-cp.jpg';
 import jsdsImg from 'images/project-jsds.png';
 import codImg from 'images/project-cod.jpg';
@@ -94,6 +96,10 @@ const ProjectCards = () => {
       <Container ref={cardsRef} className={classnames(styles.projectCards, isVisible ? styles.fadeIn : '')}>
         {renderCards()}
       </Container>
+
+      <div className={styles.decoratorImg}>
+        <img src={decoratorImg} alt="decorator" />
+      </div>
     </section>
   );
 };
