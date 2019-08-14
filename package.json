@@ -1,7 +1,7 @@
 {
   "name": "terry-chen-portfolio",
   "private": true,
-  "description": "New design of my porfolio",
+  "description": "New design of my portfolio",
   "version": "0.1.0",
   "author": "Terry Chen <yenhsuan.terry@gmail.com>",
   "dependencies": {
@@ -11,8 +11,10 @@
     "gatsby-image": "^2.2.6",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sass": "^2.1.3",
     "gatsby-plugin-sharp": "^2.2.7",
+    "gatsby-plugin-sitemap": "^2.2.6",
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-transformer-json": "^2.2.2",
     "gatsby-transformer-sharp": "^2.2.3",
@@ -48,6 +50,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "stage": "npm run build && npm run serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lint": "npm run lintcss && npm run lintjs",
     "lintcss": "./node_modules/stylelint/bin/stylelint.js ./src/sass/**/*.scss",
