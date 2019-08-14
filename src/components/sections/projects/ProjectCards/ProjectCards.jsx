@@ -80,7 +80,7 @@ const ProjectCards = () => {
     if (node !== null) {
       setIsVisible(node.getBoundingClientRect().top < windowPos);
     }
-  });
+  }, []);
 
   useEffect(ScrollSpyEffect((viewport) => {
     setWindowPos(viewport);

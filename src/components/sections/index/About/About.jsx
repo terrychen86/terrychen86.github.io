@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import classnames from 'classnames';
-import _ from 'lodash';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import ScrollSpyEffect from 'utils/ScrollSpyEffect';
+
 import { Container, Button } from 'common-ui';
 import profileImage from 'images/profile.png';
 import sdeIcon from 'images/icon-job.png';
@@ -56,29 +57,29 @@ const renderIconCards = () => {
   ));
 };
 
-const isVisible = ({ ref, position }) => {
-  if (!ref || !ref.current) {
-    return false;
-  }
-  return ref.current.getBoundingClientRect().top < position;
-};
-
 const About = () => {
   const [windowTop, setWindowTop] = useState(window.innerHeight);
-  const contentRef = useRef(null);
-  const cardsRef = useRef(null);
-  useEffect(() => {
-    const scrollHandler = _.throttle(() => {
-      const viewport = +window.scrollY + window.innerHeight;
-      setWindowTop(viewport);
-    }, 10);
+  const [contentPos, setContentPos] = useState(window.innerHeight + 100);
+  const [cardsPos, setCardsPos] = useState(window.innerHeight + 100);
 
-    window.addEventListener('scroll', scrollHandler);
-    return () => { window.removeEventListener('scroll', scrollHandler); };
+  const contentRef = useCallback((node) => {
+    if (node !== null) {
+      setContentPos(node.getBoundingClientRect().top);
+    }
   }, []);
 
-  const isContentVisible = isVisible({ ref: contentRef, position: windowTop });
-  const isCardsVisible = isVisible({ ref: cardsRef, position: windowTop });
+  const cardsRef = useCallback((node) => {
+    if (node !== null) {
+      setCardsPos(node.getBoundingClientRect().top);
+    }
+  }, []);
+
+  useEffect(ScrollSpyEffect((viewport) => {
+    setWindowTop(viewport);
+  }), []);
+
+  const isContentVisible = contentPos < windowTop;
+  const isCardsVisible = cardsPos < windowTop;
 
   return (
     <main>
