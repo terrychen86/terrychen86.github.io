@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { Container, Button } from 'common-ui';
 import profileImage from 'images/profile.png';
@@ -39,7 +40,7 @@ const renderIconCards = () => {
 
   const icons = data.allAboutMeIconJson.nodes;
   return icons.map((icon, i) => (
-    <div key={icon.name} className={`${styles.card} ${styles[`card${i + 1}`]}`}>
+    <div key={icon.name} className={classnames(styles.card, styles[`card${i + 1}`])}>
       <div className={styles.iconWrapper}>
         <img width="100%" src={ICONS[icon.name]} alt={`icon-${icon.name}`} />
       </div>
