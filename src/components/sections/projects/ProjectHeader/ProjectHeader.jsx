@@ -9,7 +9,9 @@ const ProjectHeader = () => {
   let timer = null;
   const [typistKey, setTypistKey] = useState(1);
   const onTypingDone = () => {
-    timer = setTimeout(() => setTypistKey(typistKey * -1), 0);
+    timer = setTimeout(() => {
+      setTypistKey(typistKey * -1);
+    }, 100);
   };
 
   useEffect(() => () => { clearTimeout(timer); }, []);
@@ -37,8 +39,10 @@ const ProjectHeader = () => {
               onTypingDone={onTypingDone}
               className={styles.code}
             >
-              I CODE therefor I AM
-              <Typist.Backspace count={30} delay={1000} />
+              {'    '}
+              {'    '}
+              {'I CODE therefore I AM             '}
+              <Typist.Backspace count={30} />
             </Typist>
           </div>
         </section>
