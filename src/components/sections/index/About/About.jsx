@@ -57,7 +57,7 @@ const renderIconCards = () => {
 
 
 const About = () => (
-  <>
+  <main>
     <Container className={styles.about}>
       <section className={styles.aboutMe}>
         <div className={styles.aboutMeImage}>
@@ -92,7 +92,7 @@ const About = () => (
         </Button>
       </Link>
     </Container>
-  </>
+  </main>
 );
 
 export default About;
