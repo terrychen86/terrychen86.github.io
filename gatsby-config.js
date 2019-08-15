@@ -8,7 +8,7 @@ module.exports = {
     author: 'Terry Chen',
     description: "Terry Chen's Portfolio",
     url: 'https://terrychen86.github.io',
-    image: '/static/screen.png',
+    image: '/screenshot.png',
     siteUrl: 'https://terrychen86.github.io',
   },
   plugins: [
