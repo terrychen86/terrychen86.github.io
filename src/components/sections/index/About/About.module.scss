@@ -1,5 +1,22 @@
 @import 'src/sass/shared.scss';
 
+@keyframes fade-in {
+  0% {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.8s ease-out;
+  animation-fill-mode: forwards;
+}
+
 .about {
   min-height: auto;
   padding-top: 10rem;
@@ -13,6 +30,7 @@
 .about-me {
   display: flex;
   align-items: center;
+  opacity: 0;
 
   @include respond-below(sm) {
     flex-direction: column;
@@ -69,6 +87,7 @@ p.text {
   display: flex;
   flex-wrap: wrap;
   padding-top: 3rem;
+  opacity: 0;
 
   @media (max-width: 1015px) {
     max-width: 78rem;

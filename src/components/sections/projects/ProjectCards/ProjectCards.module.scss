@@ -1,8 +1,47 @@
 @import 'src/sass/shared.scss';
 
+@keyframes fade-in {
+  0% {
+    opacity: 0.1;
+    transform: translateY(4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-in;
+  animation-fill-mode: forwards;
+}
+
+.project-cards-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.decorator-img {
+  position: absolute;
+  bottom: -25rem;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+
+  @include respond-below(md) {
+    bottom: -5rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
 .project-cards {
   display: flex;
   flex-wrap: wrap;
+  opacity: 0;
 
   @include respond-below(sm) {
     flex-wrap: nowrap;
@@ -38,6 +77,7 @@
 
   @include respond-below(sm) {
     width: 100%;
+    opacity: 0.95;
   }
 }
 
@@ -63,11 +103,13 @@
   background-position: center;
   border-radius: 100%;
   border: 0.5rem solid white;
+  z-index: 3;
 }
 
 .card-desc {
   position: relative;
   padding: 2rem;
+  background: white;
 }
 
 .card-title {
@@ -124,5 +166,5 @@
 }
 
 .chrome {
-  color: #ffb122;
+  color: #82ce55;
 }

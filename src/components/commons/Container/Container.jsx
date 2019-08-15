@@ -3,15 +3,15 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './Container.scss';
 
-const Container = ({ className, ...props }) => {
+const Container = React.forwardRef(({ className, ...props }, ref) => {
   const { children } = props;
   const styles = classNames('container', className);
   return (
-    <div className={styles}>
+    <div className={styles} ref={ref}>
       {children}
     </div>
   );
-};
+});
 
 Container.defaultProps = {
   className: '',

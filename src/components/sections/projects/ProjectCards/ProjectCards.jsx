@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import classnames from 'classnames';
 import { Container } from 'common-ui';
+import { window } from 'utils/SSR';
+import ScrollSpyEffect from 'utils/ScrollSpyEffect';
+
+import decoratorImg from 'images/background.png';
+
+import websiteImg from 'images/project-website.png';
 import codepadImg from 'images/project-cp.jpg';
 import jsdsImg from 'images/project-jsds.png';
 import codImg from 'images/project-cod.jpg';
@@ -21,6 +28,7 @@ const CARD_IMAGES = {
   spg: spgImg,
   snake: snakeImg,
   crud: crudImg,
+  website: websiteImg,
 };
 
 const renderCards = () => {
@@ -70,12 +78,32 @@ const renderCards = () => {
   ));
 };
 
-const ProjectCards = () => (
-  <section>
-    <Container className={styles.projectCards}>
-      {renderCards()}
-    </Container>
-  </section>
-);
+const ProjectCards = () => {
+  const [windowPos, setWindowPos] = useState(window.innerHeight);
+  const [cardsPos, setCardsPos] = useState(window.innerHeight + 100);
+  const cardsRef = useCallback((node) => {
+    if (node !== null) {
+      setCardsPos(node.getBoundingClientRect().top);
+    }
+  }, []);
+
+  useEffect(ScrollSpyEffect((viewport) => {
+    setWindowPos(viewport);
+  }), []);
+
+  const isVisible = cardsPos < windowPos;
+
+  return (
+    <section className={styles.projectCardsWrapper}>
+      <Container ref={cardsRef} className={classnames(styles.projectCards, isVisible ? styles.fadeIn : '')}>
+        {renderCards()}
+      </Container>
+
+      <div className={styles.decoratorImg}>
+        <img src={decoratorImg} alt="decorator" />
+      </div>
+    </section>
+  );
+};
 
 export default ProjectCards;
