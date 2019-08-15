@@ -20,7 +20,7 @@ const Hero = () => {
 
   const renderIconLink = () => {
     const { nodes } = data.allIconLinksJson;
-    return nodes.map((link) => (
+    return nodes.map(link => (
       <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
         <i className={`fa ${link.icon}`} aria-hidden="true" />
       </a>
