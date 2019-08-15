@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const ScrollSpyEffect = callback => () => {
+const ScrollSpyEffect = (callback) => () => {
   const scrollHandler = _.throttle(() => {
     const viewport = +window.scrollY + window.innerHeight;
     callback(viewport);

@@ -61,12 +61,12 @@ const renderCards = () => {
         </section>
         <section className={styles.cardDesc}>
           <div className={styles.cardTags}>
-            {project.tags.map(tag => (<span key={tag} className={styles.cardTag}>{tag}</span>))}
+            {project.tags.map((tag) => (<span key={tag} className={styles.cardTag}>{tag}</span>))}
           </div>
         </section>
         <section className={styles.btnGroup}>
           {
-            project.links.map(link => (
+            project.links.map((link) => (
               <a className={styles.iconBtn} key={link.icon} href={link.link} target="_blank" rel="noreferrer noopener">
                 <i className={`fa fa-${link.icon} ${styles[link.icon]}`} aria-hidden="true" />
               </a>

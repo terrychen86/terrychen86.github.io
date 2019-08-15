@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import { Container } from 'common-ui';
 import './Navbar.scss';
 
-const renderNavItems = items => (
+const renderNavItems = (items) => (
   items.map(({ title, path, link }) => (
     <span className="nav-item" key={path || link}>
       {path && (<Link activeClassName="active" className="nav-item__link" to={path}>{title}</Link>)}
