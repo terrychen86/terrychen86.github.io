@@ -7,6 +7,7 @@ import ScrollSpyEffect from 'utils/ScrollSpyEffect';
 
 import decoratorImg from 'images/background.png';
 
+import websiteImg from 'images/project-website.png';
 import codepadImg from 'images/project-cp.jpg';
 import jsdsImg from 'images/project-jsds.png';
 import codImg from 'images/project-cod.jpg';
@@ -27,6 +28,7 @@ const CARD_IMAGES = {
   spg: spgImg,
   snake: snakeImg,
   crud: crudImg,
+  website: websiteImg,
 };
 
 const renderCards = () => {
