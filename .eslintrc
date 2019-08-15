@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb",
+  "extends": "airbnb/hooks",
   "settings": {
     "import/resolver": {
       "alias": {
@@ -16,5 +16,12 @@
   "globals": {
     "document": true,
     "window": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+  },
+  "env": {
+      "es6": true
   }
 }

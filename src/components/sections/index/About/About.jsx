@@ -28,19 +28,7 @@ const ICONS = {
   ui: uiIcon,
 };
 
-const renderIconCards = () => {
-  const data = useStaticQuery(graphql`
-    query AboutMeIconQuery {
-      allAboutMeIconJson {
-        nodes {
-          name
-          title
-          text
-        }
-      }
-    }
-  `);
-
+const renderIconCards = (data) => {
   const icons = data.allAboutMeIconJson.nodes;
   return icons.map((icon, i) => (
     <div key={icon.name} className={classnames(styles.card, styles[`card${i + 1}`])}>
@@ -82,6 +70,19 @@ const About = () => {
   const isContentVisible = contentPos < windowTop;
   const isCardsVisible = cardsPos < windowTop;
 
+  const data = useStaticQuery(graphql`
+    query AboutMeIconQuery {
+      allAboutMeIconJson {
+        nodes {
+          name
+          title
+          text
+        }
+      }
+    }
+  `);
+
+
   return (
     <main>
       <section>
@@ -111,7 +112,7 @@ const About = () => {
 
       <section>
         <Container ref={cardsRef} className={classnames(styles.cards, isCardsVisible ? styles.fadeIn : '')}>
-          {renderIconCards()}
+          {renderIconCards(data)}
         </Container>
       </section>
 
