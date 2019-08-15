@@ -51,7 +51,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "stage": "npm run build && npm run serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "test": "echo \"WIP... Terry Chen\"",
     "lint": "npm run lintcss && npm run lintjs",
     "lintcss": "./node_modules/stylelint/bin/stylelint.js ./src/sass/**/*.scss",
     "lintjs": "./node_modules/.bin/eslint ./src --ext .js --ext .jsx",
