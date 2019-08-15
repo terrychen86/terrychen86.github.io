@@ -31,23 +31,7 @@ const CARD_IMAGES = {
   website: websiteImg,
 };
 
-const renderCards = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allProjectsJson {
-        nodes {
-          links {
-            icon
-            link
-          }
-          name
-          title
-          tags
-        }
-      }
-    }
-  `);
-
+const renderCards = (data) => {
   const projects = data.allProjectsJson.nodes;
 
   return projects.map((project, i) => (
@@ -92,11 +76,26 @@ const ProjectCards = () => {
   }), []);
 
   const isVisible = cardsPos < windowPos;
+  const data = useStaticQuery(graphql`
+  query {
+    allProjectsJson {
+      nodes {
+        links {
+          icon
+          link
+        }
+        name
+        title
+        tags
+      }
+    }
+  }
+`);
 
   return (
     <section className={styles.projectCardsWrapper}>
       <Container ref={cardsRef} className={classnames(styles.projectCards, isVisible ? styles.fadeIn : '')}>
-        {renderCards()}
+        {renderCards(data)}
       </Container>
 
       <div className={styles.decoratorImg}>

@@ -6,18 +6,19 @@ import heroImage from 'images/developer0-alt.svg';
 import styles from './Hero.module.scss';
 
 const Hero = () => {
-  const renderIconLink = () => {
-    const data = useStaticQuery(graphql`
-      query IconLinkQuery {
-        allIconLinksJson {
-          nodes {
-            icon
-            name
-            url
-          }
-        }
+  const data = useStaticQuery(graphql`
+  query IconLinkQuery {
+    allIconLinksJson {
+      nodes {
+        icon
+        name
+        url
       }
-    `);
+    }
+  }
+`);
+
+  const renderIconLink = () => {
     const { nodes } = data.allIconLinksJson;
     return nodes.map(link => (
       <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">

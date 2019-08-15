@@ -14,7 +14,7 @@ const ProjectHeader = () => {
     }, 100);
   };
 
-  useEffect(() => () => { clearTimeout(timer); }, []);
+  useEffect(() => () => { clearTimeout(timer); }, [timer]);
 
   return (
     <Module className={styles.projectHeader}>
