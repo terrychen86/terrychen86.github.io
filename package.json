@@ -2,7 +2,7 @@
   "name": "terry-chen-portfolio",
   "private": true,
   "description": "New design of my portfolio",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Terry Chen <yenhsuan.terry@gmail.com>",
   "dependencies": {
     "@reach/router": "^1.2.1",
@@ -29,14 +29,6 @@
     "smooth-scroll": "^16.1.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-import-resolver-webpack": "^0.12.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.3.0",
     "gatsby-plugin-root-import": "^2.0.5",
     "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
