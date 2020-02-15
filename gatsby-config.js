@@ -39,7 +39,5 @@ module.exports = {
         path: `${ROOT_PATH}/images`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
   ],
 };

@@ -7,7 +7,7 @@
       "utils/*": ["src/utils/*"],
       "components/*": ["src/components/*"],
       "images/*": ["src/images/*"],
-      "common-ui": ["src/components/commons/CommonUI.jsx"]
+      "commons/": ["src/components/commons/*"]
     }
-  }
+  },
 }
