@@ -8,17 +8,12 @@ const Section = ({ className, ...props }) => {
   const { children } = props;
   const styles = classNames('section', className);
 
-  return (
-    <div className={styles}>
-      { children }
-    </div>
-  );
+  return <div className={styles}>{children}</div>;
 };
 
 Section.defaultProps = {
   className: '',
 };
-
 
 Section.propTypes = {
   className: PropTypes.string,
