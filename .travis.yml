@@ -18,7 +18,6 @@ deploy:
   on:
     branch: dev
 before_script:
-  - "yarn add -g gatsby-cli"
   - "yarn install"
 script:
   - "yarn test"
