@@ -28,7 +28,7 @@ const ICONS = {
   ui: uiIcon,
 };
 
-const renderIconCards = (data) => {
+const renderIconCards = data => {
   const icons = data.allAboutMeIconJson.nodes;
   return icons.map((icon, i) => (
     <div key={icon.name} className={classnames(styles.card, styles[`card${i + 1}`])}>
@@ -36,12 +36,8 @@ const renderIconCards = (data) => {
         <img width="100%" src={ICONS[icon.name]} alt={`icon-${icon.name}`} />
       </div>
 
-      <p className={styles.cardTitle}>
-        {icon.title}
-      </p>
-      <p className={styles.cardText}>
-        {icon.text}
-      </p>
+      <p className={styles.cardTitle}>{icon.title}</p>
+      <p className={styles.cardText}>{icon.text}</p>
     </div>
   ));
 };
@@ -51,21 +47,24 @@ const About = () => {
   const [contentPos, setContentPos] = useState(window.innerHeight + 100);
   const [cardsPos, setCardsPos] = useState(window.innerHeight + 100);
 
-  const contentRef = useCallback((node) => {
+  const contentRef = useCallback(node => {
     if (node !== null) {
       setContentPos(node.getBoundingClientRect().top);
     }
   }, []);
 
-  const cardsRef = useCallback((node) => {
+  const cardsRef = useCallback(node => {
     if (node !== null) {
       setCardsPos(node.getBoundingClientRect().top);
     }
   }, []);
 
-  useEffect(ScrollSpyEffect((viewport) => {
-    setWindowTop(viewport);
-  }), []);
+  useEffect(
+    ScrollSpyEffect(viewport => {
+      setWindowTop(viewport);
+    }),
+    [],
+  );
 
   const isContentVisible = contentPos < windowTop;
   const isCardsVisible = cardsPos < windowTop;
@@ -82,7 +81,6 @@ const About = () => {
     }
   `);
 
-
   return (
     <main>
       <section>
@@ -93,17 +91,13 @@ const About = () => {
             </div>
 
             <div className={styles.aboutMeContent}>
-              <h3 className={styles.title}>
-                ABOUT ME
-              </h3>
+              <h3 className={styles.title}>ABOUT ME</h3>
 
               <p className={styles.text}>
-                  Hi, my name is Terry (Yen-Hsuan).
-                  I write code and enjoy building beautiful and complicated things.
-                  I call many places home. I am from Taiwan,
-                  studied in LA and live in San Francisco now.
-                  I own both EE & CS master degrees, and I did scientific brain research too.
-                  I love travel, music, dogs, coffee, diet coke, and korean food!
+                Hi, my name is Terry (Yen-Hsuan). I write code and enjoy building beautiful and complicated things. I
+                call many places home. I am from Taiwan, studied in LA and live in San Francisco now. I own both EE & CS
+                master degrees, and I did scientific brain research too. I love travel, music, dogs, coffee, diet coke,
+                and korean food!
               </p>
             </div>
           </div>
@@ -119,9 +113,7 @@ const About = () => {
       <section>
         <Container className={styles.btnContainer}>
           <Link to="/projects">
-            <Button>
-              See my projects
-            </Button>
+            <Button>See my projects</Button>
           </Link>
         </Container>
       </section>

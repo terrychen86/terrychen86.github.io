@@ -9,9 +9,7 @@ const PageNotFound = () => (
       <h2 className={styles.title}>Oops!</h2>
       <h2 className={styles.secondaryTitle}>Page not found :(</h2>
       <Link to="/">
-        <Button className={styles.button}>
-          BACK TO HOMEPAGE
-        </Button>
+        <Button className={styles.button}>BACK TO HOMEPAGE</Button>
       </Link>
     </Container>
   </Module>

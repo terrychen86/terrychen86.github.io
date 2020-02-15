@@ -67,7 +67,7 @@
   "scripts": {
     "build": "yarn lint && yarn gatsby build",
     "develop": "yarn gatsby develop",
-    "format": "yarn prettier --write src/**/*.{js,jsx}",
+    "format": "yarn eslint ./src --ext .js --ext .jsx --fix",
     "start": "yarn develop",
     "serve": "yarn gatsby serve",
     "stage": "yarn build && yarn serve",
@@ -75,8 +75,7 @@
     "lintcss": "yarn stylelint ./src/sass/**/*.scss",
     "lintjs": "yarn eslint ./src --ext .js --ext .jsx",
     "deploy": "yarn build && gh-pages -d public -b master",
-    "test": "echo \"WIP... Terry Chen\"",
-    "prettier": "yarn prettier --write src/**/*.{js,jsx,ts,tsx,json,css,scss}"
+    "test": "echo \"WIP... Terry Chen\""
   },
   "repository": {
     "type": "git",

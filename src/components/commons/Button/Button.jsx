@@ -6,17 +6,12 @@ import './Button.scss';
 const Button = ({ className, ...props }) => {
   const { children } = props;
   const styles = classNames('button', className);
-  return (
-    <div className={styles}>
-      {children}
-    </div>
-  );
+  return <div className={styles}>{children}</div>;
 };
 
 Button.defaultProps = {
   className: '',
 };
-
 
 Button.propTypes = {
   className: PropTypes.string,

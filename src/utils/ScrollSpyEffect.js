@@ -7,7 +7,9 @@ const ScrollSpyEffect = callback => () => {
   }, 10);
 
   window.addEventListener('scroll', scrollHandler);
-  return () => { window.removeEventListener('scroll', scrollHandler); };
+  return () => {
+    window.removeEventListener('scroll', scrollHandler);
+  };
 };
 
 export default ScrollSpyEffect;

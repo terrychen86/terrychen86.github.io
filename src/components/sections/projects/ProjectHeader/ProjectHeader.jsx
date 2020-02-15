@@ -4,7 +4,6 @@ import Typist from 'react-typist';
 import projectImage from 'images/projects.svg';
 import styles from './ProjectHeader.module.scss';
 
-
 const ProjectHeader = () => {
   let timer = null;
   const [typistKey, setTypistKey] = useState(1);
@@ -14,7 +13,12 @@ const ProjectHeader = () => {
     }, 100);
   };
 
-  useEffect(() => () => { clearTimeout(timer); }, [timer]);
+  useEffect(
+    () => () => {
+      clearTimeout(timer);
+    },
+    [timer],
+  );
 
   return (
     <Module className={styles.projectHeader}>
@@ -34,11 +38,7 @@ const ProjectHeader = () => {
           </div>
           <div className={styles.terminalPanel}>
             terry $ &nbsp;
-            <Typist
-              key={typistKey}
-              onTypingDone={onTypingDone}
-              className={styles.code}
-            >
+            <Typist key={typistKey} onTypingDone={onTypingDone} className={styles.code}>
               {'    '}
               {'    '}
               {'I CODE therefore I AM             '}
