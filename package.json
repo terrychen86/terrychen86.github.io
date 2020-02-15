@@ -6,6 +6,7 @@
   "author": "Terry Chen <yenhsuan.terry@gmail.com>",
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "babel-plugin-styled-components": "^1.10.7",
     "classnames": "^2.2.6",
     "gatsby": "^2.19.17",
     "gatsby-image": "^2.2.39",
@@ -15,6 +16,7 @@
     "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-plugin-sitemap": "^2.2.27",
+    "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-json": "^2.2.2",
     "lodash": "^4.17.15",
@@ -25,7 +27,8 @@
     "react-helmet": "^5.2.1",
     "react-pdf": "^4.1.0",
     "react-typist": "^2.0.5",
-    "smooth-scroll": "^16.1.0"
+    "smooth-scroll": "^16.1.0",
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
