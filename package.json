@@ -52,7 +52,10 @@
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "stylelint": "^13.2.0",
+    "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "webpack": "^4.41.6"
   },
   "husky": {
@@ -75,7 +78,7 @@
     "serve": "yarn gatsby serve",
     "stage": "yarn build && yarn serve",
     "lint": "yarn lintcss && yarn lintjs",
-    "lintcss": "yarn stylelint ./src/sass/**/*.scss",
+    "lintcss": "yarn stylelint ./src/**/*.jsx",
     "lintjs": "yarn eslint ./src --ext .js --ext .jsx",
     "deploy": "yarn build && gh-pages -d public -b master",
     "test": "echo \"WIP... Terry Chen\""
