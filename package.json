@@ -74,7 +74,8 @@
     "lint": "yarn lintcss && yarn lintjs",
     "lintcss": "yarn stylelint ./src/sass/**/*.scss",
     "lintjs": "yarn eslint ./src --ext .js --ext .jsx",
-    "deploy": "yarn build && gh-pages -d public -b master"
+    "deploy": "yarn build && gh-pages -d public -b master",
+    "test": "echo \"WIP... Terry Chen\""
   },
   "repository": {
     "type": "git",
