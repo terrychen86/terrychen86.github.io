@@ -17,6 +17,7 @@ Container.defaultProps = {
   className: '',
 };
 
+Container.displayName = Container;
 
 Container.propTypes = {
   className: PropTypes.string,

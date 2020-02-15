@@ -1,28 +1,65 @@
 {
-  "extends": "airbnb",
-  "plugins": ["react", "jsx-a11y", "import"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/strict",
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/flowtype"
+  ],
+  "plugins": ["react", "react-hooks", "jsx-a11y", "prettier", "flowtype"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "no-console": "off",
+    "react/prop-types": 0,
+    "prettier/prettier": ["warn", { "singleQuote": true, "trailingComma": "all", "printWidth": 120, "parser": "flow" }],
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "localStorage": true,
+    "FormData": true,
+    "FileReader": true,
+    "Blob": true,
+    "navigator": true
+  },
   "settings": {
     "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      },
       "alias": {
         "map": [
           ["components", "./src/components"],
           ["utils", "./src/utils"],
           ["images", "./src/images"],
-          ["common-ui", "./src/components/commons/CommonUI.jsx"],
+          ["common-ui", "./src/components/commons/CommonUI.jsx"]
         ],
-        "extensions": [".ts", ".js", ".jsx"],
-      },
+        "extensions": [".ts", ".js", ".jsx"]
+      }
     }
-  },
-  "globals": {
-    "document": true,
-    "window": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-  },
-  "env": {
-      "es6": true
-  },
+  }
 }

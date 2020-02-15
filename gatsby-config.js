@@ -20,7 +20,7 @@ module.exports = {
         src: path.join(__dirname, 'src'),
         pages: path.join(__dirname, 'src/pages'),
         images: path.join(__dirname, 'src/images'),
-        'common-ui': path.join(__dirname, 'src/components/commons/CommonUI.jsx'),
+        components: path.join(__dirname, 'src/components'),
       },
     },
     'gatsby-plugin-sass',
@@ -39,7 +39,5 @@ module.exports = {
         path: `${ROOT_PATH}/images`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
   ],
 };

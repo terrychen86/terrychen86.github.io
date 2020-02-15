@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "12.8.0"
 cache:
+  yarn: true
   directories:
   - node_modules
 branches:
@@ -17,9 +18,8 @@ deploy:
   on:
     branch: dev
 before_script:
-  - "npm install -g gatsby-cli"
-  - "npm install"
+  - "yarn install"
 script:
-  - "npm run test"
+  - "yarn test"
 after_success:
-  - "npm run build"
+  - "yarn build"
