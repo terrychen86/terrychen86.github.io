@@ -33,6 +33,8 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-webpack": "^0.12.1",
     "eslint-plugin-flowtype": "^4.6.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -43,9 +45,23 @@
     "flow-typed": "^2.6.2",
     "gatsby-plugin-root-import": "^2.0.5",
     "gh-pages": "^2.1.1",
-    "prettier": "^1.18.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
     "stylelint": "^13.2.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "webpack": "^4.41.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": [
+      "yarn prettier --write",
+      "git add"
+    ]
   },
   "keywords": [],
   "scripts": {
@@ -57,7 +73,7 @@
     "stage": "yarn build && yarn serve",
     "lint": "yarn lintcss && yarn lintjs",
     "lintcss": "yarn stylelint ./src/sass/**/*.scss",
-    "lintjs": "yarn ./src --ext .js --ext .jsx",
+    "lintjs": "yarn eslint ./src --ext .js --ext .jsx",
     "deploy": "yarn build && gh-pages -d public -b master"
   },
   "repository": {

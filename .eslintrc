@@ -56,7 +56,7 @@
           ["components", "./src/components"],
           ["utils", "./src/utils"],
           ["images", "./src/images"],
-          ["commons", "./src/commons"]
+          ["common-ui", "./src/components/commons/CommonUI.jsx"]
         ],
         "extensions": [".ts", ".js", ".jsx"]
       }
