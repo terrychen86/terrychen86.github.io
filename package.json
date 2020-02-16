@@ -32,6 +32,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
+    "@graphql-codegen/flow": "1.12.2",
+    "@graphql-codegen/flow-operations": "1.12.2",
+    "@graphql-codegen/cli": "^1.12.2",
     "babel-preset-gatsby": "^0.2.29",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -48,6 +51,7 @@
     "flow-typed": "^2.6.2",
     "gatsby-plugin-root-import": "^2.0.5",
     "gh-pages": "^2.1.1",
+    "graphql": "^14.6.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
@@ -81,7 +85,8 @@
     "lintcss": "yarn stylelint ./src/**/*.jsx",
     "lintjs": "yarn eslint ./src --ext .js --ext .jsx",
     "deploy": "yarn build && gh-pages -d public -b master",
-    "test": "echo \"WIP... Terry Chen\""
+    "test": "echo \"WIP... Terry Chen\"",
+    "gen-types": "yarn graphql-codegen --config codegen.yml"
   },
   "repository": {
     "type": "git",
