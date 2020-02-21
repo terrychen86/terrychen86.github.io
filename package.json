@@ -10,6 +10,7 @@
     "classnames": "^2.2.6",
     "gatsby": "^2.19.17",
     "gatsby-image": "^2.2.39",
+    "gatsby-plugin-flow": "^1.1.19",
     "gatsby-plugin-offline": "^3.0.34",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-robots-txt": "^1.5.0",
@@ -17,6 +18,7 @@
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-plugin-styled-components": "^3.1.19",
+    "gatsby-plugin-typegen": "^1.1.1",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-json": "^2.2.2",
     "lodash": "^4.17.15",
@@ -32,9 +34,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "@graphql-codegen/flow": "1.12.2",
-    "@graphql-codegen/flow-operations": "1.12.2",
-    "@graphql-codegen/cli": "^1.12.2",
     "babel-preset-gatsby": "^0.2.29",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -85,8 +84,7 @@
     "lintcss": "yarn stylelint ./src/**/*.jsx",
     "lintjs": "yarn eslint ./src --ext .js --ext .jsx",
     "deploy": "yarn build && gh-pages -d public -b master",
-    "test": "echo \"WIP... Terry Chen\"",
-    "gen-types": "yarn graphql-codegen --config codegen.yml"
+    "test": "echo \"WIP... Terry Chen\""
   },
   "repository": {
     "type": "git",

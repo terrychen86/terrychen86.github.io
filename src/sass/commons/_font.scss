@@ -1,15 +1,16 @@
 @import './layout.scss';
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
 html,
 body {
-  font-family: "Avenir", "Avenir Next", "Lato", Helvetica, sans-serif;
+  font-family: 'Avenir', 'Avenir Next', 'Lato', Helvetica, sans-serif;
 }
 
 h1 {
   font-size: 5.4rem;
-  font-family: "Baloo Chettan", sans-serif;
+  font-family: 'Fredoka One', sans-serif;
   font-weight: 500;
 
   @include respond-below(sm) {
@@ -19,7 +20,7 @@ h1 {
 
 h2 {
   color: $project-title-color;
-  font-family: "Baloo Chettan", sans-serif;
+  font-family: 'Fredoka One', sans-serif;
   font-weight: 500;
   font-size: 4.2rem;
   letter-spacing: 0.3rem;
