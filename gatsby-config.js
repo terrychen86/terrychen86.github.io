@@ -21,6 +21,7 @@ module.exports = {
         pages: path.join(__dirname, 'src/pages'),
         images: path.join(__dirname, 'src/images'),
         components: path.join(__dirname, 'src/components'),
+        types: path.join(__dirname, 'src/types'),
       },
     },
     'gatsby-plugin-sass',
@@ -40,5 +41,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-flow',
+    {
+      resolve: `gatsby-plugin-typegen`,
+      options: {
+        language: `flow`,
+        outputPath: `src/types/graphql.js`,
+      },
+    },
   ],
 };
