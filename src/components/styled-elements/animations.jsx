@@ -29,7 +29,7 @@ export const moveLeft = keyframes`
 export const moveUp = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(150px);
+    transform: translateY(100px);
   }
 
   100% {

@@ -27,7 +27,7 @@ type Props = {|
 
 const Transition = ({ children, delay, duration }: Props): React.Node => {
   const [windowTop, setWindowTop] = React.useState<number>(+window.innerHeight);
-  const [contentPos, setContentPos] = React.useState<number>(+window.innerHeight + 100);
+  const [contentPos, setContentPos] = React.useState<number>(+window.innerHeight + 50);
 
   const contentRef = React.useCallback((node: ?HTMLElement) => {
     if (node != null) {
