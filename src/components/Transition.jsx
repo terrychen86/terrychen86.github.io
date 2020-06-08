@@ -3,7 +3,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { throttle } from 'lodash';
+
 import { moveUp } from 'components/styled-elements/animations';
+import { window } from 'utils/SSR';
 
 type AnimationWrapperType = {|
   +delay: number,
