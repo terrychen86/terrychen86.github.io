@@ -20,6 +20,7 @@ import yrbImg from 'images/project-yrb.jpg';
 import spgImg from 'images/project-spg.jpg';
 import snakeImg from 'images/project-snake.png';
 import crudImg from 'images/project-crud.jpg';
+import ytmusicImg from 'images/project-ytmusic.png';
 
 import type { ProjectFragment } from 'types/graphql';
 
@@ -33,6 +34,7 @@ const CARD_IMAGES = {
   snake: snakeImg,
   crud: crudImg,
   website: websiteImg,
+  ytmusic: ytmusicImg,
   default: websiteImg,
 };
 
@@ -104,7 +106,7 @@ const ProjectCards = ({ projects }: Props) => {
                   link: l?.link,
                 }))}
                 imgSrc={CARD_IMAGES[project.name || 'default']}
-                order={i}
+                colorId={i}
               />
             </CardsColumn>
           ))}

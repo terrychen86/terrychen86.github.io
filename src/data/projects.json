@@ -1,8 +1,29 @@
 [
   {
+    "name": "ytmusic",
+    "title": "YT Audio Mode",
+    "tags": ["Chrome extension", "Typescript", "Webpack", "Babel", "Prettier", "ESlint", "Travis CI"],
+    "links": [
+      {
+        "icon": "github",
+        "link": "https://github.com/terrychen86/youtube-audio-mode"
+      }
+    ]
+  },
+  {
     "name": "website",
     "title": "This Website",
-    "tags": ["React.js", "React Hook", "Gastby.js", "GraphQL", "CSS Module", "Sass", "Webpack", "Node.js", "Travis CI"],
+    "tags": [
+      "React.js",
+      "Flow.js",
+      "Gastby.js",
+      "GraphQL",
+      "Styled Components",
+      "Sass",
+      "Webpack",
+      "Node.js",
+      "Travis CI"
+    ],
     "links": [
       {
         "icon": "github",

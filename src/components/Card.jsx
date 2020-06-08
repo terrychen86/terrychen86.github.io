@@ -135,13 +135,13 @@ type Props = {|
   +imgSrc: string,
   +tags: Array<?string>,
   +links: Array<Link>,
-  +order: number,
+  +colorId: number,
 |};
 
-const Card = ({ title, imgSrc, tags, links, order }: Props) => {
+const Card = ({ title, imgSrc, tags, links, colorId }: Props) => {
   return (
     <CardWrapper>
-      <Heading colorId={order}>
+      <Heading colorId={colorId % Object.keys(headingBgColorsSet).length}>
         <Title>{title}</Title>
         <Thumbnail imgSrc={imgSrc} />
       </Heading>
