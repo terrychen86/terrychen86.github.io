@@ -2,23 +2,25 @@
 
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import { type IndexPageQuery } from 'types/graphql';
-import Layout from '../components/layout';
+import Layout from 'components/layout';
+import Hero from 'components/sections/index/Hero/Hero';
+import About from 'components/sections/index/About/About';
 
-import Hero from '../components/sections/index/Hero/Hero';
-import About from '../components/sections/index/About/About';
+import narrowConnection from 'utils/narrow-connection';
+import type { IndexPageQuery } from 'types/graphql';
 
 type Props = {|
-  data: IndexPageQuery,
+  +data: IndexPageQuery,
 |};
 
-const Index = ({ data }: Props): React.Node => {
-  const iconLinks = data.allIconLinksJson.edges.map(e => e.node);
+const Index = ({ data }: Props) => {
+  const iconLinks = narrowConnection(data.allIconLinksJson);
+  const aboutMeCards = narrowConnection(data.allAboutMeCardsJson);
 
   return (
     <Layout>
       <Hero iconLinks={iconLinks} />
-      <About />
+      <About aboutMeCards={aboutMeCards} />
     </Layout>
   );
 };
@@ -31,6 +33,14 @@ export const query = graphql`
       edges {
         node {
           ...IconLink
+        }
+      }
+    }
+
+    allAboutMeCardsJson {
+      edges {
+        node {
+          ...AboutMeCard
         }
       }
     }

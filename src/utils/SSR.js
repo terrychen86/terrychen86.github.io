@@ -1,3 +1,5 @@
+// @flow strict
+
 const $window = typeof window !== 'undefined' && window;
 
 export { $window as window };

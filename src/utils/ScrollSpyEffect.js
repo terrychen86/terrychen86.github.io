@@ -1,8 +1,12 @@
+// @flow strict
+
 import _ from 'lodash';
 
-const ScrollSpyEffect = callback => () => {
+type Callback = (viewport: number) => mixed;
+
+const ScrollSpyEffect = (callback: Callback) => () => {
   const scrollHandler = _.throttle(() => {
-    const viewport = +window.scrollY + window.innerHeight;
+    const viewport: number = +window.scrollY + window.innerHeight;
     callback(viewport);
   }, 10);
 

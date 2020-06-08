@@ -1,11 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import SEO from './seo';
-import Navbar from './widgets/Navbar/Navbar';
-import Footer from './widgets/Footer/Footer';
+// @flow strict
 
-const Layout = ({ children }) => (
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import Footer from 'components/Footer';
+import SEO from 'components/seo';
+
+import Navbar from 'components/Navbar/Navbar';
+import '../sass/styles.scss';
+
+type Props = {|
+  +children: React.Node,
+|};
+
+const Layout = ({ children }: Props) => (
   <>
     <SEO />
     <Helmet>
@@ -19,9 +26,5 @@ const Layout = ({ children }) => (
     <Footer />
   </>
 );
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Layout;

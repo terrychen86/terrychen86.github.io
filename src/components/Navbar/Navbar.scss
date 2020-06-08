@@ -1,0 +1,50 @@
+/* legacy scss styles */
+
+.nav-item {
+  &__link,
+  &__link:visited {
+    color: rgba(white, 0.5);
+  }
+
+  &__link.active {
+    color: white;
+  }
+
+  &__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0%;
+    bottom: -4px;
+    height: 2.5px;
+    background-color: white;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &__link:hover {
+    color: white;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.dark {
+  &.nav-item__link,
+  &.nav-item__link:visited {
+    color: #9b9b9b;
+  }
+
+  &.nav-item__link.active {
+    color: #40a1e4;
+  }
+
+  &.nav-item__link::after {
+    background-color: #40a1e4;
+  }
+
+  &.nav-item__link:hover {
+    color: #40a1e4;
+  }
+}

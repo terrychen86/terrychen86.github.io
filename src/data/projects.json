@@ -2,17 +2,7 @@
   {
     "name": "website",
     "title": "This Website",
-    "tags": [
-      "React.js",
-      "React Hook",
-      "Gastby.js",
-      "GrapgQL",
-      "CSS Module",
-      "Sass",
-      "Webpack",
-      "Node.js",
-      "Travis CI"
-    ],
+    "tags": ["React.js", "React Hook", "Gastby.js", "GraphQL", "CSS Module", "Sass", "Webpack", "Node.js", "Travis CI"],
     "links": [
       {
         "icon": "github",
@@ -23,17 +13,7 @@
   {
     "name": "codepad",
     "title": "CodePad",
-    "tags": [
-      "React.js",
-      "React-MobX",
-      "JSS",
-      "Websocket",
-      "Babel",
-      "Webpack",
-      "Node.js",
-      "Redis",
-      "Docker"
-    ],
+    "tags": ["React.js", "React-MobX", "JSS", "Websocket", "Babel", "Webpack", "Node.js", "Redis", "Docker"],
     "links": [
       {
         "icon": "globe",
@@ -48,13 +28,7 @@
   {
     "name": "jsds",
     "title": "JavaScript DS",
-    "tags": [
-      "ES6/ES7",
-      "Mocha",
-      "Webpack",
-      "Babel",
-      "Node.js"
-    ],
+    "tags": ["ES6/ES7", "Mocha", "Webpack", "Babel", "Node.js"],
     "links": [
       {
         "icon": "github",
@@ -65,14 +39,7 @@
   {
     "name": "cod",
     "title": "Share Docs",
-    "tags": [
-      "Angular",
-      "Node.js",
-      "CSS3",
-      "Express.js",
-      "MongoDB",
-      "Socket.io"
-    ],
+    "tags": ["Angular", "Node.js", "CSS3", "Express.js", "MongoDB", "Socket.io"],
     "links": [
       {
         "icon": "globe",
@@ -83,14 +50,7 @@
   {
     "name": "tweets",
     "title": "Twitter Search",
-    "tags": [
-      "React.js",
-      "React-MobX",
-      "Sass",
-      "Webpack",
-      "Express.js",
-      "Node.js"
-    ],
+    "tags": ["React.js", "React-MobX", "Sass", "Webpack", "Express.js", "Node.js"],
     "links": [
       {
         "icon": "globe",
@@ -101,11 +61,7 @@
   {
     "name": "yrb",
     "title": "Youtube Repeater",
-    "tags": [
-      "JavaScript ES6",
-      "CSS3",
-      "Chrome Extension"
-    ],
+    "tags": ["JavaScript ES6", "CSS3", "Chrome Extension"],
     "links": [
       {
         "icon": "chrome",
@@ -116,12 +72,7 @@
   {
     "name": "spg",
     "title": "Chrome Start Page",
-    "tags": [
-      "Angular",
-      "Sematic UI",
-      "Chrome Extension",
-      "Chrome API"
-    ],
+    "tags": ["Angular", "Sematic UI", "Chrome Extension", "Chrome API"],
     "links": [
       {
         "icon": "chrome",
@@ -132,11 +83,7 @@
   {
     "name": "snake",
     "title": "Snake!",
-    "tags": [
-      "JavaScript ES6",
-      "Canvas",
-      "CSS3"
-    ],
+    "tags": ["JavaScript ES6", "Canvas", "CSS3"],
     "links": [
       {
         "icon": "globe",

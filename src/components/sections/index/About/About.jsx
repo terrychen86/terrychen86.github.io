@@ -1,10 +1,17 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import classnames from 'classnames';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import { window } from 'utils/SSR';
-import ScrollSpyEffect from 'utils/ScrollSpyEffect';
+// @flow strict
 
-import { Container, Button } from 'common-ui';
+import * as React from 'react';
+import styled from 'styled-components';
+import { Link, graphql } from 'gatsby';
+
+import Transition from 'components/Transition';
+import Container from 'components/styled-elements/Container';
+import Button from 'components/styled-elements/Button';
+import { H3, P } from 'components/styled-elements/fonts';
+
+import mediaQuery from 'utils/media-query';
+import * as colors from 'utils/colors';
+
 import profileImage from 'images/profile.png';
 import sdeIcon from 'images/icon-job.png';
 import sfIcon from 'images/icon-sf.png';
@@ -15,7 +22,7 @@ import codeIcon from 'images/icon-code.png';
 import gameIcon from 'images/icon-game.png';
 import uiIcon from 'images/icon-ui.png';
 
-import styles from './About.module.scss';
+import type { AboutMeCardFragment } from 'types/graphql';
 
 const ICONS = {
   sde: sdeIcon,
@@ -28,97 +35,186 @@ const ICONS = {
   ui: uiIcon,
 };
 
-const renderIconCards = data => {
-  const icons = data.allAboutMeIconJson.nodes;
-  return icons.map((icon, i) => (
-    <div key={icon.name} className={classnames(styles.card, styles[`card${i + 1}`])}>
-      <div className={styles.iconWrapper}>
-        <img width="100%" src={ICONS[icon.name]} alt={`icon-${icon.name}`} />
-      </div>
+const AboutMeContainer: React$ComponentType<{}> = styled.section`
+  display: flex;
+  align-items: center;
 
-      <p className={styles.cardTitle}>{icon.title}</p>
-      <p className={styles.cardText}>{icon.text}</p>
-    </div>
-  ));
-};
+  ${mediaQuery.below('sm')} {
+    flex-direction: column;
+  }
+`;
 
-const About = () => {
-  const [windowTop, setWindowTop] = useState(window.innerHeight);
-  const [contentPos, setContentPos] = useState(window.innerHeight + 100);
-  const [cardsPos, setCardsPos] = useState(window.innerHeight + 100);
+const AboutMeImage: React$ComponentType<{}> = styled.figure`
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 180px;
+  height: 180px;
+  padding: 4px;
+  background: linear-gradient(270deg, ${colors.pink}, ${colors.deepPink});
+  border-radius: 100%;
 
-  const contentRef = useCallback(node => {
-    if (node !== null) {
-      setContentPos(node.getBoundingClientRect().top);
-    }
-  }, []);
+  & > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+  }
+`;
 
-  const cardsRef = useCallback(node => {
-    if (node !== null) {
-      setCardsPos(node.getBoundingClientRect().top);
-    }
-  }, []);
+const AboutMeContentWrapper: React$ComponentType<{}> = styled.div`
+  margin-left: 80px;
 
-  useEffect(
-    ScrollSpyEffect(viewport => {
-      setWindowTop(viewport);
-    }),
-    [],
-  );
+  ${mediaQuery.below('sm')} {
+    margin-top: 40px;
+    margin-left: 0;
+  }
+`;
 
-  const isContentVisible = contentPos < windowTop;
-  const isCardsVisible = cardsPos < windowTop;
+const AboutMeTitle: React$ComponentType<{}> = styled(H3)`
+  color: ${colors.blackBlue};
+  margin-bottom: 10px;
 
-  const data = useStaticQuery(graphql`
-    query AboutMeIconQuery {
-      allAboutMeIconJson {
-        nodes {
-          name
-          title
-          text
-        }
-      }
-    }
-  `);
+  ${mediaQuery.below('sm')} {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+`;
 
+const AboutMeCopy: React$ComponentType<{}> = styled(P)`
+  color: ${colors.blackBlue};
+`;
+
+const CardsContainer: React$ComponentType<{}> = styled(Container)`
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 30px;
+
+  ${mediaQuery.below('lg')} {
+    max-width: 780px;
+  }
+
+  ${mediaQuery.below('md')} {
+    margin-top: 10px;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  ${mediaQuery.below('sm')} {
+    max-width: 414px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+`;
+
+const CardTitle: React$ComponentType<{}> = styled(P)`
+  color: ${colors.white};
+  font-size: 14px;
+`;
+
+const CardText: React$ComponentType<{}> = styled(P)`
+  color: ${colors.white};
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 700;
+`;
+
+type CardProps = {|
+  +id: number,
+  +children: React.Node,
+|};
+
+const Card: React$ComponentType<CardProps> = styled.div`
+  display: inline-block;
+  flex-shrink: 0;
+  width: 220px;
+  height: 150px;
+  margin: 5px;
+  text-align: center;
+  padding: 15px 0;
+  background-color: ${props => colors.cardColors[props.id]};
+`;
+
+const IconWrapper: React$ComponentType<{}> = styled.div`
+  margin: 12px auto;
+  width: 48px;
+  height: 48px;
+`;
+
+const ButtonContainer: React$ComponentType<{}> = styled(Container)`
+  text-align: center;
+`;
+
+const ButtonCopy: React$ComponentType<{}> = styled(P)`
+  letter-spacing: 2px;
+  color: ${colors.white};
+  text-transform: uppercase;
+  font-size: 14px;
+`;
+
+type Props = {|
+  +aboutMeCards: Array<AboutMeCardFragment>,
+|};
+
+const About = ({ aboutMeCards }: Props) => {
   return (
     <main>
-      <section>
-        <Container className={styles.about}>
-          <div className={classnames(styles.aboutMe, isContentVisible ? styles.fadeIn : '')} ref={contentRef}>
-            <div className={styles.aboutMeImage}>
+      <Container>
+        <Transition delay={0} duration={0.7}>
+          <AboutMeContainer>
+            <AboutMeImage>
               <img src={profileImage} alt="profile" />
-            </div>
+            </AboutMeImage>
 
-            <div className={styles.aboutMeContent}>
-              <h3 className={styles.title}>ABOUT ME</h3>
-
-              <p className={styles.text}>
+            <AboutMeContentWrapper>
+              <AboutMeTitle>ABOUT ME</AboutMeTitle>
+              <AboutMeCopy>
                 Hi, my name is Terry (Yen-Hsuan). I write code and enjoy building beautiful and complicated things. I
                 call many places home. I am from Taiwan, studied in LA and live in San Francisco now. I own both EE & CS
                 master degrees, and I did scientific brain research too. I love travel, music, dogs, coffee, diet coke,
                 and korean food!
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
+              </AboutMeCopy>
+            </AboutMeContentWrapper>
+          </AboutMeContainer>
+        </Transition>
+      </Container>
 
-      <section>
-        <Container ref={cardsRef} className={classnames(styles.cards, isCardsVisible ? styles.fadeIn : '')}>
-          {renderIconCards(data)}
-        </Container>
-      </section>
+      <Transition delay={0} duration={0.7}>
+        <CardsContainer>
+          {aboutMeCards.map(({ name, title, text }, i) => (
+            <>
+              {name != null && (
+                <Card key={name} id={i}>
+                  <IconWrapper>
+                    <img width="100%" src={ICONS[name]} alt={`icon-${name}`} />
+                  </IconWrapper>
 
-      <section>
-        <Container className={styles.btnContainer}>
-          <Link to="/projects">
-            <Button>See my projects</Button>
-          </Link>
-        </Container>
-      </section>
+                  {title != null && <CardTitle>{title}</CardTitle>}
+                  {text != null && <CardText>{text}</CardText>}
+                </Card>
+              )}
+            </>
+          ))}
+        </CardsContainer>
+      </Transition>
+
+      <ButtonContainer>
+        <Link to="/projects">
+          <Button>
+            <ButtonCopy>See my projects</ButtonCopy>
+          </Button>
+        </Link>
+      </ButtonContainer>
     </main>
   );
 };
 
 export default About;
+
+export const query = graphql`
+  fragment AboutMeCard on AboutMeCardsJson {
+    name
+    text
+    title
+  }
+`;

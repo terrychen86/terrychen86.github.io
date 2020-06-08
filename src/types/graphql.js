@@ -13,7 +13,7 @@ export type Scalars = {|
   JSON: any,
 |};
 
-export type AboutMeIconJson = {|
+export type AboutMeCardsJson = {|
   ...Node,
   ...{|
     +id: $ElementType<Scalars, 'ID'>,
@@ -26,32 +26,32 @@ export type AboutMeIconJson = {|
   |},
 |};
 
-export type AboutMeIconJsonConnection = {|
+export type AboutMeCardsJsonConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<AboutMeIconJsonEdge>,
-  +nodes: Array<AboutMeIconJson>,
+  +edges: Array<AboutMeCardsJsonEdge>,
+  +nodes: Array<AboutMeCardsJson>,
   +pageInfo: PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<AboutMeIconJsonGroupConnection>,
+  +group: Array<AboutMeCardsJsonGroupConnection>,
 |};
 
-export type AboutMeIconJsonConnection_distinctArgs = {|
-  field: AboutMeIconJsonFieldsEnum,
+export type AboutMeCardsJsonConnection_distinctArgs = {|
+  field: AboutMeCardsJsonFieldsEnum,
 |};
 
-export type AboutMeIconJsonConnection_groupArgs = {|
+export type AboutMeCardsJsonConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: AboutMeIconJsonFieldsEnum,
+  field: AboutMeCardsJsonFieldsEnum,
 |};
 
-export type AboutMeIconJsonEdge = {|
-  +next?: ?AboutMeIconJson,
-  +node: AboutMeIconJson,
-  +previous?: ?AboutMeIconJson,
+export type AboutMeCardsJsonEdge = {|
+  +next?: ?AboutMeCardsJson,
+  +node: AboutMeCardsJson,
+  +previous?: ?AboutMeCardsJson,
 |};
 
-export const AboutMeIconJsonFieldsEnumValues = Object.freeze({
+export const AboutMeCardsJsonFieldsEnumValues = Object.freeze({
   id: 'id',
   parent___id: 'parent.id',
   parent___parent___id: 'parent.parent.id',
@@ -143,9 +143,9 @@ export const AboutMeIconJsonFieldsEnumValues = Object.freeze({
   text: 'text',
 });
 
-export type AboutMeIconJsonFieldsEnum = $Values<typeof AboutMeIconJsonFieldsEnumValues>;
+export type AboutMeCardsJsonFieldsEnum = $Values<typeof AboutMeCardsJsonFieldsEnumValues>;
 
-export type AboutMeIconJsonFilterInput = {|
+export type AboutMeCardsJsonFilterInput = {|
   id?: ?StringQueryOperatorInput,
   parent?: ?NodeFilterInput,
   children?: ?NodeFilterListInput,
@@ -155,21 +155,21 @@ export type AboutMeIconJsonFilterInput = {|
   text?: ?StringQueryOperatorInput,
 |};
 
-export type AboutMeIconJsonFilterListInput = {|
-  elemMatch?: ?AboutMeIconJsonFilterInput,
+export type AboutMeCardsJsonFilterListInput = {|
+  elemMatch?: ?AboutMeCardsJsonFilterInput,
 |};
 
-export type AboutMeIconJsonGroupConnection = {|
+export type AboutMeCardsJsonGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<AboutMeIconJsonEdge>,
-  +nodes: Array<AboutMeIconJson>,
+  +edges: Array<AboutMeCardsJsonEdge>,
+  +nodes: Array<AboutMeCardsJson>,
   +pageInfo: PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type AboutMeIconJsonSortInput = {|
-  fields?: ?Array<?AboutMeIconJsonFieldsEnum>,
+export type AboutMeCardsJsonSortInput = {|
+  fields?: ?Array<?AboutMeCardsJsonFieldsEnum>,
   order?: ?Array<?SortOrderEnum>,
 |};
 
@@ -528,10 +528,10 @@ export type File = {|
     +parent?: ?Node,
     +children: Array<Node>,
     +internal: Internal,
-    +childrenAboutMeIconJson?: ?Array<?AboutMeIconJson>,
     +childrenIconLinksJson?: ?Array<?IconLinksJson>,
     +childrenNavItemsJson?: ?Array<?NavItemsJson>,
     +childrenProjectsJson?: ?Array<?ProjectsJson>,
+    +childrenAboutMeCardsJson?: ?Array<?AboutMeCardsJson>,
   |},
 |};
 
@@ -730,49 +730,6 @@ export const FileFieldsEnumValues = Object.freeze({
   internal___mediaType: 'internal.mediaType',
   internal___owner: 'internal.owner',
   internal___type: 'internal.type',
-  childrenAboutMeIconJson: 'childrenAboutMeIconJson',
-  childrenAboutMeIconJson___id: 'childrenAboutMeIconJson.id',
-  childrenAboutMeIconJson___parent___id: 'childrenAboutMeIconJson.parent.id',
-  childrenAboutMeIconJson___parent___parent___id: 'childrenAboutMeIconJson.parent.parent.id',
-  childrenAboutMeIconJson___parent___parent___children: 'childrenAboutMeIconJson.parent.parent.children',
-  childrenAboutMeIconJson___parent___children: 'childrenAboutMeIconJson.parent.children',
-  childrenAboutMeIconJson___parent___children___id: 'childrenAboutMeIconJson.parent.children.id',
-  childrenAboutMeIconJson___parent___children___children: 'childrenAboutMeIconJson.parent.children.children',
-  childrenAboutMeIconJson___parent___internal___content: 'childrenAboutMeIconJson.parent.internal.content',
-  childrenAboutMeIconJson___parent___internal___contentDigest: 'childrenAboutMeIconJson.parent.internal.contentDigest',
-  childrenAboutMeIconJson___parent___internal___description: 'childrenAboutMeIconJson.parent.internal.description',
-  childrenAboutMeIconJson___parent___internal___fieldOwners: 'childrenAboutMeIconJson.parent.internal.fieldOwners',
-  childrenAboutMeIconJson___parent___internal___ignoreType: 'childrenAboutMeIconJson.parent.internal.ignoreType',
-  childrenAboutMeIconJson___parent___internal___mediaType: 'childrenAboutMeIconJson.parent.internal.mediaType',
-  childrenAboutMeIconJson___parent___internal___owner: 'childrenAboutMeIconJson.parent.internal.owner',
-  childrenAboutMeIconJson___parent___internal___type: 'childrenAboutMeIconJson.parent.internal.type',
-  childrenAboutMeIconJson___children: 'childrenAboutMeIconJson.children',
-  childrenAboutMeIconJson___children___id: 'childrenAboutMeIconJson.children.id',
-  childrenAboutMeIconJson___children___parent___id: 'childrenAboutMeIconJson.children.parent.id',
-  childrenAboutMeIconJson___children___parent___children: 'childrenAboutMeIconJson.children.parent.children',
-  childrenAboutMeIconJson___children___children: 'childrenAboutMeIconJson.children.children',
-  childrenAboutMeIconJson___children___children___id: 'childrenAboutMeIconJson.children.children.id',
-  childrenAboutMeIconJson___children___children___children: 'childrenAboutMeIconJson.children.children.children',
-  childrenAboutMeIconJson___children___internal___content: 'childrenAboutMeIconJson.children.internal.content',
-  childrenAboutMeIconJson___children___internal___contentDigest:
-    'childrenAboutMeIconJson.children.internal.contentDigest',
-  childrenAboutMeIconJson___children___internal___description: 'childrenAboutMeIconJson.children.internal.description',
-  childrenAboutMeIconJson___children___internal___fieldOwners: 'childrenAboutMeIconJson.children.internal.fieldOwners',
-  childrenAboutMeIconJson___children___internal___ignoreType: 'childrenAboutMeIconJson.children.internal.ignoreType',
-  childrenAboutMeIconJson___children___internal___mediaType: 'childrenAboutMeIconJson.children.internal.mediaType',
-  childrenAboutMeIconJson___children___internal___owner: 'childrenAboutMeIconJson.children.internal.owner',
-  childrenAboutMeIconJson___children___internal___type: 'childrenAboutMeIconJson.children.internal.type',
-  childrenAboutMeIconJson___internal___content: 'childrenAboutMeIconJson.internal.content',
-  childrenAboutMeIconJson___internal___contentDigest: 'childrenAboutMeIconJson.internal.contentDigest',
-  childrenAboutMeIconJson___internal___description: 'childrenAboutMeIconJson.internal.description',
-  childrenAboutMeIconJson___internal___fieldOwners: 'childrenAboutMeIconJson.internal.fieldOwners',
-  childrenAboutMeIconJson___internal___ignoreType: 'childrenAboutMeIconJson.internal.ignoreType',
-  childrenAboutMeIconJson___internal___mediaType: 'childrenAboutMeIconJson.internal.mediaType',
-  childrenAboutMeIconJson___internal___owner: 'childrenAboutMeIconJson.internal.owner',
-  childrenAboutMeIconJson___internal___type: 'childrenAboutMeIconJson.internal.type',
-  childrenAboutMeIconJson___name: 'childrenAboutMeIconJson.name',
-  childrenAboutMeIconJson___title: 'childrenAboutMeIconJson.title',
-  childrenAboutMeIconJson___text: 'childrenAboutMeIconJson.text',
   childrenIconLinksJson: 'childrenIconLinksJson',
   childrenIconLinksJson___id: 'childrenIconLinksJson.id',
   childrenIconLinksJson___parent___id: 'childrenIconLinksJson.parent.id',
@@ -902,6 +859,52 @@ export const FileFieldsEnumValues = Object.freeze({
   childrenProjectsJson___links: 'childrenProjectsJson.links',
   childrenProjectsJson___links___icon: 'childrenProjectsJson.links.icon',
   childrenProjectsJson___links___link: 'childrenProjectsJson.links.link',
+  childrenAboutMeCardsJson: 'childrenAboutMeCardsJson',
+  childrenAboutMeCardsJson___id: 'childrenAboutMeCardsJson.id',
+  childrenAboutMeCardsJson___parent___id: 'childrenAboutMeCardsJson.parent.id',
+  childrenAboutMeCardsJson___parent___parent___id: 'childrenAboutMeCardsJson.parent.parent.id',
+  childrenAboutMeCardsJson___parent___parent___children: 'childrenAboutMeCardsJson.parent.parent.children',
+  childrenAboutMeCardsJson___parent___children: 'childrenAboutMeCardsJson.parent.children',
+  childrenAboutMeCardsJson___parent___children___id: 'childrenAboutMeCardsJson.parent.children.id',
+  childrenAboutMeCardsJson___parent___children___children: 'childrenAboutMeCardsJson.parent.children.children',
+  childrenAboutMeCardsJson___parent___internal___content: 'childrenAboutMeCardsJson.parent.internal.content',
+  childrenAboutMeCardsJson___parent___internal___contentDigest:
+    'childrenAboutMeCardsJson.parent.internal.contentDigest',
+  childrenAboutMeCardsJson___parent___internal___description: 'childrenAboutMeCardsJson.parent.internal.description',
+  childrenAboutMeCardsJson___parent___internal___fieldOwners: 'childrenAboutMeCardsJson.parent.internal.fieldOwners',
+  childrenAboutMeCardsJson___parent___internal___ignoreType: 'childrenAboutMeCardsJson.parent.internal.ignoreType',
+  childrenAboutMeCardsJson___parent___internal___mediaType: 'childrenAboutMeCardsJson.parent.internal.mediaType',
+  childrenAboutMeCardsJson___parent___internal___owner: 'childrenAboutMeCardsJson.parent.internal.owner',
+  childrenAboutMeCardsJson___parent___internal___type: 'childrenAboutMeCardsJson.parent.internal.type',
+  childrenAboutMeCardsJson___children: 'childrenAboutMeCardsJson.children',
+  childrenAboutMeCardsJson___children___id: 'childrenAboutMeCardsJson.children.id',
+  childrenAboutMeCardsJson___children___parent___id: 'childrenAboutMeCardsJson.children.parent.id',
+  childrenAboutMeCardsJson___children___parent___children: 'childrenAboutMeCardsJson.children.parent.children',
+  childrenAboutMeCardsJson___children___children: 'childrenAboutMeCardsJson.children.children',
+  childrenAboutMeCardsJson___children___children___id: 'childrenAboutMeCardsJson.children.children.id',
+  childrenAboutMeCardsJson___children___children___children: 'childrenAboutMeCardsJson.children.children.children',
+  childrenAboutMeCardsJson___children___internal___content: 'childrenAboutMeCardsJson.children.internal.content',
+  childrenAboutMeCardsJson___children___internal___contentDigest:
+    'childrenAboutMeCardsJson.children.internal.contentDigest',
+  childrenAboutMeCardsJson___children___internal___description:
+    'childrenAboutMeCardsJson.children.internal.description',
+  childrenAboutMeCardsJson___children___internal___fieldOwners:
+    'childrenAboutMeCardsJson.children.internal.fieldOwners',
+  childrenAboutMeCardsJson___children___internal___ignoreType: 'childrenAboutMeCardsJson.children.internal.ignoreType',
+  childrenAboutMeCardsJson___children___internal___mediaType: 'childrenAboutMeCardsJson.children.internal.mediaType',
+  childrenAboutMeCardsJson___children___internal___owner: 'childrenAboutMeCardsJson.children.internal.owner',
+  childrenAboutMeCardsJson___children___internal___type: 'childrenAboutMeCardsJson.children.internal.type',
+  childrenAboutMeCardsJson___internal___content: 'childrenAboutMeCardsJson.internal.content',
+  childrenAboutMeCardsJson___internal___contentDigest: 'childrenAboutMeCardsJson.internal.contentDigest',
+  childrenAboutMeCardsJson___internal___description: 'childrenAboutMeCardsJson.internal.description',
+  childrenAboutMeCardsJson___internal___fieldOwners: 'childrenAboutMeCardsJson.internal.fieldOwners',
+  childrenAboutMeCardsJson___internal___ignoreType: 'childrenAboutMeCardsJson.internal.ignoreType',
+  childrenAboutMeCardsJson___internal___mediaType: 'childrenAboutMeCardsJson.internal.mediaType',
+  childrenAboutMeCardsJson___internal___owner: 'childrenAboutMeCardsJson.internal.owner',
+  childrenAboutMeCardsJson___internal___type: 'childrenAboutMeCardsJson.internal.type',
+  childrenAboutMeCardsJson___name: 'childrenAboutMeCardsJson.name',
+  childrenAboutMeCardsJson___title: 'childrenAboutMeCardsJson.title',
+  childrenAboutMeCardsJson___text: 'childrenAboutMeCardsJson.text',
 });
 
 export type FileFieldsEnum = $Values<typeof FileFieldsEnumValues>;
@@ -945,10 +948,10 @@ export type FileFilterInput = {|
   parent?: ?NodeFilterInput,
   children?: ?NodeFilterListInput,
   internal?: ?InternalFilterInput,
-  childrenAboutMeIconJson?: ?AboutMeIconJsonFilterListInput,
   childrenIconLinksJson?: ?IconLinksJsonFilterListInput,
   childrenNavItemsJson?: ?NavItemsJsonFilterListInput,
   childrenProjectsJson?: ?ProjectsJsonFilterListInput,
+  childrenAboutMeCardsJson?: ?AboutMeCardsJsonFilterListInput,
 |};
 
 export type FileGroupConnection = {|
@@ -1545,12 +1548,12 @@ export type Query = {|
   +allSitePage: SitePageConnection,
   +projectsJson?: ?ProjectsJson,
   +allProjectsJson: ProjectsJsonConnection,
+  +aboutMeCardsJson?: ?AboutMeCardsJson,
+  +allAboutMeCardsJson: AboutMeCardsJsonConnection,
   +navItemsJson?: ?NavItemsJson,
   +allNavItemsJson: NavItemsJsonConnection,
   +iconLinksJson?: ?IconLinksJson,
   +allIconLinksJson: IconLinksJsonConnection,
-  +aboutMeIconJson?: ?AboutMeIconJson,
-  +allAboutMeIconJson: AboutMeIconJsonConnection,
   +site?: ?Site,
   +allSite: SiteConnection,
   +sitePlugin?: ?SitePlugin,
@@ -1596,10 +1599,10 @@ export type Query_fileArgs = {|
   parent?: ?NodeFilterInput,
   children?: ?NodeFilterListInput,
   internal?: ?InternalFilterInput,
-  childrenAboutMeIconJson?: ?AboutMeIconJsonFilterListInput,
   childrenIconLinksJson?: ?IconLinksJsonFilterListInput,
   childrenNavItemsJson?: ?NavItemsJsonFilterListInput,
   childrenProjectsJson?: ?ProjectsJsonFilterListInput,
+  childrenAboutMeCardsJson?: ?AboutMeCardsJsonFilterListInput,
 |};
 
 export type Query_allFileArgs = {|
@@ -1697,6 +1700,23 @@ export type Query_allProjectsJsonArgs = {|
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
+export type Query_aboutMeCardsJsonArgs = {|
+  id?: ?StringQueryOperatorInput,
+  parent?: ?NodeFilterInput,
+  children?: ?NodeFilterListInput,
+  internal?: ?InternalFilterInput,
+  name?: ?StringQueryOperatorInput,
+  title?: ?StringQueryOperatorInput,
+  text?: ?StringQueryOperatorInput,
+|};
+
+export type Query_allAboutMeCardsJsonArgs = {|
+  filter?: ?AboutMeCardsJsonFilterInput,
+  sort?: ?AboutMeCardsJsonSortInput,
+  skip?: ?$ElementType<Scalars, 'Int'>,
+  limit?: ?$ElementType<Scalars, 'Int'>,
+|};
+
 export type Query_navItemsJsonArgs = {|
   id?: ?StringQueryOperatorInput,
   parent?: ?NodeFilterInput,
@@ -1727,23 +1747,6 @@ export type Query_iconLinksJsonArgs = {|
 export type Query_allIconLinksJsonArgs = {|
   filter?: ?IconLinksJsonFilterInput,
   sort?: ?IconLinksJsonSortInput,
-  skip?: ?$ElementType<Scalars, 'Int'>,
-  limit?: ?$ElementType<Scalars, 'Int'>,
-|};
-
-export type Query_aboutMeIconJsonArgs = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  name?: ?StringQueryOperatorInput,
-  title?: ?StringQueryOperatorInput,
-  text?: ?StringQueryOperatorInput,
-|};
-
-export type Query_allAboutMeIconJsonArgs = {|
-  filter?: ?AboutMeIconJsonFilterInput,
-  sort?: ?AboutMeIconJsonSortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
@@ -2531,22 +2534,13 @@ export type StringQueryOperatorInput = {|
 
 type $Pick<Origin: Object, Keys: Object> = $ObjMapi<Keys, <Key>(k: Key) => $ElementType<Origin, Key>>;
 
-export type AboutMeIconQueryQueryVariables = {};
+export type NavbarQueryQueryVariables = {};
 
-export type AboutMeIconQueryQuery = {|
-  +allAboutMeIconJson: {| +nodes: Array<$Pick<AboutMeIconJson, {| +name: *, +title: *, +text: * |}>> |},
+export type NavbarQueryQuery = {|
+  +allNavItemsJson: {| +nodes: Array<$Pick<NavItemsJson, {| +path: *, +link: *, +title: * |}>> |},
 |};
 
-export type Unnamed_1_QueryVariables = {};
-
-export type Unnamed_1_Query = {|
-  +allProjectsJson: {|
-    +nodes: Array<{
-      ...$Pick<ProjectsJson, {| +name: *, +title: *, +tags: * |}>,
-      ...{| +links: ?Array<?$Pick<ProjectsJsonLinks, {| +icon: *, +link: * |}>> |},
-    }>,
-  |},
-|};
+export type AboutMeCardFragment = $Pick<AboutMeCardsJson, {| +name: *, +text: *, +title: * |}>;
 
 export type IconLinkFragment = $Pick<IconLinksJson, {| +name: *, +url: *, +icon: * |}>;
 
@@ -2561,15 +2555,21 @@ export type SEOQuery = {|
   |},
 |};
 
-export type NavbarQueryQueryVariables = {};
-
-export type NavbarQueryQuery = {|
-  +allNavItemsJson: {| +nodes: Array<$Pick<NavItemsJson, {| +path: *, +link: *, +title: * |}>> |},
-|};
+export type ProjectFragment = {
+  ...$Pick<ProjectsJson, {| +name: *, +title: *, +tags: * |}>,
+  ...{| +links: ?Array<?$Pick<ProjectsJsonLinks, {| +icon: *, +link: * |}>> |},
+};
 
 export type IndexPageQueryVariables = {};
 
-export type IndexPageQuery = {| +allIconLinksJson: {| +edges: Array<{| +node: IconLinkFragment |}> |} |};
+export type IndexPageQuery = {|
+  +allIconLinksJson: {| +edges: Array<{| +node: IconLinkFragment |}> |},
+  +allAboutMeCardsJson: {| +edges: Array<{| +node: AboutMeCardFragment |}> |},
+|};
+
+export type ProjectPageQueryVariables = {};
+
+export type ProjectPageQuery = {| +allProjectsJson: {| +edges: Array<{| +node: ProjectFragment |}> |} |};
 
 export type PagesQueryQueryVariables = {};
 

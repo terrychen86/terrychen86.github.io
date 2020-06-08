@@ -1,5 +1,7 @@
-import React from 'react';
-import NotFound from 'components/sections/404/404';
+// @flow strict
+
+import * as React from 'react';
+import NotFound from 'components/404';
 
 const NotFoundPage = () => <NotFound />;
 

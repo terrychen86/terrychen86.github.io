@@ -1,12 +1,16 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import classnames from 'classnames';
-import { Container } from 'common-ui';
-import { window } from 'utils/SSR';
-import ScrollSpyEffect from 'utils/ScrollSpyEffect';
+// @flow strict
+
+import * as React from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+
+import Container from 'components/styled-elements/Container';
+import Transition from 'components/Transition';
+import Card from 'components/Card';
+
+import mediaQuery from 'utils/media-query';
 
 import decoratorImg from 'images/background.png';
-
 import websiteImg from 'images/project-website.png';
 import codepadImg from 'images/project-cp.jpg';
 import jsdsImg from 'images/project-jsds.png';
@@ -17,7 +21,7 @@ import spgImg from 'images/project-spg.jpg';
 import snakeImg from 'images/project-snake.png';
 import crudImg from 'images/project-crud.jpg';
 
-import styles from './ProjectCards.module.scss';
+import type { ProjectFragment } from 'types/graphql';
 
 const CARD_IMAGES = {
   codepad: codepadImg,
@@ -29,83 +33,101 @@ const CARD_IMAGES = {
   snake: snakeImg,
   crud: crudImg,
   website: websiteImg,
+  default: websiteImg,
 };
 
-const renderCards = data => {
-  const projects = data.allProjectsJson.nodes;
+const ProjectCardsWrapper: React$ComponentType<*> = styled.div`
+  position: relative;
+  overflow: hidden;
+`;
 
-  return projects.map((project, i) => (
-    <div key={project.name} className={styles.projectCardsCol}>
-      <div className={styles.card}>
-        <section className={`${styles.cardHeader} ${styles[`colorCard${i + 1}`]}`}>
-          <h1 className={styles.cardTitle}>{project.title}</h1>
-          <div className={styles.cardImage} style={{ backgroundImage: `url(${CARD_IMAGES[project.name]})` }} />
-        </section>
-        <section className={styles.cardDesc}>
-          <div className={styles.cardTags}>
-            {project.tags.map(tag => (
-              <span key={tag} className={styles.cardTag}>
-                {tag}
-              </span>
-            ))}
-          </div>
-        </section>
-        <section className={styles.btnGroup}>
-          {project.links.map(link => (
-            <a className={styles.iconBtn} key={link.icon} href={link.link} target="_blank" rel="noreferrer noopener">
-              <i className={`fa fa-${link.icon} ${styles[link.icon]}`} aria-hidden="true" />
-            </a>
-          ))}
-        </section>
-      </div>
-    </div>
-  ));
-};
+const CardsContainer: React$ComponentType<*> = styled(Container)`
+  display: flex;
+  flex-wrap: wrap;
 
-const ProjectCards = () => {
-  const [windowPos, setWindowPos] = useState(window.innerHeight);
-  const [cardsPos, setCardsPos] = useState(window.innerHeight + 100);
-  const cardsRef = useCallback(node => {
-    if (node !== null) {
-      setCardsPos(node.getBoundingClientRect().top);
-    }
-  }, []);
+  ${mediaQuery.below('sm')} {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+`;
 
-  useEffect(
-    ScrollSpyEffect(viewport => {
-      setWindowPos(viewport);
-    }),
-    [],
-  );
+const CardsColumn: React$ComponentType<*> = styled.div`
+  flex: 0 0 33.333332%;
+  text-align: center;
 
-  const isVisible = cardsPos < windowPos;
-  const data = useStaticQuery(graphql`
-    query {
-      allProjectsJson {
-        nodes {
-          links {
-            icon
-            link
-          }
-          name
-          title
-          tags
-        }
-      }
-    }
-  `);
+  ${mediaQuery.below('md')} {
+    flex: 0 0 50%;
+  }
 
+  ${mediaQuery.below('sm')} {
+    flex: 0 0 260px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+`;
+
+const Background: React$ComponentType<*> = styled.div`
+  position: absolute;
+  bottom: -250px;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+
+  ${mediaQuery.below('md')} {
+    bottom: -50px;
+  }
+
+  img {
+    width: 100%;
+  }
+`;
+
+type Props = {|
+  +projects: Array<ProjectFragment>,
+|};
+
+const ProjectCards = ({ projects }: Props) => {
   return (
-    <section className={styles.projectCardsWrapper}>
-      <Container ref={cardsRef} className={classnames(styles.projectCards, isVisible ? styles.fadeIn : '')}>
-        {renderCards(data)}
-      </Container>
+    <ProjectCardsWrapper>
+      <Transition delay={0} duration={0.7}>
+        <CardsContainer>
+          {projects.map((project, i) => (
+            <CardsColumn key={project.name}>
+              <Card
+                title={project.title || ''}
+                tags={project.tags || []}
+                links={(project.links || []).map(l => ({
+                  icon: l?.icon,
+                  link: l?.link,
+                }))}
+                imgSrc={CARD_IMAGES[project.name || 'default']}
+                order={i}
+              />
+            </CardsColumn>
+          ))}
+        </CardsContainer>
+      </Transition>
 
-      <div className={styles.decoratorImg}>
+      <Background>
         <img src={decoratorImg} alt="decorator" />
-      </div>
-    </section>
+      </Background>
+    </ProjectCardsWrapper>
   );
 };
 
 export default ProjectCards;
+
+export const query = graphql`
+  fragment Project on ProjectsJson {
+    links {
+      icon
+      link
+    }
+    name
+    title
+    tags
+  }
+`;
