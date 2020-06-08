@@ -8,13 +8,13 @@ import Container from 'components/styled-elements/Container';
 import FullscreenWrapper from 'components/styled-elements/FullscreenModule';
 import { H1, H4, P } from 'components/styled-elements/fonts';
 import * as keyframes from 'components/styled-elements/animations';
-import Wave from 'components/widgets/Wave/Wave';
+import Wave from 'components/styled-elements/Wave';
 import mediaQuery from 'utils/media-query';
 import * as colors from 'utils/colors';
 import { rgba } from 'utils/rgba';
 import heroImage from 'images/developer.svg';
 
-import { type IconLinkFragment } from 'types/graphql';
+import type { IconLinkFragment } from 'types/graphql';
 
 const HeroWrapper: React$ComponentType<{}> = styled(FullscreenWrapper)`
   position: relative;
@@ -116,13 +116,6 @@ const Image: React$ComponentType<{}> = styled.img`
   width: 100%;
 `;
 
-const renderIconLinks = (iconLinks: Array<IconLinkFragment>): React.Node =>
-  iconLinks.map(link => (
-    <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
-      <i className={`fa ${link.icon || ''}`} aria-hidden="true" />
-    </a>
-  ));
-
 type Props = {|
   +iconLinks: Array<IconLinkFragment>,
 |};
@@ -136,7 +129,17 @@ const Hero = ({ iconLinks }: Props) => (
         <Text>Software Engineer who focuses on building elegant and high performance web application.</Text>
 
         <IconGroupWrapper>
-          <IconGroup>{renderIconLinks(iconLinks)}</IconGroup>
+          <IconGroup>
+            {iconLinks.map(link => (
+              <>
+                {link.name != null && link.url != null && link.icon != null && (
+                  <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
+                    <i className={`fa ${link.icon || ''}`} aria-hidden="true" />
+                  </a>
+                )}
+              </>
+            ))}
+          </IconGroup>
         </IconGroupWrapper>
       </Content>
 

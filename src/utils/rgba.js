@@ -1,4 +1,4 @@
-// @flow strict-local
+// @flow strict
 
 type Rgb = {|
   +r: number,
