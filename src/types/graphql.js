@@ -1,57 +1,59 @@
 /* eslint-disable */
 
-/* @flow */
+// @flow
+
+// @flow
 
 /** All built-in and custom scalars, mapped to their actual values */
-export type Scalars = {|
+declare type Scalars = {|
   ID: string,
   String: string,
   Boolean: boolean,
   Int: number,
   Float: number,
-  Date: any,
-  JSON: any,
+  Date: string,
+  JSON: never,
 |};
 
-export type AboutMeCardsJson = {|
-  ...Node,
+declare type GatsbyTypes$AboutMeCardsJson = {|
+  ...GatsbyTypes$Node,
   ...{|
     +id: $ElementType<Scalars, 'ID'>,
-    +parent?: ?Node,
-    +children: Array<Node>,
-    +internal: Internal,
+    +parent?: ?GatsbyTypes$Node,
+    +children: Array<GatsbyTypes$Node>,
+    +internal: GatsbyTypes$Internal,
     +name?: ?$ElementType<Scalars, 'String'>,
     +title?: ?$ElementType<Scalars, 'String'>,
     +text?: ?$ElementType<Scalars, 'String'>,
   |},
 |};
 
-export type AboutMeCardsJsonConnection = {|
+declare type GatsbyTypes$AboutMeCardsJsonConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<AboutMeCardsJsonEdge>,
-  +nodes: Array<AboutMeCardsJson>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$AboutMeCardsJsonEdge>,
+  +nodes: Array<GatsbyTypes$AboutMeCardsJson>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<AboutMeCardsJsonGroupConnection>,
+  +group: Array<GatsbyTypes$AboutMeCardsJsonGroupConnection>,
 |};
 
-export type AboutMeCardsJsonConnection_distinctArgs = {|
-  field: AboutMeCardsJsonFieldsEnum,
+declare type GatsbyTypes$AboutMeCardsJsonConnection_distinctArgs = {|
+  field: GatsbyTypes$AboutMeCardsJsonFieldsEnum,
 |};
 
-export type AboutMeCardsJsonConnection_groupArgs = {|
+declare type GatsbyTypes$AboutMeCardsJsonConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: AboutMeCardsJsonFieldsEnum,
+  field: GatsbyTypes$AboutMeCardsJsonFieldsEnum,
 |};
 
-export type AboutMeCardsJsonEdge = {|
-  +next?: ?AboutMeCardsJson,
-  +node: AboutMeCardsJson,
-  +previous?: ?AboutMeCardsJson,
+declare type GatsbyTypes$AboutMeCardsJsonEdge = {|
+  +next?: ?GatsbyTypes$AboutMeCardsJson,
+  +node: GatsbyTypes$AboutMeCardsJson,
+  +previous?: ?GatsbyTypes$AboutMeCardsJson,
 |};
 
-export const AboutMeCardsJsonFieldsEnumValues = Object.freeze({
+export const GatsbyTypes$AboutMeCardsJsonFieldsEnumValues = Object.freeze({
   id: 'id',
   parent___id: 'parent.id',
   parent___parent___id: 'parent.parent.id',
@@ -143,44 +145,44 @@ export const AboutMeCardsJsonFieldsEnumValues = Object.freeze({
   text: 'text',
 });
 
-export type AboutMeCardsJsonFieldsEnum = $Values<typeof AboutMeCardsJsonFieldsEnumValues>;
+declare type GatsbyTypes$AboutMeCardsJsonFieldsEnum = $Values<typeof GatsbyTypes$AboutMeCardsJsonFieldsEnumValues>;
 
-export type AboutMeCardsJsonFilterInput = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  name?: ?StringQueryOperatorInput,
-  title?: ?StringQueryOperatorInput,
-  text?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$AboutMeCardsJsonFilterInput = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  title?: ?GatsbyTypes$StringQueryOperatorInput,
+  text?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type AboutMeCardsJsonFilterListInput = {|
-  elemMatch?: ?AboutMeCardsJsonFilterInput,
+declare type GatsbyTypes$AboutMeCardsJsonFilterListInput = {|
+  elemMatch?: ?GatsbyTypes$AboutMeCardsJsonFilterInput,
 |};
 
-export type AboutMeCardsJsonGroupConnection = {|
+declare type GatsbyTypes$AboutMeCardsJsonGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<AboutMeCardsJsonEdge>,
-  +nodes: Array<AboutMeCardsJson>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$AboutMeCardsJsonEdge>,
+  +nodes: Array<GatsbyTypes$AboutMeCardsJson>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type AboutMeCardsJsonSortInput = {|
+declare type GatsbyTypes$AboutMeCardsJsonSortInput = {|
   fields?: ?Array<?AboutMeCardsJsonFieldsEnum>,
-  order?: ?Array<?SortOrderEnum>,
+  order?: ?Array<?GatsbyTypes$SortOrderEnum>,
 |};
 
-export type BooleanQueryOperatorInput = {|
+declare type GatsbyTypes$BooleanQueryOperatorInput = {|
   eq?: ?$ElementType<Scalars, 'Boolean'>,
   ne?: ?$ElementType<Scalars, 'Boolean'>,
   in?: ?Array<?$ElementType<Scalars, 'Boolean'>>,
   nin?: ?Array<?$ElementType<Scalars, 'Boolean'>>,
 |};
 
-export type DateQueryOperatorInput = {|
+declare type GatsbyTypes$DateQueryOperatorInput = {|
   eq?: ?$ElementType<Scalars, 'Date'>,
   ne?: ?$ElementType<Scalars, 'Date'>,
   gt?: ?$ElementType<Scalars, 'Date'>,
@@ -191,8 +193,8 @@ export type DateQueryOperatorInput = {|
   nin?: ?Array<?$ElementType<Scalars, 'Date'>>,
 |};
 
-export type Directory = {|
-  ...Node,
+declare type GatsbyTypes$Directory = {|
+  ...GatsbyTypes$Node,
   ...{|
     +sourceInstanceName: $ElementType<Scalars, 'String'>,
     +absolutePath: $ElementType<Scalars, 'String'>,
@@ -228,87 +230,87 @@ export type Directory = {|
     +blksize?: ?$ElementType<Scalars, 'Int'>,
     +blocks?: ?$ElementType<Scalars, 'Int'>,
     +id: $ElementType<Scalars, 'ID'>,
-    +parent?: ?Node,
-    +children: Array<Node>,
-    +internal: Internal,
+    +parent?: ?GatsbyTypes$Node,
+    +children: Array<GatsbyTypes$Node>,
+    +internal: GatsbyTypes$Internal,
   |},
 |};
 
-export type Directory_modifiedTimeArgs = {|
+declare type GatsbyTypes$Directory_modifiedTimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type Directory_accessTimeArgs = {|
+declare type GatsbyTypes$Directory_accessTimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type Directory_changeTimeArgs = {|
+declare type GatsbyTypes$Directory_changeTimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type Directory_birthTimeArgs = {|
+declare type GatsbyTypes$Directory_birthTimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type Directory_atimeArgs = {|
+declare type GatsbyTypes$Directory_atimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type Directory_mtimeArgs = {|
+declare type GatsbyTypes$Directory_mtimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type Directory_ctimeArgs = {|
+declare type GatsbyTypes$Directory_ctimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type DirectoryConnection = {|
+declare type GatsbyTypes$DirectoryConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<DirectoryEdge>,
-  +nodes: Array<Directory>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$DirectoryEdge>,
+  +nodes: Array<GatsbyTypes$Directory>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<DirectoryGroupConnection>,
+  +group: Array<GatsbyTypes$DirectoryGroupConnection>,
 |};
 
-export type DirectoryConnection_distinctArgs = {|
-  field: DirectoryFieldsEnum,
+declare type GatsbyTypes$DirectoryConnection_distinctArgs = {|
+  field: GatsbyTypes$DirectoryFieldsEnum,
 |};
 
-export type DirectoryConnection_groupArgs = {|
+declare type GatsbyTypes$DirectoryConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: DirectoryFieldsEnum,
+  field: GatsbyTypes$DirectoryFieldsEnum,
 |};
 
-export type DirectoryEdge = {|
-  +next?: ?Directory,
-  +node: Directory,
-  +previous?: ?Directory,
+declare type GatsbyTypes$DirectoryEdge = {|
+  +next?: ?GatsbyTypes$Directory,
+  +node: GatsbyTypes$Directory,
+  +previous?: ?GatsbyTypes$Directory,
 |};
 
-export const DirectoryFieldsEnumValues = Object.freeze({
+export const GatsbyTypes$DirectoryFieldsEnumValues = Object.freeze({
   sourceInstanceName: 'sourceInstanceName',
   absolutePath: 'absolutePath',
   relativePath: 'relativePath',
@@ -430,64 +432,64 @@ export const DirectoryFieldsEnumValues = Object.freeze({
   internal___type: 'internal.type',
 });
 
-export type DirectoryFieldsEnum = $Values<typeof DirectoryFieldsEnumValues>;
+declare type GatsbyTypes$DirectoryFieldsEnum = $Values<typeof GatsbyTypes$DirectoryFieldsEnumValues>;
 
-export type DirectoryFilterInput = {|
-  sourceInstanceName?: ?StringQueryOperatorInput,
-  absolutePath?: ?StringQueryOperatorInput,
-  relativePath?: ?StringQueryOperatorInput,
-  extension?: ?StringQueryOperatorInput,
-  size?: ?IntQueryOperatorInput,
-  prettySize?: ?StringQueryOperatorInput,
-  modifiedTime?: ?DateQueryOperatorInput,
-  accessTime?: ?DateQueryOperatorInput,
-  changeTime?: ?DateQueryOperatorInput,
-  birthTime?: ?DateQueryOperatorInput,
-  root?: ?StringQueryOperatorInput,
-  dir?: ?StringQueryOperatorInput,
-  base?: ?StringQueryOperatorInput,
-  ext?: ?StringQueryOperatorInput,
-  name?: ?StringQueryOperatorInput,
-  relativeDirectory?: ?StringQueryOperatorInput,
-  dev?: ?IntQueryOperatorInput,
-  mode?: ?IntQueryOperatorInput,
-  nlink?: ?IntQueryOperatorInput,
-  uid?: ?IntQueryOperatorInput,
-  gid?: ?IntQueryOperatorInput,
-  rdev?: ?IntQueryOperatorInput,
-  ino?: ?FloatQueryOperatorInput,
-  atimeMs?: ?FloatQueryOperatorInput,
-  mtimeMs?: ?FloatQueryOperatorInput,
-  ctimeMs?: ?FloatQueryOperatorInput,
-  atime?: ?DateQueryOperatorInput,
-  mtime?: ?DateQueryOperatorInput,
-  ctime?: ?DateQueryOperatorInput,
-  birthtime?: ?DateQueryOperatorInput,
-  birthtimeMs?: ?FloatQueryOperatorInput,
-  blksize?: ?IntQueryOperatorInput,
-  blocks?: ?IntQueryOperatorInput,
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
+declare type GatsbyTypes$DirectoryFilterInput = {|
+  sourceInstanceName?: ?GatsbyTypes$StringQueryOperatorInput,
+  absolutePath?: ?GatsbyTypes$StringQueryOperatorInput,
+  relativePath?: ?GatsbyTypes$StringQueryOperatorInput,
+  extension?: ?GatsbyTypes$StringQueryOperatorInput,
+  size?: ?GatsbyTypes$IntQueryOperatorInput,
+  prettySize?: ?GatsbyTypes$StringQueryOperatorInput,
+  modifiedTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  accessTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  changeTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  root?: ?GatsbyTypes$StringQueryOperatorInput,
+  dir?: ?GatsbyTypes$StringQueryOperatorInput,
+  base?: ?GatsbyTypes$StringQueryOperatorInput,
+  ext?: ?GatsbyTypes$StringQueryOperatorInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  relativeDirectory?: ?GatsbyTypes$StringQueryOperatorInput,
+  dev?: ?GatsbyTypes$IntQueryOperatorInput,
+  mode?: ?GatsbyTypes$IntQueryOperatorInput,
+  nlink?: ?GatsbyTypes$IntQueryOperatorInput,
+  uid?: ?GatsbyTypes$IntQueryOperatorInput,
+  gid?: ?GatsbyTypes$IntQueryOperatorInput,
+  rdev?: ?GatsbyTypes$IntQueryOperatorInput,
+  ino?: ?GatsbyTypes$FloatQueryOperatorInput,
+  atimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  mtimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  ctimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  atime?: ?GatsbyTypes$DateQueryOperatorInput,
+  mtime?: ?GatsbyTypes$DateQueryOperatorInput,
+  ctime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthtime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthtimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  blksize?: ?GatsbyTypes$IntQueryOperatorInput,
+  blocks?: ?GatsbyTypes$IntQueryOperatorInput,
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
 |};
 
-export type DirectoryGroupConnection = {|
+declare type GatsbyTypes$DirectoryGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<DirectoryEdge>,
-  +nodes: Array<Directory>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$DirectoryEdge>,
+  +nodes: Array<GatsbyTypes$Directory>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type DirectorySortInput = {|
+declare type GatsbyTypes$DirectorySortInput = {|
   fields?: ?Array<?DirectoryFieldsEnum>,
-  order?: ?Array<?SortOrderEnum>,
+  order?: ?Array<?GatsbyTypes$SortOrderEnum>,
 |};
 
-export type File = {|
-  ...Node,
+declare type GatsbyTypes$File = {|
+  ...GatsbyTypes$Node,
   ...{|
     +sourceInstanceName: $ElementType<Scalars, 'String'>,
     +absolutePath: $ElementType<Scalars, 'String'>,
@@ -525,91 +527,91 @@ export type File = {|
     /** Copy file to static directory and return public url to it */
     +publicURL?: ?$ElementType<Scalars, 'String'>,
     +id: $ElementType<Scalars, 'ID'>,
-    +parent?: ?Node,
-    +children: Array<Node>,
-    +internal: Internal,
-    +childrenIconLinksJson?: ?Array<?IconLinksJson>,
-    +childrenAboutMeCardsJson?: ?Array<?AboutMeCardsJson>,
-    +childrenNavItemsJson?: ?Array<?NavItemsJson>,
-    +childrenProjectsJson?: ?Array<?ProjectsJson>,
+    +parent?: ?GatsbyTypes$Node,
+    +children: Array<GatsbyTypes$Node>,
+    +internal: GatsbyTypes$Internal,
+    +childrenIconLinksJson?: ?Array<?GatsbyTypes$IconLinksJson>,
+    +childrenAboutMeCardsJson?: ?Array<?GatsbyTypes$AboutMeCardsJson>,
+    +childrenNavItemsJson?: ?Array<?GatsbyTypes$NavItemsJson>,
+    +childrenProjectsJson?: ?Array<?GatsbyTypes$ProjectsJson>,
   |},
 |};
 
-export type File_modifiedTimeArgs = {|
+declare type GatsbyTypes$File_modifiedTimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type File_accessTimeArgs = {|
+declare type GatsbyTypes$File_accessTimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type File_changeTimeArgs = {|
+declare type GatsbyTypes$File_changeTimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type File_birthTimeArgs = {|
+declare type GatsbyTypes$File_birthTimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type File_atimeArgs = {|
+declare type GatsbyTypes$File_atimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type File_mtimeArgs = {|
+declare type GatsbyTypes$File_mtimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type File_ctimeArgs = {|
+declare type GatsbyTypes$File_ctimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type FileConnection = {|
+declare type GatsbyTypes$FileConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<FileEdge>,
-  +nodes: Array<File>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$FileEdge>,
+  +nodes: Array<GatsbyTypes$File>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<FileGroupConnection>,
+  +group: Array<GatsbyTypes$FileGroupConnection>,
 |};
 
-export type FileConnection_distinctArgs = {|
-  field: FileFieldsEnum,
+declare type GatsbyTypes$FileConnection_distinctArgs = {|
+  field: GatsbyTypes$FileFieldsEnum,
 |};
 
-export type FileConnection_groupArgs = {|
+declare type GatsbyTypes$FileConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: FileFieldsEnum,
+  field: GatsbyTypes$FileFieldsEnum,
 |};
 
-export type FileEdge = {|
-  +next?: ?File,
-  +node: File,
-  +previous?: ?File,
+declare type GatsbyTypes$FileEdge = {|
+  +next?: ?GatsbyTypes$File,
+  +node: GatsbyTypes$File,
+  +previous?: ?GatsbyTypes$File,
 |};
 
-export const FileFieldsEnumValues = Object.freeze({
+export const GatsbyTypes$FileFieldsEnumValues = Object.freeze({
   sourceInstanceName: 'sourceInstanceName',
   absolutePath: 'absolutePath',
   relativePath: 'relativePath',
@@ -907,68 +909,68 @@ export const FileFieldsEnumValues = Object.freeze({
   childrenProjectsJson___links___link: 'childrenProjectsJson.links.link',
 });
 
-export type FileFieldsEnum = $Values<typeof FileFieldsEnumValues>;
+declare type GatsbyTypes$FileFieldsEnum = $Values<typeof GatsbyTypes$FileFieldsEnumValues>;
 
-export type FileFilterInput = {|
-  sourceInstanceName?: ?StringQueryOperatorInput,
-  absolutePath?: ?StringQueryOperatorInput,
-  relativePath?: ?StringQueryOperatorInput,
-  extension?: ?StringQueryOperatorInput,
-  size?: ?IntQueryOperatorInput,
-  prettySize?: ?StringQueryOperatorInput,
-  modifiedTime?: ?DateQueryOperatorInput,
-  accessTime?: ?DateQueryOperatorInput,
-  changeTime?: ?DateQueryOperatorInput,
-  birthTime?: ?DateQueryOperatorInput,
-  root?: ?StringQueryOperatorInput,
-  dir?: ?StringQueryOperatorInput,
-  base?: ?StringQueryOperatorInput,
-  ext?: ?StringQueryOperatorInput,
-  name?: ?StringQueryOperatorInput,
-  relativeDirectory?: ?StringQueryOperatorInput,
-  dev?: ?IntQueryOperatorInput,
-  mode?: ?IntQueryOperatorInput,
-  nlink?: ?IntQueryOperatorInput,
-  uid?: ?IntQueryOperatorInput,
-  gid?: ?IntQueryOperatorInput,
-  rdev?: ?IntQueryOperatorInput,
-  ino?: ?FloatQueryOperatorInput,
-  atimeMs?: ?FloatQueryOperatorInput,
-  mtimeMs?: ?FloatQueryOperatorInput,
-  ctimeMs?: ?FloatQueryOperatorInput,
-  atime?: ?DateQueryOperatorInput,
-  mtime?: ?DateQueryOperatorInput,
-  ctime?: ?DateQueryOperatorInput,
-  birthtime?: ?DateQueryOperatorInput,
-  birthtimeMs?: ?FloatQueryOperatorInput,
-  blksize?: ?IntQueryOperatorInput,
-  blocks?: ?IntQueryOperatorInput,
-  publicURL?: ?StringQueryOperatorInput,
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  childrenIconLinksJson?: ?IconLinksJsonFilterListInput,
-  childrenAboutMeCardsJson?: ?AboutMeCardsJsonFilterListInput,
-  childrenNavItemsJson?: ?NavItemsJsonFilterListInput,
-  childrenProjectsJson?: ?ProjectsJsonFilterListInput,
+declare type GatsbyTypes$FileFilterInput = {|
+  sourceInstanceName?: ?GatsbyTypes$StringQueryOperatorInput,
+  absolutePath?: ?GatsbyTypes$StringQueryOperatorInput,
+  relativePath?: ?GatsbyTypes$StringQueryOperatorInput,
+  extension?: ?GatsbyTypes$StringQueryOperatorInput,
+  size?: ?GatsbyTypes$IntQueryOperatorInput,
+  prettySize?: ?GatsbyTypes$StringQueryOperatorInput,
+  modifiedTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  accessTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  changeTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  root?: ?GatsbyTypes$StringQueryOperatorInput,
+  dir?: ?GatsbyTypes$StringQueryOperatorInput,
+  base?: ?GatsbyTypes$StringQueryOperatorInput,
+  ext?: ?GatsbyTypes$StringQueryOperatorInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  relativeDirectory?: ?GatsbyTypes$StringQueryOperatorInput,
+  dev?: ?GatsbyTypes$IntQueryOperatorInput,
+  mode?: ?GatsbyTypes$IntQueryOperatorInput,
+  nlink?: ?GatsbyTypes$IntQueryOperatorInput,
+  uid?: ?GatsbyTypes$IntQueryOperatorInput,
+  gid?: ?GatsbyTypes$IntQueryOperatorInput,
+  rdev?: ?GatsbyTypes$IntQueryOperatorInput,
+  ino?: ?GatsbyTypes$FloatQueryOperatorInput,
+  atimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  mtimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  ctimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  atime?: ?GatsbyTypes$DateQueryOperatorInput,
+  mtime?: ?GatsbyTypes$DateQueryOperatorInput,
+  ctime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthtime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthtimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  blksize?: ?GatsbyTypes$IntQueryOperatorInput,
+  blocks?: ?GatsbyTypes$IntQueryOperatorInput,
+  publicURL?: ?GatsbyTypes$StringQueryOperatorInput,
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  childrenIconLinksJson?: ?GatsbyTypes$IconLinksJsonFilterListInput,
+  childrenAboutMeCardsJson?: ?GatsbyTypes$AboutMeCardsJsonFilterListInput,
+  childrenNavItemsJson?: ?GatsbyTypes$NavItemsJsonFilterListInput,
+  childrenProjectsJson?: ?GatsbyTypes$ProjectsJsonFilterListInput,
 |};
 
-export type FileGroupConnection = {|
+declare type GatsbyTypes$FileGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<FileEdge>,
-  +nodes: Array<File>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$FileEdge>,
+  +nodes: Array<GatsbyTypes$File>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type FileSortInput = {|
+declare type GatsbyTypes$FileSortInput = {|
   fields?: ?Array<?FileFieldsEnum>,
-  order?: ?Array<?SortOrderEnum>,
+  order?: ?Array<?GatsbyTypes$SortOrderEnum>,
 |};
 
-export type FloatQueryOperatorInput = {|
+declare type GatsbyTypes$FloatQueryOperatorInput = {|
   eq?: ?$ElementType<Scalars, 'Float'>,
   ne?: ?$ElementType<Scalars, 'Float'>,
   gt?: ?$ElementType<Scalars, 'Float'>,
@@ -979,45 +981,45 @@ export type FloatQueryOperatorInput = {|
   nin?: ?Array<?$ElementType<Scalars, 'Float'>>,
 |};
 
-export type IconLinksJson = {|
-  ...Node,
+declare type GatsbyTypes$IconLinksJson = {|
+  ...GatsbyTypes$Node,
   ...{|
     +id: $ElementType<Scalars, 'ID'>,
-    +parent?: ?Node,
-    +children: Array<Node>,
-    +internal: Internal,
+    +parent?: ?GatsbyTypes$Node,
+    +children: Array<GatsbyTypes$Node>,
+    +internal: GatsbyTypes$Internal,
     +name?: ?$ElementType<Scalars, 'String'>,
     +icon?: ?$ElementType<Scalars, 'String'>,
     +url?: ?$ElementType<Scalars, 'String'>,
   |},
 |};
 
-export type IconLinksJsonConnection = {|
+declare type GatsbyTypes$IconLinksJsonConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<IconLinksJsonEdge>,
-  +nodes: Array<IconLinksJson>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$IconLinksJsonEdge>,
+  +nodes: Array<GatsbyTypes$IconLinksJson>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<IconLinksJsonGroupConnection>,
+  +group: Array<GatsbyTypes$IconLinksJsonGroupConnection>,
 |};
 
-export type IconLinksJsonConnection_distinctArgs = {|
-  field: IconLinksJsonFieldsEnum,
+declare type GatsbyTypes$IconLinksJsonConnection_distinctArgs = {|
+  field: GatsbyTypes$IconLinksJsonFieldsEnum,
 |};
 
-export type IconLinksJsonConnection_groupArgs = {|
+declare type GatsbyTypes$IconLinksJsonConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: IconLinksJsonFieldsEnum,
+  field: GatsbyTypes$IconLinksJsonFieldsEnum,
 |};
 
-export type IconLinksJsonEdge = {|
-  +next?: ?IconLinksJson,
-  +node: IconLinksJson,
-  +previous?: ?IconLinksJson,
+declare type GatsbyTypes$IconLinksJsonEdge = {|
+  +next?: ?GatsbyTypes$IconLinksJson,
+  +node: GatsbyTypes$IconLinksJson,
+  +previous?: ?GatsbyTypes$IconLinksJson,
 |};
 
-export const IconLinksJsonFieldsEnumValues = Object.freeze({
+export const GatsbyTypes$IconLinksJsonFieldsEnumValues = Object.freeze({
   id: 'id',
   parent___id: 'parent.id',
   parent___parent___id: 'parent.parent.id',
@@ -1109,37 +1111,37 @@ export const IconLinksJsonFieldsEnumValues = Object.freeze({
   url: 'url',
 });
 
-export type IconLinksJsonFieldsEnum = $Values<typeof IconLinksJsonFieldsEnumValues>;
+declare type GatsbyTypes$IconLinksJsonFieldsEnum = $Values<typeof GatsbyTypes$IconLinksJsonFieldsEnumValues>;
 
-export type IconLinksJsonFilterInput = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  name?: ?StringQueryOperatorInput,
-  icon?: ?StringQueryOperatorInput,
-  url?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$IconLinksJsonFilterInput = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  icon?: ?GatsbyTypes$StringQueryOperatorInput,
+  url?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type IconLinksJsonFilterListInput = {|
-  elemMatch?: ?IconLinksJsonFilterInput,
+declare type GatsbyTypes$IconLinksJsonFilterListInput = {|
+  elemMatch?: ?GatsbyTypes$IconLinksJsonFilterInput,
 |};
 
-export type IconLinksJsonGroupConnection = {|
+declare type GatsbyTypes$IconLinksJsonGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<IconLinksJsonEdge>,
-  +nodes: Array<IconLinksJson>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$IconLinksJsonEdge>,
+  +nodes: Array<GatsbyTypes$IconLinksJson>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type IconLinksJsonSortInput = {|
+declare type GatsbyTypes$IconLinksJsonSortInput = {|
   fields?: ?Array<?IconLinksJsonFieldsEnum>,
-  order?: ?Array<?SortOrderEnum>,
+  order?: ?Array<?GatsbyTypes$SortOrderEnum>,
 |};
 
-export type Internal = {|
+declare type GatsbyTypes$Internal = {|
   +content?: ?$ElementType<Scalars, 'String'>,
   +contentDigest: $ElementType<Scalars, 'String'>,
   +description?: ?$ElementType<Scalars, 'String'>,
@@ -1150,18 +1152,18 @@ export type Internal = {|
   +type: $ElementType<Scalars, 'String'>,
 |};
 
-export type InternalFilterInput = {|
-  content?: ?StringQueryOperatorInput,
-  contentDigest?: ?StringQueryOperatorInput,
-  description?: ?StringQueryOperatorInput,
-  fieldOwners?: ?StringQueryOperatorInput,
-  ignoreType?: ?BooleanQueryOperatorInput,
-  mediaType?: ?StringQueryOperatorInput,
-  owner?: ?StringQueryOperatorInput,
-  type?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$InternalFilterInput = {|
+  content?: ?GatsbyTypes$StringQueryOperatorInput,
+  contentDigest?: ?GatsbyTypes$StringQueryOperatorInput,
+  description?: ?GatsbyTypes$StringQueryOperatorInput,
+  fieldOwners?: ?GatsbyTypes$StringQueryOperatorInput,
+  ignoreType?: ?GatsbyTypes$BooleanQueryOperatorInput,
+  mediaType?: ?GatsbyTypes$StringQueryOperatorInput,
+  owner?: ?GatsbyTypes$StringQueryOperatorInput,
+  type?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type IntQueryOperatorInput = {|
+declare type GatsbyTypes$IntQueryOperatorInput = {|
   eq?: ?$ElementType<Scalars, 'Int'>,
   ne?: ?$ElementType<Scalars, 'Int'>,
   gt?: ?$ElementType<Scalars, 'Int'>,
@@ -1172,45 +1174,45 @@ export type IntQueryOperatorInput = {|
   nin?: ?Array<?$ElementType<Scalars, 'Int'>>,
 |};
 
-export type NavItemsJson = {|
-  ...Node,
+declare type GatsbyTypes$NavItemsJson = {|
+  ...GatsbyTypes$Node,
   ...{|
     +id: $ElementType<Scalars, 'ID'>,
-    +parent?: ?Node,
-    +children: Array<Node>,
-    +internal: Internal,
+    +parent?: ?GatsbyTypes$Node,
+    +children: Array<GatsbyTypes$Node>,
+    +internal: GatsbyTypes$Internal,
     +title?: ?$ElementType<Scalars, 'String'>,
     +path?: ?$ElementType<Scalars, 'String'>,
     +link?: ?$ElementType<Scalars, 'String'>,
   |},
 |};
 
-export type NavItemsJsonConnection = {|
+declare type GatsbyTypes$NavItemsJsonConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<NavItemsJsonEdge>,
-  +nodes: Array<NavItemsJson>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$NavItemsJsonEdge>,
+  +nodes: Array<GatsbyTypes$NavItemsJson>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<NavItemsJsonGroupConnection>,
+  +group: Array<GatsbyTypes$NavItemsJsonGroupConnection>,
 |};
 
-export type NavItemsJsonConnection_distinctArgs = {|
-  field: NavItemsJsonFieldsEnum,
+declare type GatsbyTypes$NavItemsJsonConnection_distinctArgs = {|
+  field: GatsbyTypes$NavItemsJsonFieldsEnum,
 |};
 
-export type NavItemsJsonConnection_groupArgs = {|
+declare type GatsbyTypes$NavItemsJsonConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: NavItemsJsonFieldsEnum,
+  field: GatsbyTypes$NavItemsJsonFieldsEnum,
 |};
 
-export type NavItemsJsonEdge = {|
-  +next?: ?NavItemsJson,
-  +node: NavItemsJson,
-  +previous?: ?NavItemsJson,
+declare type GatsbyTypes$NavItemsJsonEdge = {|
+  +next?: ?GatsbyTypes$NavItemsJson,
+  +node: GatsbyTypes$NavItemsJson,
+  +previous?: ?GatsbyTypes$NavItemsJson,
 |};
 
-export const NavItemsJsonFieldsEnumValues = Object.freeze({
+export const GatsbyTypes$NavItemsJsonFieldsEnumValues = Object.freeze({
   id: 'id',
   parent___id: 'parent.id',
   parent___parent___id: 'parent.parent.id',
@@ -1302,56 +1304,56 @@ export const NavItemsJsonFieldsEnumValues = Object.freeze({
   link: 'link',
 });
 
-export type NavItemsJsonFieldsEnum = $Values<typeof NavItemsJsonFieldsEnumValues>;
+declare type GatsbyTypes$NavItemsJsonFieldsEnum = $Values<typeof GatsbyTypes$NavItemsJsonFieldsEnumValues>;
 
-export type NavItemsJsonFilterInput = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  title?: ?StringQueryOperatorInput,
-  path?: ?StringQueryOperatorInput,
-  link?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$NavItemsJsonFilterInput = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  title?: ?GatsbyTypes$StringQueryOperatorInput,
+  path?: ?GatsbyTypes$StringQueryOperatorInput,
+  link?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type NavItemsJsonFilterListInput = {|
-  elemMatch?: ?NavItemsJsonFilterInput,
+declare type GatsbyTypes$NavItemsJsonFilterListInput = {|
+  elemMatch?: ?GatsbyTypes$NavItemsJsonFilterInput,
 |};
 
-export type NavItemsJsonGroupConnection = {|
+declare type GatsbyTypes$NavItemsJsonGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<NavItemsJsonEdge>,
-  +nodes: Array<NavItemsJson>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$NavItemsJsonEdge>,
+  +nodes: Array<GatsbyTypes$NavItemsJson>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type NavItemsJsonSortInput = {|
+declare type GatsbyTypes$NavItemsJsonSortInput = {|
   fields?: ?Array<?NavItemsJsonFieldsEnum>,
-  order?: ?Array<?SortOrderEnum>,
+  order?: ?Array<?GatsbyTypes$SortOrderEnum>,
 |};
 
 /** Node Interface */
-export type Node = {|
+declare type GatsbyTypes$Node = {|
   +id: $ElementType<Scalars, 'ID'>,
-  +parent?: ?Node,
-  +children: Array<Node>,
-  +internal: Internal,
+  +parent?: ?GatsbyTypes$Node,
+  +children: Array<GatsbyTypes$Node>,
+  +internal: GatsbyTypes$Internal,
 |};
 
-export type NodeFilterInput = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
+declare type GatsbyTypes$NodeFilterInput = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
 |};
 
-export type NodeFilterListInput = {|
-  elemMatch?: ?NodeFilterInput,
+declare type GatsbyTypes$NodeFilterListInput = {|
+  elemMatch?: ?GatsbyTypes$NodeFilterInput,
 |};
 
-export type PageInfo = {|
+declare type GatsbyTypes$PageInfo = {|
   +currentPage: $ElementType<Scalars, 'Int'>,
   +hasPreviousPage: $ElementType<Scalars, 'Boolean'>,
   +hasNextPage: $ElementType<Scalars, 'Boolean'>,
@@ -1361,46 +1363,46 @@ export type PageInfo = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
 |};
 
-export type ProjectsJson = {|
-  ...Node,
+declare type GatsbyTypes$ProjectsJson = {|
+  ...GatsbyTypes$Node,
   ...{|
     +id: $ElementType<Scalars, 'ID'>,
-    +parent?: ?Node,
-    +children: Array<Node>,
-    +internal: Internal,
+    +parent?: ?GatsbyTypes$Node,
+    +children: Array<GatsbyTypes$Node>,
+    +internal: GatsbyTypes$Internal,
     +name?: ?$ElementType<Scalars, 'String'>,
     +title?: ?$ElementType<Scalars, 'String'>,
     +tags?: ?Array<?$ElementType<Scalars, 'String'>>,
-    +links?: ?Array<?ProjectsJsonLinks>,
+    +links?: ?Array<?GatsbyTypes$ProjectsJsonLinks>,
   |},
 |};
 
-export type ProjectsJsonConnection = {|
+declare type GatsbyTypes$ProjectsJsonConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<ProjectsJsonEdge>,
-  +nodes: Array<ProjectsJson>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$ProjectsJsonEdge>,
+  +nodes: Array<GatsbyTypes$ProjectsJson>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<ProjectsJsonGroupConnection>,
+  +group: Array<GatsbyTypes$ProjectsJsonGroupConnection>,
 |};
 
-export type ProjectsJsonConnection_distinctArgs = {|
-  field: ProjectsJsonFieldsEnum,
+declare type GatsbyTypes$ProjectsJsonConnection_distinctArgs = {|
+  field: GatsbyTypes$ProjectsJsonFieldsEnum,
 |};
 
-export type ProjectsJsonConnection_groupArgs = {|
+declare type GatsbyTypes$ProjectsJsonConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: ProjectsJsonFieldsEnum,
+  field: GatsbyTypes$ProjectsJsonFieldsEnum,
 |};
 
-export type ProjectsJsonEdge = {|
-  +next?: ?ProjectsJson,
-  +node: ProjectsJson,
-  +previous?: ?ProjectsJson,
+declare type GatsbyTypes$ProjectsJsonEdge = {|
+  +next?: ?GatsbyTypes$ProjectsJson,
+  +node: GatsbyTypes$ProjectsJson,
+  +previous?: ?GatsbyTypes$ProjectsJson,
 |};
 
-export const ProjectsJsonFieldsEnumValues = Object.freeze({
+export const GatsbyTypes$ProjectsJsonFieldsEnumValues = Object.freeze({
   id: 'id',
   parent___id: 'parent.id',
   parent___parent___id: 'parent.parent.id',
@@ -1495,385 +1497,389 @@ export const ProjectsJsonFieldsEnumValues = Object.freeze({
   links___link: 'links.link',
 });
 
-export type ProjectsJsonFieldsEnum = $Values<typeof ProjectsJsonFieldsEnumValues>;
+declare type GatsbyTypes$ProjectsJsonFieldsEnum = $Values<typeof GatsbyTypes$ProjectsJsonFieldsEnumValues>;
 
-export type ProjectsJsonFilterInput = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  name?: ?StringQueryOperatorInput,
-  title?: ?StringQueryOperatorInput,
-  tags?: ?StringQueryOperatorInput,
-  links?: ?ProjectsJsonLinksFilterListInput,
+declare type GatsbyTypes$ProjectsJsonFilterInput = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  title?: ?GatsbyTypes$StringQueryOperatorInput,
+  tags?: ?GatsbyTypes$StringQueryOperatorInput,
+  links?: ?GatsbyTypes$ProjectsJsonLinksFilterListInput,
 |};
 
-export type ProjectsJsonFilterListInput = {|
-  elemMatch?: ?ProjectsJsonFilterInput,
+declare type GatsbyTypes$ProjectsJsonFilterListInput = {|
+  elemMatch?: ?GatsbyTypes$ProjectsJsonFilterInput,
 |};
 
-export type ProjectsJsonGroupConnection = {|
+declare type GatsbyTypes$ProjectsJsonGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<ProjectsJsonEdge>,
-  +nodes: Array<ProjectsJson>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$ProjectsJsonEdge>,
+  +nodes: Array<GatsbyTypes$ProjectsJson>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type ProjectsJsonLinks = {|
+declare type GatsbyTypes$ProjectsJsonLinks = {|
   +icon?: ?$ElementType<Scalars, 'String'>,
   +link?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type ProjectsJsonLinksFilterInput = {|
-  icon?: ?StringQueryOperatorInput,
-  link?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$ProjectsJsonLinksFilterInput = {|
+  icon?: ?GatsbyTypes$StringQueryOperatorInput,
+  link?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type ProjectsJsonLinksFilterListInput = {|
-  elemMatch?: ?ProjectsJsonLinksFilterInput,
+declare type GatsbyTypes$ProjectsJsonLinksFilterListInput = {|
+  elemMatch?: ?GatsbyTypes$ProjectsJsonLinksFilterInput,
 |};
 
-export type ProjectsJsonSortInput = {|
+declare type GatsbyTypes$ProjectsJsonSortInput = {|
   fields?: ?Array<?ProjectsJsonFieldsEnum>,
-  order?: ?Array<?SortOrderEnum>,
+  order?: ?Array<?GatsbyTypes$SortOrderEnum>,
 |};
 
-export type Query = {|
-  +file?: ?File,
-  +allFile: FileConnection,
-  +directory?: ?Directory,
-  +allDirectory: DirectoryConnection,
-  +sitePage?: ?SitePage,
-  +allSitePage: SitePageConnection,
-  +site?: ?Site,
-  +allSite: SiteConnection,
-  +projectsJson?: ?ProjectsJson,
-  +allProjectsJson: ProjectsJsonConnection,
-  +navItemsJson?: ?NavItemsJson,
-  +allNavItemsJson: NavItemsJsonConnection,
-  +aboutMeCardsJson?: ?AboutMeCardsJson,
-  +allAboutMeCardsJson: AboutMeCardsJsonConnection,
-  +iconLinksJson?: ?IconLinksJson,
-  +allIconLinksJson: IconLinksJsonConnection,
-  +siteBuildMetadata?: ?SiteBuildMetadata,
-  +allSiteBuildMetadata: SiteBuildMetadataConnection,
-  +sitePlugin?: ?SitePlugin,
-  +allSitePlugin: SitePluginConnection,
+declare type GatsbyTypes$Query = {|
+  +file?: ?GatsbyTypes$File,
+  +allFile: GatsbyTypes$FileConnection,
+  +directory?: ?GatsbyTypes$Directory,
+  +allDirectory: GatsbyTypes$DirectoryConnection,
+  +sitePage?: ?GatsbyTypes$SitePage,
+  +allSitePage: GatsbyTypes$SitePageConnection,
+  +site?: ?GatsbyTypes$Site,
+  +allSite: GatsbyTypes$SiteConnection,
+  +projectsJson?: ?GatsbyTypes$ProjectsJson,
+  +allProjectsJson: GatsbyTypes$ProjectsJsonConnection,
+  +navItemsJson?: ?GatsbyTypes$NavItemsJson,
+  +allNavItemsJson: GatsbyTypes$NavItemsJsonConnection,
+  +iconLinksJson?: ?GatsbyTypes$IconLinksJson,
+  +allIconLinksJson: GatsbyTypes$IconLinksJsonConnection,
+  +aboutMeCardsJson?: ?GatsbyTypes$AboutMeCardsJson,
+  +allAboutMeCardsJson: GatsbyTypes$AboutMeCardsJsonConnection,
+  +siteBuildMetadata?: ?GatsbyTypes$SiteBuildMetadata,
+  +allSiteBuildMetadata: GatsbyTypes$SiteBuildMetadataConnection,
+  +sitePlugin?: ?GatsbyTypes$SitePlugin,
+  +allSitePlugin: GatsbyTypes$SitePluginConnection,
 |};
 
-export type Query_fileArgs = {|
-  sourceInstanceName?: ?StringQueryOperatorInput,
-  absolutePath?: ?StringQueryOperatorInput,
-  relativePath?: ?StringQueryOperatorInput,
-  extension?: ?StringQueryOperatorInput,
-  size?: ?IntQueryOperatorInput,
-  prettySize?: ?StringQueryOperatorInput,
-  modifiedTime?: ?DateQueryOperatorInput,
-  accessTime?: ?DateQueryOperatorInput,
-  changeTime?: ?DateQueryOperatorInput,
-  birthTime?: ?DateQueryOperatorInput,
-  root?: ?StringQueryOperatorInput,
-  dir?: ?StringQueryOperatorInput,
-  base?: ?StringQueryOperatorInput,
-  ext?: ?StringQueryOperatorInput,
-  name?: ?StringQueryOperatorInput,
-  relativeDirectory?: ?StringQueryOperatorInput,
-  dev?: ?IntQueryOperatorInput,
-  mode?: ?IntQueryOperatorInput,
-  nlink?: ?IntQueryOperatorInput,
-  uid?: ?IntQueryOperatorInput,
-  gid?: ?IntQueryOperatorInput,
-  rdev?: ?IntQueryOperatorInput,
-  ino?: ?FloatQueryOperatorInput,
-  atimeMs?: ?FloatQueryOperatorInput,
-  mtimeMs?: ?FloatQueryOperatorInput,
-  ctimeMs?: ?FloatQueryOperatorInput,
-  atime?: ?DateQueryOperatorInput,
-  mtime?: ?DateQueryOperatorInput,
-  ctime?: ?DateQueryOperatorInput,
-  birthtime?: ?DateQueryOperatorInput,
-  birthtimeMs?: ?FloatQueryOperatorInput,
-  blksize?: ?IntQueryOperatorInput,
-  blocks?: ?IntQueryOperatorInput,
-  publicURL?: ?StringQueryOperatorInput,
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  childrenIconLinksJson?: ?IconLinksJsonFilterListInput,
-  childrenAboutMeCardsJson?: ?AboutMeCardsJsonFilterListInput,
-  childrenNavItemsJson?: ?NavItemsJsonFilterListInput,
-  childrenProjectsJson?: ?ProjectsJsonFilterListInput,
+declare type GatsbyTypes$Query_fileArgs = {|
+  sourceInstanceName?: ?GatsbyTypes$StringQueryOperatorInput,
+  absolutePath?: ?GatsbyTypes$StringQueryOperatorInput,
+  relativePath?: ?GatsbyTypes$StringQueryOperatorInput,
+  extension?: ?GatsbyTypes$StringQueryOperatorInput,
+  size?: ?GatsbyTypes$IntQueryOperatorInput,
+  prettySize?: ?GatsbyTypes$StringQueryOperatorInput,
+  modifiedTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  accessTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  changeTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  root?: ?GatsbyTypes$StringQueryOperatorInput,
+  dir?: ?GatsbyTypes$StringQueryOperatorInput,
+  base?: ?GatsbyTypes$StringQueryOperatorInput,
+  ext?: ?GatsbyTypes$StringQueryOperatorInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  relativeDirectory?: ?GatsbyTypes$StringQueryOperatorInput,
+  dev?: ?GatsbyTypes$IntQueryOperatorInput,
+  mode?: ?GatsbyTypes$IntQueryOperatorInput,
+  nlink?: ?GatsbyTypes$IntQueryOperatorInput,
+  uid?: ?GatsbyTypes$IntQueryOperatorInput,
+  gid?: ?GatsbyTypes$IntQueryOperatorInput,
+  rdev?: ?GatsbyTypes$IntQueryOperatorInput,
+  ino?: ?GatsbyTypes$FloatQueryOperatorInput,
+  atimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  mtimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  ctimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  atime?: ?GatsbyTypes$DateQueryOperatorInput,
+  mtime?: ?GatsbyTypes$DateQueryOperatorInput,
+  ctime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthtime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthtimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  blksize?: ?GatsbyTypes$IntQueryOperatorInput,
+  blocks?: ?GatsbyTypes$IntQueryOperatorInput,
+  publicURL?: ?GatsbyTypes$StringQueryOperatorInput,
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  childrenIconLinksJson?: ?GatsbyTypes$IconLinksJsonFilterListInput,
+  childrenAboutMeCardsJson?: ?GatsbyTypes$AboutMeCardsJsonFilterListInput,
+  childrenNavItemsJson?: ?GatsbyTypes$NavItemsJsonFilterListInput,
+  childrenProjectsJson?: ?GatsbyTypes$ProjectsJsonFilterListInput,
 |};
 
-export type Query_allFileArgs = {|
-  filter?: ?FileFilterInput,
-  sort?: ?FileSortInput,
+declare type GatsbyTypes$Query_allFileArgs = {|
+  filter?: ?GatsbyTypes$FileFilterInput,
+  sort?: ?GatsbyTypes$FileSortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
-export type Query_directoryArgs = {|
-  sourceInstanceName?: ?StringQueryOperatorInput,
-  absolutePath?: ?StringQueryOperatorInput,
-  relativePath?: ?StringQueryOperatorInput,
-  extension?: ?StringQueryOperatorInput,
-  size?: ?IntQueryOperatorInput,
-  prettySize?: ?StringQueryOperatorInput,
-  modifiedTime?: ?DateQueryOperatorInput,
-  accessTime?: ?DateQueryOperatorInput,
-  changeTime?: ?DateQueryOperatorInput,
-  birthTime?: ?DateQueryOperatorInput,
-  root?: ?StringQueryOperatorInput,
-  dir?: ?StringQueryOperatorInput,
-  base?: ?StringQueryOperatorInput,
-  ext?: ?StringQueryOperatorInput,
-  name?: ?StringQueryOperatorInput,
-  relativeDirectory?: ?StringQueryOperatorInput,
-  dev?: ?IntQueryOperatorInput,
-  mode?: ?IntQueryOperatorInput,
-  nlink?: ?IntQueryOperatorInput,
-  uid?: ?IntQueryOperatorInput,
-  gid?: ?IntQueryOperatorInput,
-  rdev?: ?IntQueryOperatorInput,
-  ino?: ?FloatQueryOperatorInput,
-  atimeMs?: ?FloatQueryOperatorInput,
-  mtimeMs?: ?FloatQueryOperatorInput,
-  ctimeMs?: ?FloatQueryOperatorInput,
-  atime?: ?DateQueryOperatorInput,
-  mtime?: ?DateQueryOperatorInput,
-  ctime?: ?DateQueryOperatorInput,
-  birthtime?: ?DateQueryOperatorInput,
-  birthtimeMs?: ?FloatQueryOperatorInput,
-  blksize?: ?IntQueryOperatorInput,
-  blocks?: ?IntQueryOperatorInput,
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
+declare type GatsbyTypes$Query_directoryArgs = {|
+  sourceInstanceName?: ?GatsbyTypes$StringQueryOperatorInput,
+  absolutePath?: ?GatsbyTypes$StringQueryOperatorInput,
+  relativePath?: ?GatsbyTypes$StringQueryOperatorInput,
+  extension?: ?GatsbyTypes$StringQueryOperatorInput,
+  size?: ?GatsbyTypes$IntQueryOperatorInput,
+  prettySize?: ?GatsbyTypes$StringQueryOperatorInput,
+  modifiedTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  accessTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  changeTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  root?: ?GatsbyTypes$StringQueryOperatorInput,
+  dir?: ?GatsbyTypes$StringQueryOperatorInput,
+  base?: ?GatsbyTypes$StringQueryOperatorInput,
+  ext?: ?GatsbyTypes$StringQueryOperatorInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  relativeDirectory?: ?GatsbyTypes$StringQueryOperatorInput,
+  dev?: ?GatsbyTypes$IntQueryOperatorInput,
+  mode?: ?GatsbyTypes$IntQueryOperatorInput,
+  nlink?: ?GatsbyTypes$IntQueryOperatorInput,
+  uid?: ?GatsbyTypes$IntQueryOperatorInput,
+  gid?: ?GatsbyTypes$IntQueryOperatorInput,
+  rdev?: ?GatsbyTypes$IntQueryOperatorInput,
+  ino?: ?GatsbyTypes$FloatQueryOperatorInput,
+  atimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  mtimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  ctimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  atime?: ?GatsbyTypes$DateQueryOperatorInput,
+  mtime?: ?GatsbyTypes$DateQueryOperatorInput,
+  ctime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthtime?: ?GatsbyTypes$DateQueryOperatorInput,
+  birthtimeMs?: ?GatsbyTypes$FloatQueryOperatorInput,
+  blksize?: ?GatsbyTypes$IntQueryOperatorInput,
+  blocks?: ?GatsbyTypes$IntQueryOperatorInput,
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
 |};
 
-export type Query_allDirectoryArgs = {|
-  filter?: ?DirectoryFilterInput,
-  sort?: ?DirectorySortInput,
+declare type GatsbyTypes$Query_allDirectoryArgs = {|
+  filter?: ?GatsbyTypes$DirectoryFilterInput,
+  sort?: ?GatsbyTypes$DirectorySortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
-export type Query_sitePageArgs = {|
-  path?: ?StringQueryOperatorInput,
-  component?: ?StringQueryOperatorInput,
-  internalComponentName?: ?StringQueryOperatorInput,
-  componentChunkName?: ?StringQueryOperatorInput,
-  matchPath?: ?StringQueryOperatorInput,
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  isCreatedByStatefulCreatePages?: ?BooleanQueryOperatorInput,
-  pluginCreator?: ?SitePluginFilterInput,
-  pluginCreatorId?: ?StringQueryOperatorInput,
-  componentPath?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$Query_sitePageArgs = {|
+  path?: ?GatsbyTypes$StringQueryOperatorInput,
+  component?: ?GatsbyTypes$StringQueryOperatorInput,
+  internalComponentName?: ?GatsbyTypes$StringQueryOperatorInput,
+  componentChunkName?: ?GatsbyTypes$StringQueryOperatorInput,
+  matchPath?: ?GatsbyTypes$StringQueryOperatorInput,
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  isCreatedByStatefulCreatePages?: ?GatsbyTypes$BooleanQueryOperatorInput,
+  pluginCreator?: ?GatsbyTypes$SitePluginFilterInput,
+  pluginCreatorId?: ?GatsbyTypes$StringQueryOperatorInput,
+  componentPath?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type Query_allSitePageArgs = {|
-  filter?: ?SitePageFilterInput,
-  sort?: ?SitePageSortInput,
+declare type GatsbyTypes$Query_allSitePageArgs = {|
+  filter?: ?GatsbyTypes$SitePageFilterInput,
+  sort?: ?GatsbyTypes$SitePageSortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
-export type Query_siteArgs = {|
-  buildTime?: ?DateQueryOperatorInput,
-  siteMetadata?: ?SiteSiteMetadataFilterInput,
-  polyfill?: ?BooleanQueryOperatorInput,
-  pathPrefix?: ?StringQueryOperatorInput,
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
+declare type GatsbyTypes$Query_siteArgs = {|
+  buildTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  siteMetadata?: ?GatsbyTypes$SiteSiteMetadataFilterInput,
+  port?: ?GatsbyTypes$IntQueryOperatorInput,
+  host?: ?GatsbyTypes$StringQueryOperatorInput,
+  polyfill?: ?GatsbyTypes$BooleanQueryOperatorInput,
+  pathPrefix?: ?GatsbyTypes$StringQueryOperatorInput,
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
 |};
 
-export type Query_allSiteArgs = {|
-  filter?: ?SiteFilterInput,
-  sort?: ?SiteSortInput,
+declare type GatsbyTypes$Query_allSiteArgs = {|
+  filter?: ?GatsbyTypes$SiteFilterInput,
+  sort?: ?GatsbyTypes$SiteSortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
-export type Query_projectsJsonArgs = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  name?: ?StringQueryOperatorInput,
-  title?: ?StringQueryOperatorInput,
-  tags?: ?StringQueryOperatorInput,
-  links?: ?ProjectsJsonLinksFilterListInput,
+declare type GatsbyTypes$Query_projectsJsonArgs = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  title?: ?GatsbyTypes$StringQueryOperatorInput,
+  tags?: ?GatsbyTypes$StringQueryOperatorInput,
+  links?: ?GatsbyTypes$ProjectsJsonLinksFilterListInput,
 |};
 
-export type Query_allProjectsJsonArgs = {|
-  filter?: ?ProjectsJsonFilterInput,
-  sort?: ?ProjectsJsonSortInput,
+declare type GatsbyTypes$Query_allProjectsJsonArgs = {|
+  filter?: ?GatsbyTypes$ProjectsJsonFilterInput,
+  sort?: ?GatsbyTypes$ProjectsJsonSortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
-export type Query_navItemsJsonArgs = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  title?: ?StringQueryOperatorInput,
-  path?: ?StringQueryOperatorInput,
-  link?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$Query_navItemsJsonArgs = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  title?: ?GatsbyTypes$StringQueryOperatorInput,
+  path?: ?GatsbyTypes$StringQueryOperatorInput,
+  link?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type Query_allNavItemsJsonArgs = {|
-  filter?: ?NavItemsJsonFilterInput,
-  sort?: ?NavItemsJsonSortInput,
+declare type GatsbyTypes$Query_allNavItemsJsonArgs = {|
+  filter?: ?GatsbyTypes$NavItemsJsonFilterInput,
+  sort?: ?GatsbyTypes$NavItemsJsonSortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
-export type Query_aboutMeCardsJsonArgs = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  name?: ?StringQueryOperatorInput,
-  title?: ?StringQueryOperatorInput,
-  text?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$Query_iconLinksJsonArgs = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  icon?: ?GatsbyTypes$StringQueryOperatorInput,
+  url?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type Query_allAboutMeCardsJsonArgs = {|
-  filter?: ?AboutMeCardsJsonFilterInput,
-  sort?: ?AboutMeCardsJsonSortInput,
+declare type GatsbyTypes$Query_allIconLinksJsonArgs = {|
+  filter?: ?GatsbyTypes$IconLinksJsonFilterInput,
+  sort?: ?GatsbyTypes$IconLinksJsonSortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
-export type Query_iconLinksJsonArgs = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  name?: ?StringQueryOperatorInput,
-  icon?: ?StringQueryOperatorInput,
-  url?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$Query_aboutMeCardsJsonArgs = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  title?: ?GatsbyTypes$StringQueryOperatorInput,
+  text?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type Query_allIconLinksJsonArgs = {|
-  filter?: ?IconLinksJsonFilterInput,
-  sort?: ?IconLinksJsonSortInput,
+declare type GatsbyTypes$Query_allAboutMeCardsJsonArgs = {|
+  filter?: ?GatsbyTypes$AboutMeCardsJsonFilterInput,
+  sort?: ?GatsbyTypes$AboutMeCardsJsonSortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
-export type Query_siteBuildMetadataArgs = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  buildTime?: ?DateQueryOperatorInput,
+declare type GatsbyTypes$Query_siteBuildMetadataArgs = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  buildTime?: ?GatsbyTypes$DateQueryOperatorInput,
 |};
 
-export type Query_allSiteBuildMetadataArgs = {|
-  filter?: ?SiteBuildMetadataFilterInput,
-  sort?: ?SiteBuildMetadataSortInput,
+declare type GatsbyTypes$Query_allSiteBuildMetadataArgs = {|
+  filter?: ?GatsbyTypes$SiteBuildMetadataFilterInput,
+  sort?: ?GatsbyTypes$SiteBuildMetadataSortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
-export type Query_sitePluginArgs = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  resolve?: ?StringQueryOperatorInput,
-  name?: ?StringQueryOperatorInput,
-  version?: ?StringQueryOperatorInput,
-  pluginOptions?: ?SitePluginPluginOptionsFilterInput,
-  nodeAPIs?: ?StringQueryOperatorInput,
-  ssrAPIs?: ?StringQueryOperatorInput,
-  pluginFilepath?: ?StringQueryOperatorInput,
-  packageJson?: ?SitePluginPackageJsonFilterInput,
+declare type GatsbyTypes$Query_sitePluginArgs = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  resolve?: ?GatsbyTypes$StringQueryOperatorInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  version?: ?GatsbyTypes$StringQueryOperatorInput,
+  pluginOptions?: ?GatsbyTypes$SitePluginPluginOptionsFilterInput,
+  nodeAPIs?: ?GatsbyTypes$StringQueryOperatorInput,
+  ssrAPIs?: ?GatsbyTypes$StringQueryOperatorInput,
+  pluginFilepath?: ?GatsbyTypes$StringQueryOperatorInput,
+  packageJson?: ?GatsbyTypes$SitePluginPackageJsonFilterInput,
 |};
 
-export type Query_allSitePluginArgs = {|
-  filter?: ?SitePluginFilterInput,
-  sort?: ?SitePluginSortInput,
+declare type GatsbyTypes$Query_allSitePluginArgs = {|
+  filter?: ?GatsbyTypes$SitePluginFilterInput,
+  sort?: ?GatsbyTypes$SitePluginSortInput,
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
 |};
 
-export type Site = {|
-  ...Node,
+declare type GatsbyTypes$Site = {|
+  ...GatsbyTypes$Node,
   ...{|
     +buildTime?: ?$ElementType<Scalars, 'Date'>,
-    +siteMetadata?: ?SiteSiteMetadata,
+    +siteMetadata?: ?GatsbyTypes$SiteSiteMetadata,
+    +port?: ?$ElementType<Scalars, 'Int'>,
+    +host?: ?$ElementType<Scalars, 'String'>,
     +polyfill?: ?$ElementType<Scalars, 'Boolean'>,
     +pathPrefix?: ?$ElementType<Scalars, 'String'>,
     +id: $ElementType<Scalars, 'ID'>,
-    +parent?: ?Node,
-    +children: Array<Node>,
-    +internal: Internal,
+    +parent?: ?GatsbyTypes$Node,
+    +children: Array<GatsbyTypes$Node>,
+    +internal: GatsbyTypes$Internal,
   |},
 |};
 
-export type Site_buildTimeArgs = {|
+declare type GatsbyTypes$Site_buildTimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type SiteBuildMetadata = {|
-  ...Node,
+declare type GatsbyTypes$SiteBuildMetadata = {|
+  ...GatsbyTypes$Node,
   ...{|
     +id: $ElementType<Scalars, 'ID'>,
-    +parent?: ?Node,
-    +children: Array<Node>,
-    +internal: Internal,
+    +parent?: ?GatsbyTypes$Node,
+    +children: Array<GatsbyTypes$Node>,
+    +internal: GatsbyTypes$Internal,
     +buildTime?: ?$ElementType<Scalars, 'Date'>,
   |},
 |};
 
-export type SiteBuildMetadata_buildTimeArgs = {|
+declare type GatsbyTypes$SiteBuildMetadata_buildTimeArgs = {|
   formatString?: ?$ElementType<Scalars, 'String'>,
   fromNow?: ?$ElementType<Scalars, 'Boolean'>,
   difference?: ?$ElementType<Scalars, 'String'>,
   locale?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type SiteBuildMetadataConnection = {|
+declare type GatsbyTypes$SiteBuildMetadataConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<SiteBuildMetadataEdge>,
-  +nodes: Array<SiteBuildMetadata>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$SiteBuildMetadataEdge>,
+  +nodes: Array<GatsbyTypes$SiteBuildMetadata>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<SiteBuildMetadataGroupConnection>,
+  +group: Array<GatsbyTypes$SiteBuildMetadataGroupConnection>,
 |};
 
-export type SiteBuildMetadataConnection_distinctArgs = {|
-  field: SiteBuildMetadataFieldsEnum,
+declare type GatsbyTypes$SiteBuildMetadataConnection_distinctArgs = {|
+  field: GatsbyTypes$SiteBuildMetadataFieldsEnum,
 |};
 
-export type SiteBuildMetadataConnection_groupArgs = {|
+declare type GatsbyTypes$SiteBuildMetadataConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: SiteBuildMetadataFieldsEnum,
+  field: GatsbyTypes$SiteBuildMetadataFieldsEnum,
 |};
 
-export type SiteBuildMetadataEdge = {|
-  +next?: ?SiteBuildMetadata,
-  +node: SiteBuildMetadata,
-  +previous?: ?SiteBuildMetadata,
+declare type GatsbyTypes$SiteBuildMetadataEdge = {|
+  +next?: ?GatsbyTypes$SiteBuildMetadata,
+  +node: GatsbyTypes$SiteBuildMetadata,
+  +previous?: ?GatsbyTypes$SiteBuildMetadata,
 |};
 
-export const SiteBuildMetadataFieldsEnumValues = Object.freeze({
+export const GatsbyTypes$SiteBuildMetadataFieldsEnumValues = Object.freeze({
   id: 'id',
   parent___id: 'parent.id',
   parent___parent___id: 'parent.parent.id',
@@ -1963,56 +1969,56 @@ export const SiteBuildMetadataFieldsEnumValues = Object.freeze({
   buildTime: 'buildTime',
 });
 
-export type SiteBuildMetadataFieldsEnum = $Values<typeof SiteBuildMetadataFieldsEnumValues>;
+declare type GatsbyTypes$SiteBuildMetadataFieldsEnum = $Values<typeof GatsbyTypes$SiteBuildMetadataFieldsEnumValues>;
 
-export type SiteBuildMetadataFilterInput = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  buildTime?: ?DateQueryOperatorInput,
+declare type GatsbyTypes$SiteBuildMetadataFilterInput = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  buildTime?: ?GatsbyTypes$DateQueryOperatorInput,
 |};
 
-export type SiteBuildMetadataGroupConnection = {|
+declare type GatsbyTypes$SiteBuildMetadataGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<SiteBuildMetadataEdge>,
-  +nodes: Array<SiteBuildMetadata>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$SiteBuildMetadataEdge>,
+  +nodes: Array<GatsbyTypes$SiteBuildMetadata>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type SiteBuildMetadataSortInput = {|
+declare type GatsbyTypes$SiteBuildMetadataSortInput = {|
   fields?: ?Array<?SiteBuildMetadataFieldsEnum>,
-  order?: ?Array<?SortOrderEnum>,
+  order?: ?Array<?GatsbyTypes$SortOrderEnum>,
 |};
 
-export type SiteConnection = {|
+declare type GatsbyTypes$SiteConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<SiteEdge>,
-  +nodes: Array<Site>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$SiteEdge>,
+  +nodes: Array<GatsbyTypes$Site>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<SiteGroupConnection>,
+  +group: Array<GatsbyTypes$SiteGroupConnection>,
 |};
 
-export type SiteConnection_distinctArgs = {|
-  field: SiteFieldsEnum,
+declare type GatsbyTypes$SiteConnection_distinctArgs = {|
+  field: GatsbyTypes$SiteFieldsEnum,
 |};
 
-export type SiteConnection_groupArgs = {|
+declare type GatsbyTypes$SiteConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: SiteFieldsEnum,
+  field: GatsbyTypes$SiteFieldsEnum,
 |};
 
-export type SiteEdge = {|
-  +next?: ?Site,
-  +node: Site,
-  +previous?: ?Site,
+declare type GatsbyTypes$SiteEdge = {|
+  +next?: ?GatsbyTypes$Site,
+  +node: GatsbyTypes$Site,
+  +previous?: ?GatsbyTypes$Site,
 |};
 
-export const SiteFieldsEnumValues = Object.freeze({
+export const GatsbyTypes$SiteFieldsEnumValues = Object.freeze({
   buildTime: 'buildTime',
   siteMetadata___title: 'siteMetadata.title',
   siteMetadata___author: 'siteMetadata.author',
@@ -2020,6 +2026,8 @@ export const SiteFieldsEnumValues = Object.freeze({
   siteMetadata___url: 'siteMetadata.url',
   siteMetadata___image: 'siteMetadata.image',
   siteMetadata___siteUrl: 'siteMetadata.siteUrl',
+  port: 'port',
+  host: 'host',
   polyfill: 'polyfill',
   pathPrefix: 'pathPrefix',
   id: 'id',
@@ -2110,30 +2118,32 @@ export const SiteFieldsEnumValues = Object.freeze({
   internal___type: 'internal.type',
 });
 
-export type SiteFieldsEnum = $Values<typeof SiteFieldsEnumValues>;
+declare type GatsbyTypes$SiteFieldsEnum = $Values<typeof GatsbyTypes$SiteFieldsEnumValues>;
 
-export type SiteFilterInput = {|
-  buildTime?: ?DateQueryOperatorInput,
-  siteMetadata?: ?SiteSiteMetadataFilterInput,
-  polyfill?: ?BooleanQueryOperatorInput,
-  pathPrefix?: ?StringQueryOperatorInput,
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
+declare type GatsbyTypes$SiteFilterInput = {|
+  buildTime?: ?GatsbyTypes$DateQueryOperatorInput,
+  siteMetadata?: ?GatsbyTypes$SiteSiteMetadataFilterInput,
+  port?: ?GatsbyTypes$IntQueryOperatorInput,
+  host?: ?GatsbyTypes$StringQueryOperatorInput,
+  polyfill?: ?GatsbyTypes$BooleanQueryOperatorInput,
+  pathPrefix?: ?GatsbyTypes$StringQueryOperatorInput,
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
 |};
 
-export type SiteGroupConnection = {|
+declare type GatsbyTypes$SiteGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<SiteEdge>,
-  +nodes: Array<Site>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$SiteEdge>,
+  +nodes: Array<GatsbyTypes$Site>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type SitePage = {|
-  ...Node,
+declare type GatsbyTypes$SitePage = {|
+  ...GatsbyTypes$Node,
   ...{|
     +path: $ElementType<Scalars, 'String'>,
     +component: $ElementType<Scalars, 'String'>,
@@ -2141,42 +2151,42 @@ export type SitePage = {|
     +componentChunkName: $ElementType<Scalars, 'String'>,
     +matchPath?: ?$ElementType<Scalars, 'String'>,
     +id: $ElementType<Scalars, 'ID'>,
-    +parent?: ?Node,
-    +children: Array<Node>,
-    +internal: Internal,
+    +parent?: ?GatsbyTypes$Node,
+    +children: Array<GatsbyTypes$Node>,
+    +internal: GatsbyTypes$Internal,
     +isCreatedByStatefulCreatePages?: ?$ElementType<Scalars, 'Boolean'>,
-    +pluginCreator?: ?SitePlugin,
+    +pluginCreator?: ?GatsbyTypes$SitePlugin,
     +pluginCreatorId?: ?$ElementType<Scalars, 'String'>,
     +componentPath?: ?$ElementType<Scalars, 'String'>,
   |},
 |};
 
-export type SitePageConnection = {|
+declare type GatsbyTypes$SitePageConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<SitePageEdge>,
-  +nodes: Array<SitePage>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$SitePageEdge>,
+  +nodes: Array<GatsbyTypes$SitePage>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<SitePageGroupConnection>,
+  +group: Array<GatsbyTypes$SitePageGroupConnection>,
 |};
 
-export type SitePageConnection_distinctArgs = {|
-  field: SitePageFieldsEnum,
+declare type GatsbyTypes$SitePageConnection_distinctArgs = {|
+  field: GatsbyTypes$SitePageFieldsEnum,
 |};
 
-export type SitePageConnection_groupArgs = {|
+declare type GatsbyTypes$SitePageConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: SitePageFieldsEnum,
+  field: GatsbyTypes$SitePageFieldsEnum,
 |};
 
-export type SitePageEdge = {|
-  +next?: ?SitePage,
-  +node: SitePage,
-  +previous?: ?SitePage,
+declare type GatsbyTypes$SitePageEdge = {|
+  +next?: ?GatsbyTypes$SitePage,
+  +node: GatsbyTypes$SitePage,
+  +previous?: ?GatsbyTypes$SitePage,
 |};
 
-export const SitePageFieldsEnumValues = Object.freeze({
+export const GatsbyTypes$SitePageFieldsEnumValues = Object.freeze({
   path: 'path',
   component: 'component',
   internalComponentName: 'internalComponentName',
@@ -2342,82 +2352,82 @@ export const SitePageFieldsEnumValues = Object.freeze({
   componentPath: 'componentPath',
 });
 
-export type SitePageFieldsEnum = $Values<typeof SitePageFieldsEnumValues>;
+declare type GatsbyTypes$SitePageFieldsEnum = $Values<typeof GatsbyTypes$SitePageFieldsEnumValues>;
 
-export type SitePageFilterInput = {|
-  path?: ?StringQueryOperatorInput,
-  component?: ?StringQueryOperatorInput,
-  internalComponentName?: ?StringQueryOperatorInput,
-  componentChunkName?: ?StringQueryOperatorInput,
-  matchPath?: ?StringQueryOperatorInput,
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  isCreatedByStatefulCreatePages?: ?BooleanQueryOperatorInput,
-  pluginCreator?: ?SitePluginFilterInput,
-  pluginCreatorId?: ?StringQueryOperatorInput,
-  componentPath?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$SitePageFilterInput = {|
+  path?: ?GatsbyTypes$StringQueryOperatorInput,
+  component?: ?GatsbyTypes$StringQueryOperatorInput,
+  internalComponentName?: ?GatsbyTypes$StringQueryOperatorInput,
+  componentChunkName?: ?GatsbyTypes$StringQueryOperatorInput,
+  matchPath?: ?GatsbyTypes$StringQueryOperatorInput,
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  isCreatedByStatefulCreatePages?: ?GatsbyTypes$BooleanQueryOperatorInput,
+  pluginCreator?: ?GatsbyTypes$SitePluginFilterInput,
+  pluginCreatorId?: ?GatsbyTypes$StringQueryOperatorInput,
+  componentPath?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type SitePageGroupConnection = {|
+declare type GatsbyTypes$SitePageGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<SitePageEdge>,
-  +nodes: Array<SitePage>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$SitePageEdge>,
+  +nodes: Array<GatsbyTypes$SitePage>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type SitePageSortInput = {|
+declare type GatsbyTypes$SitePageSortInput = {|
   fields?: ?Array<?SitePageFieldsEnum>,
-  order?: ?Array<?SortOrderEnum>,
+  order?: ?Array<?GatsbyTypes$SortOrderEnum>,
 |};
 
-export type SitePlugin = {|
-  ...Node,
+declare type GatsbyTypes$SitePlugin = {|
+  ...GatsbyTypes$Node,
   ...{|
     +id: $ElementType<Scalars, 'ID'>,
-    +parent?: ?Node,
-    +children: Array<Node>,
-    +internal: Internal,
+    +parent?: ?GatsbyTypes$Node,
+    +children: Array<GatsbyTypes$Node>,
+    +internal: GatsbyTypes$Internal,
     +resolve?: ?$ElementType<Scalars, 'String'>,
     +name?: ?$ElementType<Scalars, 'String'>,
     +version?: ?$ElementType<Scalars, 'String'>,
-    +pluginOptions?: ?SitePluginPluginOptions,
+    +pluginOptions?: ?GatsbyTypes$SitePluginPluginOptions,
     +nodeAPIs?: ?Array<?$ElementType<Scalars, 'String'>>,
     +ssrAPIs?: ?Array<?$ElementType<Scalars, 'String'>>,
     +pluginFilepath?: ?$ElementType<Scalars, 'String'>,
-    +packageJson?: ?SitePluginPackageJson,
+    +packageJson?: ?GatsbyTypes$SitePluginPackageJson,
   |},
 |};
 
-export type SitePluginConnection = {|
+declare type GatsbyTypes$SitePluginConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<SitePluginEdge>,
-  +nodes: Array<SitePlugin>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$SitePluginEdge>,
+  +nodes: Array<GatsbyTypes$SitePlugin>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +distinct: Array<$ElementType<Scalars, 'String'>>,
-  +group: Array<SitePluginGroupConnection>,
+  +group: Array<GatsbyTypes$SitePluginGroupConnection>,
 |};
 
-export type SitePluginConnection_distinctArgs = {|
-  field: SitePluginFieldsEnum,
+declare type GatsbyTypes$SitePluginConnection_distinctArgs = {|
+  field: GatsbyTypes$SitePluginFieldsEnum,
 |};
 
-export type SitePluginConnection_groupArgs = {|
+declare type GatsbyTypes$SitePluginConnection_groupArgs = {|
   skip?: ?$ElementType<Scalars, 'Int'>,
   limit?: ?$ElementType<Scalars, 'Int'>,
-  field: SitePluginFieldsEnum,
+  field: GatsbyTypes$SitePluginFieldsEnum,
 |};
 
-export type SitePluginEdge = {|
-  +next?: ?SitePlugin,
-  +node: SitePlugin,
-  +previous?: ?SitePlugin,
+declare type GatsbyTypes$SitePluginEdge = {|
+  +next?: ?GatsbyTypes$SitePlugin,
+  +node: GatsbyTypes$SitePlugin,
+  +previous?: ?GatsbyTypes$SitePlugin,
 |};
 
-export const SitePluginFieldsEnumValues = Object.freeze({
+export const GatsbyTypes$SitePluginFieldsEnumValues = Object.freeze({
   id: 'id',
   parent___id: 'parent.id',
   parent___parent___id: 'parent.parent.id',
@@ -2537,99 +2547,99 @@ export const SitePluginFieldsEnumValues = Object.freeze({
   packageJson___keywords: 'packageJson.keywords',
 });
 
-export type SitePluginFieldsEnum = $Values<typeof SitePluginFieldsEnumValues>;
+declare type GatsbyTypes$SitePluginFieldsEnum = $Values<typeof GatsbyTypes$SitePluginFieldsEnumValues>;
 
-export type SitePluginFilterInput = {|
-  id?: ?StringQueryOperatorInput,
-  parent?: ?NodeFilterInput,
-  children?: ?NodeFilterListInput,
-  internal?: ?InternalFilterInput,
-  resolve?: ?StringQueryOperatorInput,
-  name?: ?StringQueryOperatorInput,
-  version?: ?StringQueryOperatorInput,
-  pluginOptions?: ?SitePluginPluginOptionsFilterInput,
-  nodeAPIs?: ?StringQueryOperatorInput,
-  ssrAPIs?: ?StringQueryOperatorInput,
-  pluginFilepath?: ?StringQueryOperatorInput,
-  packageJson?: ?SitePluginPackageJsonFilterInput,
+declare type GatsbyTypes$SitePluginFilterInput = {|
+  id?: ?GatsbyTypes$StringQueryOperatorInput,
+  parent?: ?GatsbyTypes$NodeFilterInput,
+  children?: ?GatsbyTypes$NodeFilterListInput,
+  internal?: ?GatsbyTypes$InternalFilterInput,
+  resolve?: ?GatsbyTypes$StringQueryOperatorInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  version?: ?GatsbyTypes$StringQueryOperatorInput,
+  pluginOptions?: ?GatsbyTypes$SitePluginPluginOptionsFilterInput,
+  nodeAPIs?: ?GatsbyTypes$StringQueryOperatorInput,
+  ssrAPIs?: ?GatsbyTypes$StringQueryOperatorInput,
+  pluginFilepath?: ?GatsbyTypes$StringQueryOperatorInput,
+  packageJson?: ?GatsbyTypes$SitePluginPackageJsonFilterInput,
 |};
 
-export type SitePluginGroupConnection = {|
+declare type GatsbyTypes$SitePluginGroupConnection = {|
   +totalCount: $ElementType<Scalars, 'Int'>,
-  +edges: Array<SitePluginEdge>,
-  +nodes: Array<SitePlugin>,
-  +pageInfo: PageInfo,
+  +edges: Array<GatsbyTypes$SitePluginEdge>,
+  +nodes: Array<GatsbyTypes$SitePlugin>,
+  +pageInfo: GatsbyTypes$PageInfo,
   +field: $ElementType<Scalars, 'String'>,
   +fieldValue?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type SitePluginPackageJson = {|
+declare type GatsbyTypes$SitePluginPackageJson = {|
   +name?: ?$ElementType<Scalars, 'String'>,
   +description?: ?$ElementType<Scalars, 'String'>,
   +version?: ?$ElementType<Scalars, 'String'>,
   +main?: ?$ElementType<Scalars, 'String'>,
   +license?: ?$ElementType<Scalars, 'String'>,
-  +dependencies?: ?Array<?SitePluginPackageJsonDependencies>,
-  +devDependencies?: ?Array<?SitePluginPackageJsonDevDependencies>,
-  +peerDependencies?: ?Array<?SitePluginPackageJsonPeerDependencies>,
+  +dependencies?: ?Array<?GatsbyTypes$SitePluginPackageJsonDependencies>,
+  +devDependencies?: ?Array<?GatsbyTypes$SitePluginPackageJsonDevDependencies>,
+  +peerDependencies?: ?Array<?GatsbyTypes$SitePluginPackageJsonPeerDependencies>,
   +keywords?: ?Array<?$ElementType<Scalars, 'String'>>,
 |};
 
-export type SitePluginPackageJsonDependencies = {|
+declare type GatsbyTypes$SitePluginPackageJsonDependencies = {|
   +name?: ?$ElementType<Scalars, 'String'>,
   +version?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type SitePluginPackageJsonDependenciesFilterInput = {|
-  name?: ?StringQueryOperatorInput,
-  version?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$SitePluginPackageJsonDependenciesFilterInput = {|
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  version?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type SitePluginPackageJsonDependenciesFilterListInput = {|
-  elemMatch?: ?SitePluginPackageJsonDependenciesFilterInput,
+declare type GatsbyTypes$SitePluginPackageJsonDependenciesFilterListInput = {|
+  elemMatch?: ?GatsbyTypes$SitePluginPackageJsonDependenciesFilterInput,
 |};
 
-export type SitePluginPackageJsonDevDependencies = {|
+declare type GatsbyTypes$SitePluginPackageJsonDevDependencies = {|
   +name?: ?$ElementType<Scalars, 'String'>,
   +version?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type SitePluginPackageJsonDevDependenciesFilterInput = {|
-  name?: ?StringQueryOperatorInput,
-  version?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$SitePluginPackageJsonDevDependenciesFilterInput = {|
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  version?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type SitePluginPackageJsonDevDependenciesFilterListInput = {|
-  elemMatch?: ?SitePluginPackageJsonDevDependenciesFilterInput,
+declare type GatsbyTypes$SitePluginPackageJsonDevDependenciesFilterListInput = {|
+  elemMatch?: ?GatsbyTypes$SitePluginPackageJsonDevDependenciesFilterInput,
 |};
 
-export type SitePluginPackageJsonFilterInput = {|
-  name?: ?StringQueryOperatorInput,
-  description?: ?StringQueryOperatorInput,
-  version?: ?StringQueryOperatorInput,
-  main?: ?StringQueryOperatorInput,
-  license?: ?StringQueryOperatorInput,
-  dependencies?: ?SitePluginPackageJsonDependenciesFilterListInput,
-  devDependencies?: ?SitePluginPackageJsonDevDependenciesFilterListInput,
-  peerDependencies?: ?SitePluginPackageJsonPeerDependenciesFilterListInput,
-  keywords?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$SitePluginPackageJsonFilterInput = {|
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  description?: ?GatsbyTypes$StringQueryOperatorInput,
+  version?: ?GatsbyTypes$StringQueryOperatorInput,
+  main?: ?GatsbyTypes$StringQueryOperatorInput,
+  license?: ?GatsbyTypes$StringQueryOperatorInput,
+  dependencies?: ?GatsbyTypes$SitePluginPackageJsonDependenciesFilterListInput,
+  devDependencies?: ?GatsbyTypes$SitePluginPackageJsonDevDependenciesFilterListInput,
+  peerDependencies?: ?GatsbyTypes$SitePluginPackageJsonPeerDependenciesFilterListInput,
+  keywords?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type SitePluginPackageJsonPeerDependencies = {|
+declare type GatsbyTypes$SitePluginPackageJsonPeerDependencies = {|
   +name?: ?$ElementType<Scalars, 'String'>,
   +version?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type SitePluginPackageJsonPeerDependenciesFilterInput = {|
-  name?: ?StringQueryOperatorInput,
-  version?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$SitePluginPackageJsonPeerDependenciesFilterInput = {|
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  version?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type SitePluginPackageJsonPeerDependenciesFilterListInput = {|
-  elemMatch?: ?SitePluginPackageJsonPeerDependenciesFilterInput,
+declare type GatsbyTypes$SitePluginPackageJsonPeerDependenciesFilterListInput = {|
+  elemMatch?: ?GatsbyTypes$SitePluginPackageJsonPeerDependenciesFilterInput,
 |};
 
-export type SitePluginPluginOptions = {|
+declare type GatsbyTypes$SitePluginPluginOptions = {|
   +src?: ?$ElementType<Scalars, 'String'>,
   +pages?: ?$ElementType<Scalars, 'String'>,
   +images?: ?$ElementType<Scalars, 'String'>,
@@ -2642,25 +2652,25 @@ export type SitePluginPluginOptions = {|
   +pathCheck?: ?$ElementType<Scalars, 'Boolean'>,
 |};
 
-export type SitePluginPluginOptionsFilterInput = {|
-  src?: ?StringQueryOperatorInput,
-  pages?: ?StringQueryOperatorInput,
-  images?: ?StringQueryOperatorInput,
-  components?: ?StringQueryOperatorInput,
-  types?: ?StringQueryOperatorInput,
-  path?: ?StringQueryOperatorInput,
-  name?: ?StringQueryOperatorInput,
-  language?: ?StringQueryOperatorInput,
-  outputPath?: ?StringQueryOperatorInput,
-  pathCheck?: ?BooleanQueryOperatorInput,
+declare type GatsbyTypes$SitePluginPluginOptionsFilterInput = {|
+  src?: ?GatsbyTypes$StringQueryOperatorInput,
+  pages?: ?GatsbyTypes$StringQueryOperatorInput,
+  images?: ?GatsbyTypes$StringQueryOperatorInput,
+  components?: ?GatsbyTypes$StringQueryOperatorInput,
+  types?: ?GatsbyTypes$StringQueryOperatorInput,
+  path?: ?GatsbyTypes$StringQueryOperatorInput,
+  name?: ?GatsbyTypes$StringQueryOperatorInput,
+  language?: ?GatsbyTypes$StringQueryOperatorInput,
+  outputPath?: ?GatsbyTypes$StringQueryOperatorInput,
+  pathCheck?: ?GatsbyTypes$BooleanQueryOperatorInput,
 |};
 
-export type SitePluginSortInput = {|
+declare type GatsbyTypes$SitePluginSortInput = {|
   fields?: ?Array<?SitePluginFieldsEnum>,
-  order?: ?Array<?SortOrderEnum>,
+  order?: ?Array<?GatsbyTypes$SortOrderEnum>,
 |};
 
-export type SiteSiteMetadata = {|
+declare type GatsbyTypes$SiteSiteMetadata = {|
   +title?: ?$ElementType<Scalars, 'String'>,
   +author?: ?$ElementType<Scalars, 'String'>,
   +description?: ?$ElementType<Scalars, 'String'>,
@@ -2669,28 +2679,28 @@ export type SiteSiteMetadata = {|
   +siteUrl?: ?$ElementType<Scalars, 'String'>,
 |};
 
-export type SiteSiteMetadataFilterInput = {|
-  title?: ?StringQueryOperatorInput,
-  author?: ?StringQueryOperatorInput,
-  description?: ?StringQueryOperatorInput,
-  url?: ?StringQueryOperatorInput,
-  image?: ?StringQueryOperatorInput,
-  siteUrl?: ?StringQueryOperatorInput,
+declare type GatsbyTypes$SiteSiteMetadataFilterInput = {|
+  title?: ?GatsbyTypes$StringQueryOperatorInput,
+  author?: ?GatsbyTypes$StringQueryOperatorInput,
+  description?: ?GatsbyTypes$StringQueryOperatorInput,
+  url?: ?GatsbyTypes$StringQueryOperatorInput,
+  image?: ?GatsbyTypes$StringQueryOperatorInput,
+  siteUrl?: ?GatsbyTypes$StringQueryOperatorInput,
 |};
 
-export type SiteSortInput = {|
+declare type GatsbyTypes$SiteSortInput = {|
   fields?: ?Array<?SiteFieldsEnum>,
-  order?: ?Array<?SortOrderEnum>,
+  order?: ?Array<?GatsbyTypes$SortOrderEnum>,
 |};
 
-export const SortOrderEnumValues = Object.freeze({
+export const GatsbyTypes$SortOrderEnumValues = Object.freeze({
   ASC: 'ASC',
   DESC: 'DESC',
 });
 
-export type SortOrderEnum = $Values<typeof SortOrderEnumValues>;
+declare type GatsbyTypes$SortOrderEnum = $Values<typeof GatsbyTypes$SortOrderEnumValues>;
 
-export type StringQueryOperatorInput = {|
+declare type GatsbyTypes$StringQueryOperatorInput = {|
   eq?: ?$ElementType<Scalars, 'String'>,
   ne?: ?$ElementType<Scalars, 'String'>,
   in?: ?Array<?$ElementType<Scalars, 'String'>>,
@@ -2701,39 +2711,50 @@ export type StringQueryOperatorInput = {|
 
 type $Pick<Origin: Object, Keys: Object> = $ObjMapi<Keys, <Key>(k: Key) => $ElementType<Origin, Key>>;
 
-export type AboutMeCardFragment = $Pick<AboutMeCardsJson, {| +name?: *, +text?: *, +title?: * |}>;
+declare type GatsbyTypes$PagesQueryQueryVariables = {};
 
-export type NavbarQueryQueryVariables = {};
-
-export type NavbarQueryQuery = {|
-  +allNavItemsJson: {| +nodes: Array<$Pick<NavItemsJson, {| +path?: *, +link?: *, +title?: * |}>> |},
+declare type GatsbyTypes$PagesQueryQuery = {|
+  +allSitePage: {| +nodes: Array<$Pick<GatsbyTypes$SitePage, {| +path: * |}>> |},
 |};
 
-export type IconLinkFragment = $Pick<IconLinksJson, {| +name?: *, +url?: *, +icon?: * |}>;
+declare type GatsbyTypes$IconLinkFragment = $Pick<GatsbyTypes$IconLinksJson, {| +name?: *, +url?: *, +icon?: * |}>;
 
-export type ProjectFragment = {
-  ...$Pick<ProjectsJson, {| +name?: *, +title?: *, +tags?: * |}>,
-  ...{| +links?: ?Array<?$Pick<ProjectsJsonLinks, {| +icon?: *, +link?: * |}>> |},
+declare type GatsbyTypes$AboutMeCardFragment = $Pick<
+  GatsbyTypes$AboutMeCardsJson,
+  {| +name?: *, +text?: *, +title?: * |},
+>;
+
+declare type GatsbyTypes$IndexPageQueryVariables = {};
+
+declare type GatsbyTypes$IndexPageQuery = {|
+  +allIconLinksJson: {| +edges: Array<{| +node: GatsbyTypes$IconLinkFragment |}> |},
+  +allAboutMeCardsJson: {| +edges: Array<{| +node: GatsbyTypes$AboutMeCardFragment |}> |},
+|};
+
+declare type GatsbyTypes$ProjectFragment = {
+  ...$Pick<GatsbyTypes$ProjectsJson, {| +name?: *, +title?: *, +tags?: * |}>,
+  ...{| +links?: ?Array<?$Pick<GatsbyTypes$ProjectsJsonLinks, {| +icon?: *, +link?: * |}>> |},
 };
 
-export type SEOQueryVariables = {};
+declare type GatsbyTypes$ProjectPageQueryVariables = {};
 
-export type SEOQuery = {|
+declare type GatsbyTypes$ProjectPageQuery = {|
+  +allProjectsJson: {| +edges: Array<{| +node: GatsbyTypes$ProjectFragment |}> |},
+|};
+
+declare type GatsbyTypes$SEOQueryVariables = {};
+
+declare type GatsbyTypes$SEOQuery = {|
   +site?: ?{|
     +siteMetadata?: ?{
-      ...$Pick<SiteSiteMetadata, {| +title?: *, +url?: *, +image?: * |}>,
-      ...{| +description: $ElementType<SiteSiteMetadata, 'description'> |},
+      ...$Pick<GatsbyTypes$SiteSiteMetadata, {| +title?: *, +url?: *, +image?: * |}>,
+      ...{| +description: $ElementType<GatsbyTypes$SiteSiteMetadata, 'description'> |},
     },
   |},
 |};
 
-export type ProjectPageQueryVariables = {};
+declare type GatsbyTypes$NavbarQueryQueryVariables = {};
 
-export type ProjectPageQuery = {| +allProjectsJson: {| +edges: Array<{| +node: ProjectFragment |}> |} |};
-
-export type IndexPageQueryVariables = {};
-
-export type IndexPageQuery = {|
-  +allIconLinksJson: {| +edges: Array<{| +node: IconLinkFragment |}> |},
-  +allAboutMeCardsJson: {| +edges: Array<{| +node: AboutMeCardFragment |}> |},
+declare type GatsbyTypes$NavbarQueryQuery = {|
+  +allNavItemsJson: {| +nodes: Array<$Pick<GatsbyTypes$NavItemsJson, {| +path?: *, +link?: *, +title?: * |}>> |},
 |};
