@@ -3,7 +3,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { H1 } from 'components/styled-elements/fonts';
+import { H4 } from 'components/styled-elements/fonts';
 
 import * as colors from 'utils/colors';
 import mediaQuery from 'utils/media-query';
@@ -42,11 +42,10 @@ const headingBgColorsSet = {
 const Heading: React$ComponentType<HeadingProps> = styled.div`
   position: relative;
   height: 150px;
-  background-color: ${props => headingBgColorsSet[props.colorId.toString()] || headingBgColorsSet['0']};
+  background-color: ${(props) => headingBgColorsSet[props.colorId.toString()] || headingBgColorsSet['0']};
 `;
 
-const Title: React$ComponentType<*> = styled(H1)`
-  font-size: 28px;
+const Title: React$ComponentType<*> = styled(H4)`
   color: ${colors.white};
   text-align: center;
   padding-top: 20px;
@@ -63,7 +62,7 @@ const Thumbnail: React$ComponentType<ThumbnailProps> = styled.div`
   transform: translate(-50%, 50%);
   height: 125px;
   width: 125px;
-  background-image: url(${props => props.imgSrc});
+  background-image: url(${(props) => props.imgSrc});
   background-size: cover;
   background-position: center;
   border-radius: 100%;
@@ -113,7 +112,7 @@ const Icon: React$ComponentType<IconProps> = styled.i`
   margin-left: 20px;
   opacity: 0.8;
   transition: all 0.25s linear;
-  color: ${props =>
+  color: ${(props) =>
     ({
       github: '#333333',
       globe: '#3671bf',
@@ -146,10 +145,10 @@ const Card = ({ title, imgSrc, tags, links, colorId }: Props) => {
         <Thumbnail imgSrc={imgSrc} />
       </Heading>
       <Description>
-        <TagsContainer>{tags.map(tag => (tag == null ? null : <Tag key={tag}>{tag}</Tag>))}</TagsContainer>
+        <TagsContainer>{tags.map((tag) => (tag == null ? null : <Tag key={tag}>{tag}</Tag>))}</TagsContainer>
       </Description>
       <ButtonGroup>
-        {links.map(link =>
+        {links.map((link) =>
           link.icon == null ? null : (
             <a key={link.icon} href={link.link} target="_blank" rel="noreferrer noopener">
               <Icon icon={link.icon} className={`fa fa-${link.icon}`} />
