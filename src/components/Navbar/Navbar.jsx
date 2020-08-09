@@ -48,7 +48,7 @@ const NavItem: React$ComponentType<NavProps> = styled.span`
 `;
 
 const Navbar = () => {
-  const data = useStaticQuery<GatsbyTypes$NavbarQueryQuery>(graphql`
+  const data = useStaticQuery(graphql`
     query NavbarQuery {
       allNavItemsJson {
         nodes {
