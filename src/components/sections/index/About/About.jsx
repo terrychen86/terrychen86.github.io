@@ -22,6 +22,8 @@ import codeIcon from 'images/icon-code.png';
 import gameIcon from 'images/icon-game.png';
 import uiIcon from 'images/icon-ui.png';
 
+import type { GraphQLTypes$AboutMeCardsJson } from 'types/graphql';
+
 const ICONS = {
   sde: sdeIcon,
   sf: sfIcon,
@@ -151,7 +153,7 @@ const ButtonCopy: React$ComponentType<{}> = styled(P)`
 `;
 
 type Props = {|
-  +aboutMeCards: Array<GatsbyTypes$AboutMeCardFragment>,
+  +aboutMeCards: Array<GraphQLTypes$AboutMeCardsJson>,
 |};
 
 const About = ({ aboutMeCards }: Props) => {

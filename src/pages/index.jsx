@@ -8,8 +8,10 @@ import About from 'components/sections/index/About/About';
 
 import narrowConnection from 'utils/narrow-connection';
 
+import type { GraphQLTypes$Query } from 'types/graphql';
+
 type Props = {|
-  +data: GatsbyTypes$IndexPageQuery,
+  +data: GraphQLTypes$Query,
 |};
 
 const Index = ({ data }: Props) => {

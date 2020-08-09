@@ -69,4 +69,7 @@ yarn-error.log
 .yarn-integrity
 
 # Generated files
-src/__generated__/
+graphql.schema.json
+
+# Edito
+.vscode

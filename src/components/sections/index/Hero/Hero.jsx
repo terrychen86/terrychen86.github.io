@@ -14,6 +14,8 @@ import * as colors from 'utils/colors';
 import { rgba } from 'utils/rgba';
 import heroImage from 'images/developer.svg';
 
+import type { GraphQLTypes$IconLinksJson } from 'types/graphql';
+
 const HeroWrapper: React$ComponentType<{}> = styled(FullscreenWrapper)`
   position: relative;
   background-image: linear-gradient(to right top, #3671bf, #2579bf, #1680be, #1386bb, #1e8cb8);
@@ -115,7 +117,7 @@ const Image: React$ComponentType<{}> = styled.img`
 `;
 
 type Props = {|
-  +iconLinks: Array<GatsbyTypes$IconLinkFragment>,
+  +iconLinks: Array<GraphQLTypes$IconLinksJson>,
 |};
 
 const Hero = ({ iconLinks }: Props) => (
