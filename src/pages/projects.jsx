@@ -7,9 +7,10 @@ import ProjectHeader from 'components/sections/projects/ProjectHeader/ProjectHea
 import ProjectCards from 'components/sections/projects/ProjectCards/ProjectCards';
 
 import narrowConnection from 'utils/narrow-connection';
+import type { GraphQLTypes$Query } from 'types/graphql';
 
 type Props = {|
-  +data: GatsbyTypes$ProjectPageQuery,
+  +data: GraphQLTypes$Query,
 |};
 
 const ProjectsPage = ({ data }: Props) => (

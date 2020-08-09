@@ -2,7 +2,18 @@
 
 export default function narrowConnection<Data>(
   connection: ?{|
-    +edges: ?Array<{| +node: Data |}>,
+    __typename?: *,
+    edges: Array<{|
+      __typename?: *,
+      node: Data,
+      next?: *,
+      previous?: *,
+    |}>,
+    distinct: *,
+    group: *,
+    nodes: *,
+    pageInfo: *,
+    totalCount: *,
   |},
 ): Array<Data> {
   const edges = connection?.edges;
@@ -10,5 +21,5 @@ export default function narrowConnection<Data>(
     return [];
   }
 
-  return edges.map(e => e?.node).filter(Boolean);
+  return edges.map((e) => e?.node).filter(Boolean);
 }

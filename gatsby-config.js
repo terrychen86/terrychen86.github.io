@@ -42,12 +42,5 @@ module.exports = {
     },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-flow',
-    {
-      resolve: `gatsby-plugin-typegen`,
-      options: {
-        language: `flow`,
-        outputPath: `src/__generated__/graphql.js`,
-      },
-    },
   ],
 };

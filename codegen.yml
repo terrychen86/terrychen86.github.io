@@ -1,0 +1,9 @@
+overwrite: true
+schema: "http://localhost:8000/___graphql"
+documents: "./src/**/*.{jsx,js}"
+generates:
+  ./src/types/graphql.js:
+    plugins:
+      - "flow"
+    config:
+      typesPrefix: GraphQLTypes$

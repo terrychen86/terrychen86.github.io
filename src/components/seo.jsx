@@ -4,8 +4,10 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import type { GraphQLTypes$Query } from 'types/graphql';
+
 const SEO = () => {
-  const siteData = useStaticQuery(graphql`
+  const siteData = useStaticQuery<GraphQLTypes$Query>(graphql`
     query SEO {
       site {
         siteMetadata {

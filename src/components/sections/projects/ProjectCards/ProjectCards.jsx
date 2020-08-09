@@ -20,7 +20,9 @@ import yrbImg from 'images/project-yrb.jpg';
 import spgImg from 'images/project-spg.jpg';
 import snakeImg from 'images/project-snake.png';
 import crudImg from 'images/project-crud.jpg';
-import ytmusicImg from 'images/project-ytmusic.png';
+import ytmusicImg from 'images//project-ytmusic.png';
+
+import type { GraphQLTypes$ProjectsJson } from 'types/graphql';
 
 const CARD_IMAGES = {
   codepad: codepadImg,
@@ -86,7 +88,7 @@ const Background: React$ComponentType<*> = styled.div`
 `;
 
 type Props = {|
-  +projects: Array<GatsbyTypes$ProjectFragment>,
+  +projects: Array<GraphQLTypes$ProjectsJson>,
 |};
 
 const ProjectCards = ({ projects }: Props) => {
