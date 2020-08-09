@@ -22,8 +22,6 @@ import codeIcon from 'images/icon-code.png';
 import gameIcon from 'images/icon-game.png';
 import uiIcon from 'images/icon-ui.png';
 
-import type { AboutMeCardFragment } from 'types/graphql';
-
 const ICONS = {
   sde: sdeIcon,
   sf: sfIcon,
@@ -132,7 +130,7 @@ const Card: React$ComponentType<CardProps> = styled.div`
   margin: 5px;
   text-align: center;
   padding: 15px 0;
-  background-color: ${props => colors.cardColors[props.id]};
+  background-color: ${(props) => colors.cardColors[props.id]};
 `;
 
 const IconWrapper: React$ComponentType<{}> = styled.div`
@@ -153,7 +151,7 @@ const ButtonCopy: React$ComponentType<{}> = styled(P)`
 `;
 
 type Props = {|
-  +aboutMeCards: Array<AboutMeCardFragment>,
+  +aboutMeCards: Array<GatsbyTypes$AboutMeCardFragment>,
 |};
 
 const About = ({ aboutMeCards }: Props) => {

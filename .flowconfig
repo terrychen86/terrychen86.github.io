@@ -3,7 +3,7 @@
 [include]
 
 [libs]
-./src/types/graphql.js
+./src/__generated__/graphql.js
 
 [lints]
 

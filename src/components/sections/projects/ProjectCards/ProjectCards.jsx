@@ -22,8 +22,6 @@ import snakeImg from 'images/project-snake.png';
 import crudImg from 'images/project-crud.jpg';
 import ytmusicImg from 'images/project-ytmusic.png';
 
-import type { ProjectFragment } from 'types/graphql';
-
 const CARD_IMAGES = {
   codepad: codepadImg,
   jsds: jsdsImg,
@@ -88,7 +86,7 @@ const Background: React$ComponentType<*> = styled.div`
 `;
 
 type Props = {|
-  +projects: Array<ProjectFragment>,
+  +projects: Array<GatsbyTypes$ProjectFragment>,
 |};
 
 const ProjectCards = ({ projects }: Props) => {
@@ -101,7 +99,7 @@ const ProjectCards = ({ projects }: Props) => {
               <Card
                 title={project.title || ''}
                 tags={project.tags || []}
-                links={(project.links || []).map(l => ({
+                links={(project.links || []).map((l) => ({
                   icon: l?.icon,
                   link: l?.link,
                 }))}

@@ -7,10 +7,9 @@ import Hero from 'components/sections/index/Hero/Hero';
 import About from 'components/sections/index/About/About';
 
 import narrowConnection from 'utils/narrow-connection';
-import type { IndexPageQuery } from 'types/graphql';
 
 type Props = {|
-  +data: IndexPageQuery,
+  +data: GatsbyTypes$IndexPageQuery,
 |};
 
 const Index = ({ data }: Props) => {
