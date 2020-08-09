@@ -55,8 +55,7 @@
         "map": [
           ["components", "./src/components"],
           ["utils", "./src/utils"],
-          ["images", "./src/images"],
-          ["common-ui", "./src/components/commons/CommonUI.jsx"]
+          ["images", "./src/images"]
         ],
         "extensions": [".ts", ".js", ".jsx"]
       }

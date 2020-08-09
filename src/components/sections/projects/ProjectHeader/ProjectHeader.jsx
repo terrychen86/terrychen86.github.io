@@ -101,7 +101,7 @@ const TerminalToolbarDot: React$ComponentType<TerminalToolbarDotProps> = styled.
   width: 15px;
   height: 15px;
   margin: 5px;
-  background-color: ${props =>
+  background-color: ${(props) =>
     ({
       red: colors.terminalRed,
       yellow: colors.terminalYellow,
