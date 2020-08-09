@@ -8,10 +8,8 @@ import ProjectCards from 'components/sections/projects/ProjectCards/ProjectCards
 
 import narrowConnection from 'utils/narrow-connection';
 
-import type { ProjectPageQuery } from 'types/graphql';
-
 type Props = {|
-  +data: ProjectPageQuery,
+  +data: GatsbyTypes$ProjectPageQuery,
 |};
 
 const ProjectsPage = ({ data }: Props) => (

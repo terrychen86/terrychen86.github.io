@@ -20,15 +20,15 @@ const NavbarWrapper: React$ComponentType<NavProps> = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  background-color: ${props => (props.theme === 'init' ? 'transparent' : rgba(colors.nearBlack, 0.95))};
-  box-shadow: ${props => (props.theme === 'init' ? 'none' : rgba(colors.black, 0.1))};
+  background-color: ${(props) => (props.theme === 'init' ? 'transparent' : rgba(colors.nearBlack, 0.95))};
+  box-shadow: ${(props) => (props.theme === 'init' ? 'none' : rgba(colors.black, 0.1))};
   transition: all 0.3s linear;
   z-index: 1000;
 `;
 
 const NavbarContainer: React$ComponentType<NavProps> = styled(Container)`
   text-align: right;
-  padding: ${props => (props.theme === 'init' ? '30px 15px' : '10px 15px')};
+  padding: ${(props) => (props.theme === 'init' ? '30px 15px' : '10px 15px')};
   transition: all 0.2s linear;
 
   ${mediaQuery.below('sm')} {
@@ -40,7 +40,7 @@ const NavItem: React$ComponentType<NavProps> = styled.span`
   position: relative;
   margin: 0 18px;
   font-size: 16px;
-  opacity: ${props => (props.theme === 'init' ? 0.75 : 1)};
+  opacity: ${(props) => (props.theme === 'init' ? 0.75 : 1)};
 
   ${mediaQuery.below('sm')} {
     font-size: 14px;

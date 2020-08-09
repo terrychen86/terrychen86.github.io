@@ -14,8 +14,6 @@ import * as colors from 'utils/colors';
 import { rgba } from 'utils/rgba';
 import heroImage from 'images/developer.svg';
 
-import type { IconLinkFragment } from 'types/graphql';
-
 const HeroWrapper: React$ComponentType<{}> = styled(FullscreenWrapper)`
   position: relative;
   background-image: linear-gradient(to right top, #3671bf, #2579bf, #1680be, #1386bb, #1e8cb8);
@@ -117,7 +115,7 @@ const Image: React$ComponentType<{}> = styled.img`
 `;
 
 type Props = {|
-  +iconLinks: Array<IconLinkFragment>,
+  +iconLinks: Array<GatsbyTypes$IconLinkFragment>,
 |};
 
 const Hero = ({ iconLinks }: Props) => (
@@ -130,7 +128,7 @@ const Hero = ({ iconLinks }: Props) => (
 
         <IconGroupWrapper>
           <IconGroup>
-            {iconLinks.map(link => (
+            {iconLinks.map((link) => (
               <>
                 {link.name != null && link.url != null && link.icon != null && (
                   <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">

@@ -46,7 +46,7 @@ module.exports = {
       resolve: `gatsby-plugin-typegen`,
       options: {
         language: `flow`,
-        outputPath: `src/types/graphql.js`,
+        outputPath: `src/__generated__/graphql.js`,
       },
     },
   ],
