@@ -15,6 +15,7 @@
         "varsIgnorePattern": "^_"
       }
     ],
-    "prefer-const": "error"
+    "prefer-const": "error",
+    "@next/next/no-img-element": "off"
   }
 }
