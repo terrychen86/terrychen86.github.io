@@ -1,0 +1,105 @@
+@import "/src/sass/shared.scss";
+
+.root {
+  background-color: $white;
+   
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-top: -10px;
+
+  @include lt-md {
+    margin-top: -5px;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: $content-width;
+  width: 100%;
+  background-color: $white;
+  padding: 25px; 
+  margin: 0 auto;
+
+  display: flex;
+  gap: 80px;
+
+  @include lt-sm {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.titleWrapper {
+  position: absolute;
+  display: inline-block;
+  top: -100px;
+  left: 25;
+
+
+  @include lt-md {
+    top: -75px;
+  }
+
+  @include lt-sm {
+    position: relative;
+    top: 0;
+  }
+}
+
+.title {
+  &::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-color: $primary-color;
+    bottom: -15px;
+  }
+
+  @include lt-sm {
+    position: relative;
+    display: inline-block;
+  }
+}
+
+
+.imageBox {
+  flex: 1 1 40%;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '.';
+    width: 100%;
+    height: 100%;
+    background-color: $secondary-color;
+    left: 15px;
+    top: 15px;
+    border: 8px $dark solid;
+    border-radius: 20px;
+  }
+
+  @include lt-sm {
+    margin-right: 40px;
+  }
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 8px $dark solid;
+  border-radius: 20px;
+}
+
+.contentBox {
+  flex: 1 1 60%;
+
+  @include lt-sm {
+    margin-top: 20px;
+  }
+}

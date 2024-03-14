@@ -1,3 +1,9 @@
+@import "/src/sass/shared.scss";
+
 .hero {
   margin-top: 150px;
+}
+
+.intro {
+  background-color: $white;
 }

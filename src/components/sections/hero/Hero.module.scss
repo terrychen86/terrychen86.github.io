@@ -3,26 +3,32 @@
 .root {
   position: relative;
   background-color: $primary-color;
-  min-height: 300px;
-  margin-bottom: 50px;
+  min-height: 80vh;
 }
 
 .container {
-  width: $content-width;
-  padding: 25px;
-  color: white;
+  max-width: $content-width;
+  width: 100%;
+  padding: 25px; 
   margin: 0 auto;
 
-  @include lt-lg {
-    width: 100%;
-  }
 }
 
 .wave {
-  margin-top: -300px;
+  margin-top: -400px;
+  transform: scaleY(0.7);
+  transform-origin: bottom;
+
+  @include lt-lg {
+    margin-top: -250px;
+  }
 
   @include lt-md {
     margin-top: 0px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -47,9 +53,12 @@
     display: block;
   }
 
-  // @include lt-md {
-  //   flex: 1 1 auto;
-  // }
+}
+
+.waveImg {
+  width: 100%;
+  transform: scale(-1);
+  height: 100%;
 }
 
 .textTitle {
@@ -57,13 +66,7 @@
 }
 
 .imageBox {
-  position: relative;
   flex: 1 1 auto;
-
-  & svg {
-    position: absolute;
-    top: 0;
-  }
 
   @include lt-md {
     display: none;
