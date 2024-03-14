@@ -21,12 +21,25 @@ a {
 
 h1 {
   font-size: $font-xl;
+
+  @include lt-md {
+    font-size: $font-lg;
+  }
 }
 
 h2 {
   font-size: $font-lg;
+
+  @include lt-md {
+    font-size: $font-md;
+  }
 }
 
 p {
   font-size: $font-md;
+
+
+  @include lt-md {
+    font-size: $font-sm;
+  }
 }

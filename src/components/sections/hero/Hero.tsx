@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 import Image from "next/image";
 
-import WaveDivider from "@/components/WaveDivider";
 import styles from "@/components/sections/hero/Hero.module.scss";
 
 import illustration from "./hero-illustration.svg";
+import divider from "./wave-divider.svg";
 
 interface IconLink {
   iconName: string;
@@ -36,7 +36,7 @@ export default function Hero(_props: Props): ReactNode {
         </div>
       </div>
       <div className={styles.wave}>
-        <WaveDivider />
+        <Image className={styles.waveImg} src={divider} alt="hero-image" />
       </div>
     </section>
   );
