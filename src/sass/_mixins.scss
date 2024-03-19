@@ -82,3 +82,18 @@ $screen-lg-max: 1919px;
     @content;
   }
 }
+
+@mixin md-breakline {
+  margin-bottom: $font-md;
+
+  @include lt-md {
+    margin-bottom: $font-sm;
+  }
+}
+
+@mixin content-container {
+  max-width: $content-width;
+  width: 100%;
+  padding: 25px; 
+  margin: 0 auto;
+}

@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "title": "👋 Welcome,",
+    "subtitle": "I am Terry",
+    "content": "a software engineer focusing on building elegant and high-performance client-facing products."
+  },
+  "intro": {
+    "paragraphs": [
+      "I'm Terry Chen, a full-stack software engineer living in the San Francisco. I've been dedicated to building client-facing products from scratch and scaling them for over 6 years.",
+      "With experience in both early-stage and late-stage hyper-growth startups, I enjoy the fast-paced culture of collaborative environments where we move quickly and innovate fearlessly.",
+      "Outside of work, I love to travel and explore the good food. I'm also an avid gamer, spending a lot of my free time playing video games."
+    ]
+  }
+}

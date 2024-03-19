@@ -35,11 +35,28 @@ h2 {
   }
 }
 
-p {
+h3 {
   font-size: $font-md;
-
 
   @include lt-md {
     font-size: $font-sm;
+  }
+}
+
+h5 {
+  font-size: $font-xxxs;
+
+  @include lt-md {
+    font-size: $font-xxxxs;
+  }
+
+}
+
+p {
+  font-size: $font-sm;
+
+
+  @include lt-md {
+    font-size: $font-xs;
   }
 }

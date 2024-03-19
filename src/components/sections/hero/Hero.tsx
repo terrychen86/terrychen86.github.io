@@ -13,22 +13,20 @@ interface IconLink {
 
 type Props = Readonly<{
   title: string;
+  subtitle: string;
   content: string;
   iconLinks?: IconLink;
 }>;
 
-export default function Hero(_props: Props): ReactNode {
+export default function Hero({ title, subtitle, content }: Props): ReactNode {
   return (
     <section className={styles.root}>
       <div className={styles.container}>
         <div className={styles.contentBox}>
           <div className={styles.textBox}>
-            <h1 className={styles.textTitle}>👋 Welcome, </h1>
-            <h2>I am Terry</h2>
-            <p>
-              a software engineer focusing on building elegant and
-              high-performance client-facing products.
-            </p>
+            <h1 className={styles.textTitle}>{title}</h1>
+            <h2>{subtitle}</h2>
+            <p>{content}</p>
           </div>
           <div className={styles.imageBox}>
             <Image src={illustration} alt="hero-image" />
