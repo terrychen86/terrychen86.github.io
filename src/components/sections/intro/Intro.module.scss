@@ -15,14 +15,10 @@
 
 .container {
   position: relative;
-  max-width: $content-width;
-  width: 100%;
-  background-color: $white;
-  padding: 25px; 
-  margin: 0 auto;
-
   display: flex;
   gap: 80px;
+
+  @include content-container;
 
   @include lt-sm {
     flex-direction: column;
@@ -102,4 +98,8 @@
   @include lt-sm {
     margin-top: 20px;
   }
+}
+
+.paragraph:not(:last-child) {
+  @include md-breakline;
 }

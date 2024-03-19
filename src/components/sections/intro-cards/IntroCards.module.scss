@@ -1,0 +1,94 @@
+@import "/src/sass/shared.scss";
+
+.container {
+  @include content-container;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+
+
+  @include lt-md {
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+}
+
+.card {
+  padding: 8px;
+  flex: 0 1 25%;
+
+  @include lt-md {
+    flex: 0 0 250px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  background-color: $secondary-color;
+  color: $light-text;
+}
+
+.icon {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 10px;
+}
+
+.cardText {
+  text-align: center;
+}
+
+.orange {
+  background-color: $orange;
+}
+
+.purple {
+  background-color: $purple;
+}
+
+.yellow {
+  background-color: $yellow;
+}
+
+.lightOrange {
+  background-color: $light-orange;
+}
+
+.lightRed {
+  background-color: $light-red;
+}
+
+.pink {
+  background-color: $pink;
+}
+
+.darkPink {
+  background-color: $dark-pink;
+}
+
+.blue {
+  background-color: $blue;
+}
+
+.lightBlue {
+  background-color: $light-blue;
+}
+
+.darkBlue {
+  background-color: $dark-blue;
+}
+
+.green {
+  background-color: $green;
+}
+
+.lightPurple {
+  background-color: $light-purple;
+}
