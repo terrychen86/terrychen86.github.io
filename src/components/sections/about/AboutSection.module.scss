@@ -1,0 +1,96 @@
+@use "../../../sass/shared.scss" as *;
+
+.root {
+  @include content-container;
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: 32px;
+  align-items: start;
+  padding-top: 42px;
+  padding-bottom: 70px;
+
+  @include lt-md {
+    grid-template-columns: 1fr;
+  }
+}
+
+.copy {
+  position: sticky;
+  top: 24px;
+  color: $dark-text;
+
+  p {
+    margin-bottom: 10px;
+    color: #255d95;
+    font-size: $font-xxxs;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin-bottom: 18px;
+    line-height: 1.08;
+  }
+
+  span {
+    display: block;
+    color: rgba($dark-text, 0.82);
+    font-size: $font-sm;
+    line-height: 1.55;
+  }
+
+  @include lt-md {
+    position: static;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+
+  @include lt-sm {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: grid;
+  min-height: 180px;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  border: 1px solid rgba($dark, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.68);
+  color: $dark-text;
+  padding: 18px;
+  box-shadow: 0 14px 36px rgba(37, 83, 135, 0.07);
+
+  &:nth-child(2n) {
+    transform: translateY(12px);
+  }
+
+  h3 {
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  p {
+    color: rgba($dark-text, 0.75);
+    font-size: $font-xxs;
+    line-height: 1.45;
+  }
+
+  @include lt-sm {
+    &:nth-child(2n) {
+      transform: none;
+    }
+  }
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+}

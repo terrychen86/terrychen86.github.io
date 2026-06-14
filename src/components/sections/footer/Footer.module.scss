@@ -1,0 +1,44 @@
+@use "../../../sass/shared.scss" as *;
+
+.root {
+  background: #142033;
+  color: $light-text;
+  padding: 28px 0;
+}
+
+.container {
+  @include content-container;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  p {
+    font-size: $font-xxxs;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  a {
+    border: 1px solid rgba($light-text, 0.35);
+    border-radius: 999px;
+    font-size: $font-xxxs;
+    font-weight: 700;
+    padding: 8px 12px;
+
+    &:hover {
+      border-color: #c8daee;
+      color: #c8daee;
+    }
+  }
+
+  @include lt-sm {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

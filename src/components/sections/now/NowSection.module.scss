@@ -1,0 +1,66 @@
+@use "../../../sass/shared.scss" as *;
+
+.root {
+  @include content-container;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.88fr);
+  gap: 32px;
+  align-items: stretch;
+  padding-top: 36px;
+  padding-bottom: 64px;
+
+  @include lt-md {
+    grid-template-columns: 1fr;
+  }
+}
+
+.copy {
+  border: 1px solid rgba($dark, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  color: $dark-text;
+  padding: 32px;
+  box-shadow: 0 18px 60px rgba(37, 83, 135, 0.08);
+
+  h2 {
+    margin-bottom: 18px;
+    line-height: 1.05;
+  }
+
+  p:not(.kicker) {
+    color: rgba($dark-text, 0.82);
+    line-height: 1.55;
+  }
+
+  @include lt-sm {
+    padding: 24px;
+  }
+}
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #255d95;
+  font-size: $font-xxxs;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  color: rgba($dark-text, 0.82);
+  list-style: none;
+
+  li {
+    border-left: 3px solid #9bb8d8;
+    border-radius: 0 14px 14px 0;
+    background: rgba(255, 255, 255, 0.44);
+    font-size: $font-xxs;
+    line-height: 1.45;
+    padding: 14px 18px;
+  }
+}
