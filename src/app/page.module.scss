@@ -1,4 +1,4 @@
-@import "/src/sass/shared.scss";
+@use "../sass/shared.scss" as *;
 
 .hero {
   margin-top: 150px;
@@ -6,4 +6,9 @@
 
 .intro {
   background-color: $white;
+}
+
+.snake {
+  background-color: $white;
+  padding: 48px 0 72px;
 }

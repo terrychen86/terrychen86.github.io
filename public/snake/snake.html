@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snake</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="game-shell" aria-label="Snake game">
+      <h1>Snake</h1>
+
+      <div id="gamePanel">
+        <canvas id="gameCanvas" width="400" height="400">
+          Your browser does not support the HTML5 canvas.
+        </canvas>
+      </div>
+
+      <div id="controlPanel">
+        <button id="newGameBtn">New Game</button>
+      </div>
+
+      <div id="hintPanel">
+        <div class="gameBtnTitle">Controls</div>
+        <div class="gameBtn">↑</div>
+        <div class="gameBtn">↓</div>
+        <div class="gameBtn">←</div>
+        <div class="gameBtn">→</div>
+        <div class="hintMsg">
+          Press <span class="gameBtn gameBtnSpace">Space</span> to pause or
+          play.
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="js/snake.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+  </body>
+</html>
