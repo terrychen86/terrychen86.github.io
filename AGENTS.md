@@ -1,123 +1,82 @@
 # AGENTS.md
 
-Guidance for agents working in this repository.
+Technical guidance for agents working in this repository.
 
-## Project Direction
+## Stack
 
-This is Terry Chen's personal portfolio site.
-
-- Keep the site simple, static, and portfolio-focused.
-- Keep using Next.js with App Router.
-- Build for GitHub Pages using Next static export.
-- Use npm as the only package manager.
-- Preserve the playful illustrated style from the existing site, but modernize the implementation and polish.
-- Do not turn the site into a resume clone. LinkedIn can carry detailed work history.
-
-## Current Product Framing
-
-The site should quickly communicate:
-
-- Terry is a Senior Software Engineer at Flexport in the Bay Area.
-- He is currently building AI agents and harnesses for billing and finance workflows.
-- He previously worked as a full-stack product engineer on client-facing products, owning work end to end.
-- He is a product-minded engineer with strong UX sense and full-stack execution.
-- He has personality outside work: Bay Area, food, travel, coffee, and gaming.
-
-Detailed content can evolve later. Prefer a flexible typed content model over hard-coded copy in components.
-
-## Design Direction
-
-Keep the first refresh close to the current playful illustrated identity.
-
-Preserve:
-
-- Bright accent colors.
-- Friendly illustrated/product-engineer feel.
-- Icon/card motifs where they serve content.
-- A playful Snake game section.
-
-Improve:
-
-- Typography and long-form readability.
-- Responsive layout stability.
-- Color balance and contrast.
-- Section spacing without fragile negative-margin hacks.
-- Accessibility, semantic HTML, and image alt text.
-
-Avoid:
-
-- A generic SaaS landing page feel.
-- A formal work-history timeline for V1.
-- Stale project links or project pages that are no longer maintained.
-- Unnecessary framework migration.
-
-## Snake Game
-
-There is an existing Snake game on the old deployed `origin/master` branch:
-
-- `snake/snake.html`
-- `snake/css/styles.css`
-- `snake/js/game.js`
-- `snake/js/snake.js`
-
-Preserve this as an artifact Terry built in school more than 10 years ago, before AI coding agents were part of his workflow.
-
-Preferred implementation:
-
-- Copy the standalone game into `public/snake/`.
-- Embed it in the portfolio with an iframe.
-- Keep the game logic mostly intact.
-- Lightly adjust wrapper styling only as needed for responsiveness and visual fit.
-
-Suggested section framing:
-
-> Before Agents, There Was Snake
->
-> I built this little Snake game in school more than 10 years ago, long before AI coding agents were part of my workflow. It still works, so I am keeping it here for anyone who wants a quick break.
-
-## Deployment
-
-The old site deployed generated output to `master`, likely via Travis. Do not continue that pattern for the refresh.
-
-Preferred deployment:
-
-- Keep `main` as the source branch.
-- Use GitHub Actions for GitHub Pages.
-- Configure GitHub Pages source to GitHub Actions.
-- Build static output with Next.
-- Deploy the generated `dist` directory using the official Pages artifact/deploy actions.
+- Next.js App Router.
+- Static export for GitHub Pages.
+- TypeScript.
+- SCSS modules.
+- npm only.
+- Node version is pinned in `.nvmrc`.
 
 ## Package Management
 
-Use npm only.
-
-- Remove `yarn.lock` during foundation cleanup.
-- Keep and regenerate `package-lock.json`.
+- Use npm.
+- Keep `package-lock.json`.
+- Do not add `yarn.lock`, `pnpm-lock.yaml`, or another package-manager lockfile.
 - Use `npm ci` in CI.
-- Fix the current dependency mismatch before relying on lint/build checks.
+- Use `npm install` only when intentionally changing dependencies.
 
-Current known issue:
+## App Structure
 
-- `npm install` fails because `package.json` and `package-lock.json` are out of sync, and TypeScript ESLint versions conflict with the current Next ESLint config.
+- App entry points live under `src/app/`.
+- Reusable page sections live under `src/components/sections/`.
+- Static assets live under `public/`.
+- Imported SVG/image assets live under `src/data/svg/` or the owning component folder.
+- Homepage content should stay centralized in typed data modules, currently `src/data/index.ts`.
+- Avoid hard-coding display copy inside components when it belongs to page content.
 
-## Refactor Priorities
+## Styling
 
-Foundation first:
+- Use SCSS modules for component styles.
+- Shared Sass tokens/mixins live under `src/sass/`.
+- Use modern Sass `@use` / `@forward`; do not reintroduce deprecated `@import`.
+- Prefer local/system fonts or checked-in font assets. Do not make builds depend on network-fetched fonts.
+- Keep responsive layout constraints explicit with grid/flex/min/max sizing.
 
-- Upgrade to the latest practical Next.js version.
-- Pin a modern Node version compatible with that Next version.
-- Restore working install, lint, format, and build.
-- Add GitHub Actions Pages deployment.
+## Static Export
 
-Then structure:
+- `next.config.mjs` uses `output: "export"` and `distDir: "dist"`.
+- GitHub Pages serves static files only, so avoid features that require a Next server.
+- Do not add API routes, server actions, dynamic runtime behavior, or image optimization that conflicts with static export.
+- `images.unoptimized` should remain enabled unless the deployment model changes.
 
-- Move display content into typed data/config.
-- Remove unused assets/routes/types.
-- Replace hard-coded intro cards with data-driven cards.
-- Normalize image handling.
-- Keep components scoped and simple.
+## Deployment
 
-Then design/content:
+Branch model:
 
-- Refresh hero, current focus, about/personality, Snake, and footer/contact sections.
-- Defer deep content polish until Terry provides updated copy, links, resume, and photos.
+- `main` is the source branch.
+- `master` is the production branch served by GitHub Pages.
+
+Workflow behavior:
+
+- Pull requests run checks only.
+- Pushes to `main` run checks, build the static site, and publish `dist` to `master`.
+- Do not switch to GitHub Pages Actions publishing unless explicitly requested.
+
+## Snake Game
+
+- The Snake game is a standalone static artifact under `public/snake/`.
+- Keep it as plain HTML/CSS/JS unless the user explicitly asks to rewrite it.
+- Embed it with an iframe from the React page.
+- Exclude standalone static game files from app linting if needed.
+
+## Verification
+
+Before committing meaningful changes, run:
+
+- `npm run format:check`
+- `npm run lint`
+- `npm run build`
+
+For local preview:
+
+- `npm run dev`
+
+Important local caveat:
+
+- This repo uses `distDir: "dist"`.
+- Avoid running `npm run build` while a dev server is active.
+- If local preview returns 500 after a build, stop the dev server and restart it.
