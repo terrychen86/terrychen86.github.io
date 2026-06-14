@@ -1,4 +1,4 @@
-name: CI
+name: CI and Deploy
 
 on:
   pull_request:
@@ -7,10 +7,10 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-deploy-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -39,3 +39,11 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Deploy to production branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: master
+          publish_dir: dist
