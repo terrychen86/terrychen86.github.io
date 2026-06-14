@@ -3,7 +3,8 @@ import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "Terry Chen",
-  description: "Terry Chen's 2024 Portfolio",
+  description:
+    "Terry Chen is a Senior Software Engineer building AI agents, harnesses, and product-minded systems.",
 };
 
 export default function RootLayout({

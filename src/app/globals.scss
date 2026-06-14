@@ -1,11 +1,21 @@
 @use "../sass/shared.scss" as *;
 
+:root {
+  color: $dark-text;
+  background: #f6f8fb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
-  font-family: ui-rounded, "Avenir Next", Avenir, "Segoe UI", sans-serif;
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: $primary-color;
+  background-color: #f6f8fb;
+  color: $dark-text;
+  font-family: ui-rounded, "Avenir Next", Avenir, "Segoe UI", sans-serif;
 }
 
 a {
@@ -13,48 +23,37 @@ a {
   text-decoration: none;
 }
 
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-h1 {
-  font-size: $font-xl;
-
-  @include lt-md {
-    font-size: $font-lg;
-  }
+h1,
+h2,
+h3,
+p {
+  letter-spacing: 0;
 }
 
-h2 {
-  font-size: $font-lg;
-
-  @include lt-md {
-    font-size: $font-md;
-  }
-}
-
+h1,
+h2,
 h3 {
-  font-size: $font-md;
-
-  @include lt-md {
-    font-size: $font-sm;
-  }
-}
-
-h5 {
-  font-size: $font-xxxs;
-
-  @include lt-md {
-    font-size: $font-xxxxs;
-  }
+  font-weight: 900;
 }
 
 p {
-  font-size: $font-sm;
+  line-height: 1.5;
+}
 
-  @include lt-md {
-    font-size: $font-xs;
-  }
+::selection {
+  background: #c8daee;
+  color: #142033;
 }

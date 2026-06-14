@@ -1,0 +1,74 @@
+@use "../../../sass/shared.scss" as *;
+
+.root {
+  @include content-container;
+
+  padding-top: 42px;
+  padding-bottom: 64px;
+}
+
+.header {
+  max-width: 720px;
+  margin-bottom: 28px;
+  color: $dark-text;
+
+  p {
+    margin-bottom: 10px;
+    color: #255d95;
+    font-size: $font-xxxs;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    line-height: 1.08;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+
+  @include lt-md {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  min-height: 320px;
+  border: 1px solid rgba($dark, 0.1);
+  border-radius: 22px;
+  color: $dark-text;
+  padding: 26px;
+  box-shadow: 0 16px 48px rgba(37, 83, 135, 0.08);
+
+  h3 {
+    margin-top: 18px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+
+  p {
+    color: rgba($dark-text, 0.78);
+    font-size: $font-xxs;
+    line-height: 1.5;
+  }
+}
+
+.purple {
+  background: #edf4fb;
+}
+
+.yellow {
+  background: #f8efe7;
+}
+
+.blue {
+  background: #e8f0fb;
+}
+
+.icon {
+  width: 72px;
+  height: 72px;
+}

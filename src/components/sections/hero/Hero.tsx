@@ -1,40 +1,54 @@
-import { ReactNode } from "react";
 import Image from "next/image";
+import type { ReactNode } from "react";
 
-import styles from "@/components/sections/hero/Hero.module.scss";
-
+import styles from "./Hero.module.scss";
 import illustration from "./hero-illustration.svg";
-import divider from "./wave-divider.svg";
 
-interface IconLink {
-  iconName: string;
-  url: string;
-}
-
-type Props = Readonly<{
-  title: string;
-  subtitle: string;
-  content: string;
-  iconLinks?: IconLink;
+type Action = Readonly<{
+  label: string;
+  href: string;
 }>;
 
-export default function Hero({ title, subtitle, content }: Props): ReactNode {
+type Props = Readonly<{
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  primaryAction: Action;
+  secondaryAction: Action;
+}>;
+
+export default function Hero({
+  eyebrow,
+  title,
+  subtitle,
+  primaryAction,
+  secondaryAction,
+}: Props): ReactNode {
   return (
     <section className={styles.root}>
       <div className={styles.container}>
-        <div className={styles.contentBox}>
-          <div className={styles.textBox}>
-            <h1 className={styles.textTitle}>{title}</h1>
-            <h2>{subtitle}</h2>
-            <p>{content}</p>
-          </div>
-          <div className={styles.imageBox}>
-            <Image src={illustration} alt="hero-image" />
+        <div className={styles.copy}>
+          <p className={styles.eyebrow}>{eyebrow}</p>
+          <h1>{title}</h1>
+          <p className={styles.subtitle}>{subtitle}</p>
+          <div className={styles.actions} aria-label="Profile links">
+            <a className={styles.primaryAction} href={primaryAction.href}>
+              {primaryAction.label}
+            </a>
+            <a className={styles.secondaryAction} href={secondaryAction.href}>
+              {secondaryAction.label}
+            </a>
           </div>
         </div>
-      </div>
-      <div className={styles.wave}>
-        <Image className={styles.waveImg} src={divider} alt="hero-image" />
+
+        <div className={styles.visual}>
+          <Image
+            className={styles.illustration}
+            src={illustration}
+            alt="Illustration of a developer working with application windows"
+            priority
+          />
+        </div>
       </div>
     </section>
   );

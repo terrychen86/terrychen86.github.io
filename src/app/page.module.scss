@@ -1,14 +1,4 @@
-@use "../sass/shared.scss" as *;
-
-.hero {
-  margin-top: 150px;
-}
-
-.intro {
-  background-color: $white;
-}
-
-.snake {
-  background-color: $white;
-  padding: 48px 0 72px;
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f6f8fb 0%, #edf4fb 48%, #f6f8fb 100%);
 }
