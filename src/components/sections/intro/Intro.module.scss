@@ -1,8 +1,8 @@
-@import "/src/sass/shared.scss";
+@use "../../../sass/shared.scss" as *;
 
 .root {
   background-color: $white;
-   
+
   position: relative;
   padding-top: 20px;
   padding-bottom: 50px;
@@ -32,7 +32,6 @@
   top: -100px;
   left: 25;
 
-
   @include lt-md {
     top: -75px;
   }
@@ -46,7 +45,7 @@
 .title {
   &::after {
     position: absolute;
-    content: '';
+    content: "";
     left: 0;
     right: 0;
     height: 8px;
@@ -60,14 +59,13 @@
   }
 }
 
-
 .imageBox {
   flex: 1 1 40%;
   position: relative;
 
   &::before {
     position: absolute;
-    content: '.';
+    content: ".";
     width: 100%;
     height: 100%;
     background-color: $secondary-color;

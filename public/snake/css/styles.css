@@ -1,0 +1,123 @@
+:root {
+  color-scheme: light;
+  --blue: #104e8b;
+  --yellow: #eec900;
+  --dark: #363636;
+  --red: #e74c3c;
+  --red-shadow: #bd3e31;
+  --paper: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--blue);
+  color: var(--paper);
+  font-family: ui-rounded, "Avenir Next", Avenir, "Segoe UI", sans-serif;
+}
+
+.game-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  color: var(--yellow);
+  font-size: clamp(28px, 8vw, 40px);
+  line-height: 1;
+}
+
+#gamePanel {
+  width: 100%;
+  text-align: center;
+}
+
+canvas {
+  display: block;
+  width: min(100%, 400px);
+  height: auto;
+  margin: auto;
+  border: clamp(12px, 5vw, 30px) solid var(--dark);
+  background: var(--paper);
+}
+
+#controlPanel {
+  display: block;
+  height: 44px;
+  text-align: center;
+}
+
+#hintPanel {
+  display: block;
+  width: min(100%, 350px);
+  min-height: 80px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: var(--yellow);
+  color: #111;
+  padding: 10px 25px;
+  text-align: center;
+}
+
+#newGameBtn {
+  border: 0;
+  border-bottom: 5px solid var(--red-shadow);
+  border-radius: 4px;
+  background-color: var(--red);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 8px 16px;
+  text-shadow: 0 -2px var(--red-shadow);
+  transition:
+    transform 0.1s,
+    border-bottom-width 0.1s;
+}
+
+#newGameBtn:active {
+  border-bottom-width: 0;
+  transform: translateY(5px);
+}
+
+.gameBtnTitle {
+  margin-bottom: 5px;
+  font-weight: 800;
+}
+
+.gameBtn {
+  display: inline-block;
+  min-width: 28px;
+  margin: 0 1px;
+  border-radius: 8px;
+  background-color: #111;
+  color: white;
+  padding: 2px 6px;
+  text-align: center;
+}
+
+.hintMsg {
+  margin-top: 10px;
+  color: #8b0000;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.gameBtnSpace {
+  min-width: auto;
+}

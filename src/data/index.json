@@ -10,5 +10,9 @@
       "With experience in both early-stage and late-stage hyper-growth startups, I enjoy the fast-paced culture of collaborative environments where we move quickly and innovate fearlessly.",
       "Outside of work, I love to travel and explore the good food. I'm also an avid gamer, spending a lot of my free time playing video games."
     ]
+  },
+  "snakeBreak": {
+    "title": "Before Agents, There Was Snake",
+    "content": "I built this little Snake game in school more than 10 years ago, long before AI coding agents were part of my workflow. It still works, so I am keeping it here for anyone who wants a quick break."
   }
 }

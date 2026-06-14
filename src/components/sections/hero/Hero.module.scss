@@ -1,4 +1,4 @@
-@import "/src/sass/shared.scss";
+@use "../../../sass/shared.scss" as *;
 
 .root {
   position: relative;
@@ -48,7 +48,6 @@
   p {
     display: block;
   }
-
 }
 
 .waveImg {

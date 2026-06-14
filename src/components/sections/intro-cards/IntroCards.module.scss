@@ -1,4 +1,4 @@
-@import "/src/sass/shared.scss";
+@use "../../../sass/shared.scss" as *;
 
 .container {
   @include content-container;
@@ -7,7 +7,6 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-
 
   @include lt-md {
     flex-wrap: nowrap;

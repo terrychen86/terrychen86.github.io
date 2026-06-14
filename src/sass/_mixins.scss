@@ -1,3 +1,6 @@
+@use "fonts" as *;
+@use "variables" as *;
+
 $screen-sm-min: 600px;
 $screen-md-min: 960px;
 $screen-lg-min: 1280px;
@@ -94,6 +97,6 @@ $screen-lg-max: 1919px;
 @mixin content-container {
   max-width: $content-width;
   width: 100%;
-  padding: 25px; 
+  padding: 25px;
   margin: 0 auto;
 }
